@@ -61,7 +61,7 @@ namespace HistoriAcao.Api.Services
                 Nome = t.Nome,
                 DataInicio = t.DataInicio,
                 DataFim = t.DataFim,
-                Subtopicos = t.Subtopicos.Any() ? t.Subtopicos.Select(s => new SubtopicDto
+                Subtopicos = t.Subtopicos != null ? t.Subtopicos.Select(s => new SubtopicDto
                 {
                     Nome = s.Nome,
                     DataInicio = s.DataInicio,
@@ -145,17 +145,17 @@ namespace HistoriAcao.Api.Services
             });
         }
 
-        public Task<TopicDto> UpdateTopicAsync(Topic topic)
+        public async Task<TopicDto> UpdateTopicAsync(Topic topic)
         {
-            if (topic == null)
+            if (topic == null || await _context.Topics.FindAsync(topic.Id) == null)
             {
                 throw new ArgumentNullException(nameof(topic));
             }
 
             _context.Topics.Update(topic);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
-            return Task.FromResult(new TopicDto
+            return new TopicDto
             {
                 Nome = topic.Nome,
                 DataInicio = topic.DataInicio,
@@ -166,7 +166,7 @@ namespace HistoriAcao.Api.Services
                     DataInicio = s.DataInicio,
                     DataFim = s.DataFim
                 }).ToList() : new List<SubtopicDto>()
-            });
+            };
         }
     }
 }

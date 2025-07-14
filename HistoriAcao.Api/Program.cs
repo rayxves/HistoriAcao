@@ -1,6 +1,8 @@
 using HistoriAcao.Api.Data;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
+using HistoriAcao.Api.Interfaces;
+using HistoriAcao.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,19 +14,25 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    options.UseNpgsql(connectionString);
+    options.UseNpgsql(connectionString)
+       .LogTo(Console.WriteLine, LogLevel.Information)
+       .EnableSensitiveDataLogging();
 });
 
+builder.Services.AddScoped<ITopicServices, TopicServices>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "HistoriAcao API V1");
+    c.RoutePrefix = string.Empty;
+});
+
 
 app.MapControllers();
 
