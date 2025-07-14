@@ -1,25 +1,27 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HistoriAcao.Api.Models
 {
     public class Question
-{
-    [Key]
-    public Guid Id { get; set; } = Guid.NewGuid(); 
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
-    public int Fase { get; set; }
-    public string NivelDificuldade { get; set; } = "Média";
+        public int Fase { get; set; }
+        public string NivelDificuldade { get; set; } = "Média";
 
-    public Guid TopicId { get; set; }
-    public Topic Topic { get; set; }
+        public int TopicoId { get; set; }
+        public Topic Topico { get; set; }
 
-    public Guid SubtopicId { get; set; }
-    public Subtopic Subtopic { get; set; }
+        public int SubtopicoId { get; set; }
+        public Subtopic Subtopico { get; set; }
 
-    public string Enunciado { get; set; } = string.Empty;
+        public string Enunciado { get; set; } = string.Empty;
 
-    public List<Document>? Documentos { get; set; } = new();
-    public List<Alternative>? Alternativas { get; set; } = new();
-}
+        public ICollection<Document>? Documentos { get; set; } = new List<Document>();
+        public ICollection<Alternative>? Alternativas { get; set; } = new List<Alternative>();
+    }
 
 }
