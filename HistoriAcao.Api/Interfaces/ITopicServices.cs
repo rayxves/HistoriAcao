@@ -10,5 +10,8 @@ namespace HistoriAcao.Api.Interfaces
         Task<TopicDto> UpdateTopicAsync(Topic topic);
         Task<bool> DeleteTopicAsync(int id);
         Task<IEnumerable<SubtopicDto>> GetSubtopicsByTopicIdAsync(int topicId);
+        Task<IEnumerable<QuestionDto>> GetQuestionsByTopicIdAsync(int topicId);
+        Task<IEnumerable<QuestionDto>> GetQuestionsBySubtopicIdAsync(int subtopicId);
+
     }
 }

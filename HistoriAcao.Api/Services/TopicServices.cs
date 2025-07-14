@@ -70,11 +70,67 @@ namespace HistoriAcao.Api.Services
             });
         }
 
+        public async Task<IEnumerable<QuestionDto>> GetQuestionsBySubtopicIdAsync(int subtopicId)
+        {
+            return await _context.Subtopics
+                           .Where(t => t.Id == subtopicId)
+                           .SelectMany(t => t.Questoes)
+                           .Select(q => new QuestionDto
+                           {
+                               Fase = q.Fase,
+                               NivelDificuldade = q.NivelDificuldade,
+                               Topico = q.Topico.Nome,
+                               Subtopico = q.Subtopico != null ? q.Topico.Nome : string.Empty,
+                               Enunciado = q.Enunciado,
+                               Documentos = q.Documentos != null ? q.Documentos.Select(d => new DocumentDto
+                               {
+                                   Descricao = d.Descricao,
+                                   Origem = d.Origem,
+                                   Url = d.Url
+                               }).ToList() : new List<DocumentDto>(),
+                               Alternativas = q.Alternativas.Select(a => new AlternativeDto
+                               {
+                                   Letra = a.Letra,
+                                   Texto = a.Texto,
+                                   Pontuacao = a.Pontuacao
+                               }).ToList()
+                           })
+                           .ToListAsync();
+        }
+
+        public async Task<IEnumerable<QuestionDto>> GetQuestionsByTopicIdAsync(int topicId)
+        {
+            return await _context.Topics
+                .Where(t => t.Id == topicId)
+                .SelectMany(t => t.Questoes)
+                .Select(q => new QuestionDto
+                {
+                    Fase = q.Fase,
+                    NivelDificuldade = q.NivelDificuldade,
+                    Topico = q.Topico.Nome,
+                    Subtopico = q.Subtopico != null ? q.Topico.Nome : string.Empty,
+                    Enunciado = q.Enunciado,
+                    Documentos = q.Documentos != null ? q.Documentos.Select(d => new DocumentDto
+                    {
+                        Descricao = d.Descricao,
+                        Origem = d.Origem,
+                        Url = d.Url
+                    }).ToList() : new List<DocumentDto>(),
+                    Alternativas = q.Alternativas.Select(a => new AlternativeDto
+                    {
+                        Letra = a.Letra,
+                        Texto = a.Texto,
+                        Pontuacao = a.Pontuacao
+                    }).ToList()
+                })
+                .ToListAsync();
+        }
+
         public async Task<IEnumerable<SubtopicDto>> GetSubtopicsByTopicIdAsync(int topicId)
         {
-           var topic = await _context.Topics
-                .Include(t => t.Subtopicos)
-                .FirstOrDefaultAsync(t => t.Id == topicId);
+            var topic = await _context.Topics
+                 .Include(t => t.Subtopicos)
+                 .FirstOrDefaultAsync(t => t.Id == topicId);
 
             if (topic == null)
             {
