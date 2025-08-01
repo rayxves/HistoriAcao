@@ -38,31 +38,19 @@ app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
 {
-    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-
-    if (!await context.Topics.AnyAsync())
+    var services = scope.ServiceProvider;
+    try
     {
-        var topics = SeedData.GetTopics();
-        int topicId = 1;
-        int subtopicId = 1;
-
-        foreach (var topic in topics)
-        {
-            topic.Id = topicId++;
-
-            foreach (var sub in topic.Subtopicos)
-            {
-                sub.Id = subtopicId++;
-                sub.TopicoId = topic.Id;
-            }
-
-            context.Topics.Add(topic);
-
-        }
-
-        await context.SaveChangesAsync();
+        var context = services.GetRequiredService<ApplicationDbContext>();
+        await DatabaseSeeder.SeedAsync(context);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Ocorreu um erro durante o seeding do banco de dados.");
     }
 }
+
 
 
 await app.RunAsync();

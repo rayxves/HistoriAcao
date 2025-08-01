@@ -46,7 +46,8 @@ namespace HistoriAcao.Api.Data
             modelBuilder.Entity<Question>()
                 .HasOne(q => q.Subtopico)
                 .WithMany(s => s.Questoes)
-                .HasForeignKey(q => q.SubtopicoId);
+                .HasForeignKey(q => q.SubtopicoId)
+                .IsRequired(false);
 
             modelBuilder.Entity<Topic>()
                 .HasKey(t => t.Id);

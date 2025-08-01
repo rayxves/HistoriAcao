@@ -13,6 +13,7 @@ namespace HistoriAcao.Api.Models
         public string? Descricao { get; set; }
         public string? Origem { get; set; }
         public string? Url { get; set; }
+        public string? Texto { get; set; }
         public int QuestaoId { get; set; }
         public Question Questao { get; set; }
     }

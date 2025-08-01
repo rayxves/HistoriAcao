@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HistoriAcao.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250714114215_SeedInitialData")]
-    partial class SeedInitialData
+    [Migration("20250731165205_InicialMigration")]
+    partial class InicialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -71,6 +71,9 @@ namespace HistoriAcao.Api.Migrations
                     b.Property<int>("QuestaoId")
                         .HasColumnType("integer");
 
+                    b.Property<string>("Texto")
+                        .HasColumnType("text");
+
                     b.Property<string>("Tipo")
                         .IsRequired()
                         .HasColumnType("text");
@@ -104,6 +107,10 @@ namespace HistoriAcao.Api.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("NivelDificuldade")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Olimpiada")
                         .IsRequired()
                         .HasColumnType("text");
 

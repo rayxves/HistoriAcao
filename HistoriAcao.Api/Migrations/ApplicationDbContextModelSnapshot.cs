@@ -68,6 +68,9 @@ namespace HistoriAcao.Api.Migrations
                     b.Property<int>("QuestaoId")
                         .HasColumnType("integer");
 
+                    b.Property<string>("Texto")
+                        .HasColumnType("text");
+
                     b.Property<string>("Tipo")
                         .IsRequired()
                         .HasColumnType("text");
@@ -101,6 +104,10 @@ namespace HistoriAcao.Api.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("NivelDificuldade")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Olimpiada")
                         .IsRequired()
                         .HasColumnType("text");
 

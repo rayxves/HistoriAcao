@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HistoriAcao.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class SeedInitialData : Migration
+    public partial class InicialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -55,6 +55,7 @@ namespace HistoriAcao.Api.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Olimpiada = table.Column<string>(type: "text", nullable: false),
                     Fase = table.Column<int>(type: "integer", nullable: false),
                     NivelDificuldade = table.Column<string>(type: "text", nullable: false),
                     TopicoId = table.Column<int>(type: "integer", nullable: false),
@@ -111,6 +112,7 @@ namespace HistoriAcao.Api.Migrations
                     Descricao = table.Column<string>(type: "text", nullable: true),
                     Origem = table.Column<string>(type: "text", nullable: true),
                     Url = table.Column<string>(type: "text", nullable: true),
+                    Texto = table.Column<string>(type: "text", nullable: true),
                     QuestaoId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>

@@ -1,4 +1,5 @@
 using HistoriAcao.Api.Models;
+using System.Text.Json;
 
 namespace HistoriAcao.Api.Data
 {
@@ -266,9 +267,11 @@ namespace HistoriAcao.Api.Data
                 {
                     Nome = "Nova República",
                     DataInicio = Utc(1985, 1, 1),
-                    DataFim = null
+                    DataFim = DateTime.UtcNow
                 },
             };
         }
+
+
     }
 }

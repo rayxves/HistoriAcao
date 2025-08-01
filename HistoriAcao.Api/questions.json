@@ -1,0 +1,364 @@
+
+[
+    {
+      "Olimpiada": "3ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Média",
+      "TopicoId": 4,
+      "SubtopicoId": 5,
+      "Enunciado": "A partir do texto, assinale a alternativa mais pertinente:",
+      "Documentos": [
+        {
+          "Titulo": "Mundos do Trabalho",
+          "Tipo": "Texto",
+          "Descricao": null,
+          "Origem": "Documento base da primeira fase da ONHB",
+          "Url": null,
+          "Texto": "### Mundos do Trabalho\n\n... “Mundos do trabalho. O orgulho e a camaradagem por pertencer a um mesmo grupo profissional. Os passatempos, as brincadeiras, os apelidos inventados nos intervalos de descanso. A experiência de compartilhar: refeições, transporte, locais e condições de moradia, e até mesmo um jeito de vestir, de andar e de gesticular. O encontro em torno da música, do baile, do esporte, do lazer, promovido pela empresa, pelo sindicato ou simplesmente por colegas. É nessa convivência que se produz a cultura do mundo do trabalho. É ela que dá aos trabalhadores e trabalhadoras uma linguagem própria na qual formulam sua visão \n\nde mundo e expressam seus interesses. Quando rivalidades e diferenças opõem uns aos outros, é essa experiência comum que garante os valores e princípios sobre os quais sua identidade de classe se constrói e se reconstrói. E é essa identidade que faz a sociedade reconhecê-los como sujeito, quando circulam cotidianamente pelo mundo público ou quando o inundam de criatividade com suas lutas e mobilizações.”"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "Não são apenas as experiências de rotina dentro das fábricas ou acontecimentos como as greves que permitem compreender a realidade dos trabalhadores.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "B",
+          "Texto": "No mundo do trabalho a presença das mulheres é menor e incidental.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "C",
+          "Texto": "Os trabalhadores compartilham experiências e valores que implicam a criação de identidades de classe.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "D",
+          "Texto": "Os mundos do trabalho estão também nas práticas cotidianas, que incluem o lazer e outras formas de sociabilidade.",
+          "Pontuacao": 4
+        }
+      ]
+    },
+    {
+      "Olimpiada": "3ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Fácil",
+      "TopicoId": 7,
+      "SubtopicoId": 15,
+      "Enunciado": "Observe a charge e assinale a alternativa mais pertinente.",
+      "Documentos": [
+        {
+          "Titulo": "Voto de Cabresto",
+          "Tipo": "Imagem",
+          "Descricao": "\n**Legenda:**\n\n**Ella** - É o Zé Besta?\n\n**Elle** - Não, é o Zé Burro!",
+          "Origem": "Revista Tempo",
+          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/3ONHB_primeira_fase_questao_2.jpg",
+          "Texto": "### Revista Tempo\n\nA revista Careta, muito popular durante a Primeira República, era caracterizada pela irreverência\n\nde suas críticas ao regime e seus vícios tornando-se um porta-voz, principalmente, dos setores\n\nurbanos que se sentiam alijados das disputas eleitorais em função dos mecanismos de controle da\n\nmáquina oficial sobre as eleições, especialmente nas áreas rurais marcadas pelo fenômeno do\n\ncoronelismo.\n"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "A prática de voto descrita como “cabresto” estava na base da política dos governadores posta em prática pelos grupos oligárquicos na chamada República Velha, com o objetivo de manterem-se no poder.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "B",
+          "Texto": "A charge mostra o eleitor na forma de um burro sendo levado até as urnas pelo político e recebido por uma mulher representando a “soberania”.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "C",
+          "Texto": "A charge representa uma das fraudes eleitorais da Primeira República, quando o eleitor recebia e depositava na urna um papel com o nome do candidato do coronel da região, sem fazer sua própria escolha.",
+          "Pontuacao": 4
+        },
+        {
+          "Letra": "D",
+          "Texto": "A charge mostra o papel da mulher como eleitora na década de 1920, representada no documento pela soberania.",
+          "Pontuacao": 0
+        }
+      ]
+    },
+    {
+      "Olimpiada": "3ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Média",
+      "TopicoId": 6,
+      "SubtopicoId": 13,
+      "Enunciado": "Sobre o excerto do romance “O Cortiço” (1890) de Aluísio Azevedo, podemos afirmar que:",
+      "Documentos": [
+        {
+          "Titulo": "O Cortiço",
+          "Tipo": "Texto",
+          "Descricao": "Trecho da obra de Aluísio Azevedo que retrata a vida nos cortiços, destacando o cotidiano coletivo, as condições sociais e a representação da realidade urbana.",
+          "Origem": "Domínio público + Artigo acadêmico de Lilian Fessler Vaz",
+          "Url": null,
+          "Texto": "\n“Eram cinco horas da manhã e o cortiço acordava, abrindo, não os olhos, mas a sua infinidade de\n\nportas e janelas alinhadas. Um acordar alegre e farto de quem dormiu de uma assentada sete horas\n\nde chumbo. Como que se sentiam ainda na indolência de neblina as derradeiras notas da última\n\nguitarra da noite antecedente, dissolvendo-se à luz loura e tenra da aurora, que nem um suspiro de\n\nsaudade perdido em terra alheia. (…) Das portas surgiam cabeças congestionadas de sono;\n\nouviam-se amplos bocejos, fortes como o marulhar das ondas; pigarreava-se grosso por toda a\n\nparte; começavam as xícaras a tilintar; o cheiro quente do café aquecia, suplantando todos os\n\noutros; trocavam-se de janela para janela as primeiras palavras, os bons-dias; reatavam-se\n\nconversas interrompidas à noite; a pequenada cá fora traquinava já, e lá dentro das casas vinham\n\nchoros abafados de crianças que ainda não andam. No confuso rumor que se formava,\n\ndestacavam-se risos, sons de vozes que altercavam, sem se saber onde, grasnar de marrecos,\n\ncantar de galos, cacarejar de galinhas. (…) Daí a pouco, em volta das bicas era um zunzum\n\ncrescente; uma aglomeração tumultuosa de machos e fêmeas. Uns, após outros, lavavam a cara,\n\nincomodamente, debaixo do fio de água que escorria da altura de uns cinco palmos. O chão\n\ninundava-se. (…) As portas das latrinas não descansavam, era um abrir e fechar de cada instante,\n\num entrar e sair sem tréguas.”"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "Assim como o cortiço é descrito como se fosse um organismo vivo, as personagens são descritas confundindo-se com os próprios animais que lá viviam.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "B",
+          "Texto": "O autor trata a questão dos cortiços como uma representação coletiva que trazia incômodo a outros grupos sociais.",
+          "Pontuacao": 4
+        },
+        {
+          "Letra": "C",
+          "Texto": "Os cortiços foram os maiores culpados pelo crescimento desordenado da cidade do Rio de Janeiro e pela proliferação de doenças.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "D",
+          "Texto": "O cortiço é um reflexo de um planejamento urbano que não contemplava todas as classes sociais.",
+          "Pontuacao": 5
+        }
+      ]
+    },
+    {
+      "Olimpiada": "3ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Fácil",
+      "TopicoId": 1,
+      "SubtopicoId": null,
+      "Enunciado": "Escolha a alternativa mais pertinente:",
+      "Documentos": [
+        {
+          "Titulo": "O Brasil antes dos brasileiros",
+          "Tipo": "Texto",
+          "Descricao": "Trecho da obra de André Prous que combate estereótipos eurocêntricos sobre os povos pré-históricos no Brasil, destacando sua organização, adaptação ao meio e riqueza de recursos.",
+          "Origem": "André Prous, “O Brasil antes dos brasileiros”, 2006",
+          "Url": null,
+          "Texto": "\n“Aos poucos se vem corrigindo uma série de ideias errôneas, infelizmente enraizadas na cabeça de\n\nmuita gente – e às vezes ensinadas nas escolas. Uma delas é que os primeiros ocupantes do\n\nterritório que hoje chamamos Brasil, como qualquer homem pré-histórico, teriam vivido num\n\nmundo frio e povoado por mamutes ou dinossauros. Refugiando-se dentro de cavernas (mas\n\ntambém nômades, sem domicílio fixo), disporiam essencialmente da pedra para fabricar seus\n\ninstrumentos e passariam muita fome. Seriam primitivos que não imaginavam uma sociedade\n\nracionalmente organizada como a nossa. Esta é obviamente, uma fantasia oriunda das pesquisas\n\nrealizadas na Europa no século XIX, dentro de uma perspectiva evolucionista.\n\nCom efeito, as regiões tropicais não conheceram glaciações durante o Pleistoceno, e os mamutes –\n\nadaptados ao frio – nunca existiram no Brasil. Quanto a viver nas cavernas, teria sido estúpido\n\ninstalar-se em lugares escuros, pouco arejados e onde não se poderia fazer fogo sem ficar\n\ndefumado. Algumas populações utilizaram os abrigos bem abertos ou as entradas de grutas, mas,\n\nmesmo assim, sobretudo para fins ritualísticos ou para preservação de matérias perecíveis. Em\n\ngeral, estabeleciam suas moradias a céu aberto. Por outro lado, instrumentos de pedra são\n\nperfeitamente dispensáveis onde há recursos disponíveis suficientemente variados, como vegetais,\n\nconchas e ossos (…) Enfim, em vez de formar grupos numerosos, tornando difícil a obtenção de\n\nalimentos para todos, muitas populações limitaram sua densidade, garantindo uma relativa\n\nabundância dentro de um território fixo, cujos recursos eram perfeitamente conhecidos.”\n\n**Vocabulário:**\n\n**Pleistoceno:** Período geológico entre 2.000.000 e 10.000 anos atrás; foi marcado por grandes\n\nmudanças climáticas no mundo todo; nas latitudes altas ocorreram fenômenos conhecidos como\n\nglaciações; nas regiões quentes, as oscilações afetaram sobre tudo a pluviosidade; no final do\n\nPleistoceno, por exemplo, o clima de Minas Gerais era muito mais seco que o atual, enquanto o\n\nPiauí era bem mais úmido; as temperaturas eram também mais baixas, mas não a ponto de haver\n\ngeadas em Minas Gerais, a não ser, talvez, nos pontos mais altos das serras do Mar e do\n\nEspinhaço; grandes animais pastavam então nas imensas extensões de cerrado e de pastos.\n\n*Em: André Prous. O Brasil antes dos brasileiros – a pré-história do nosso país. Rio de Janeiro: Jorge Zahar Ed., 2006, pp. 136-137.*"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "As populações pré-históricas organizadas adaptam-se de diferentes maneiras ao meio em que vivem.",
+          "Pontuacao": 4
+        },
+        {
+          "Letra": "B",
+          "Texto": "A imagem estereotipada do homem pré-histórico criada no século XIX ainda é difundida pelos meios de comunicação como cinema e televisão.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "C",
+          "Texto": "O estereótipo europeu do homem pré-histórico não é aplicável aos primeiros habitantes do território hoje chamado de Brasil.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "D",
+          "Texto": "O homem pré-histórico de regiões tropicais vivia em um clima ameno, sem inimigos naturais e com muitos materiais a sua disposição.",
+          "Pontuacao": 0
+        }
+      ]
+    },
+    {
+      "Olimpiada": "3ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Média",
+      "TopicoId": 2,
+      "SubtopicoId": 3,
+      "Enunciado": "Escolha a alternativa mais pertinente:",
+      "Documentos": [
+        {
+          "Titulo": "História do Brasil por Frei Vicente do Salvador",
+          "Tipo": "Texto",
+          "Descricao": "Trecho crítico à ocupação portuguesa do território brasileiro, comparando sua ação à dos caranguejos e mencionando a negligência quanto às minas.",
+          "Origem": "Frei Vicente do Salvador – 1627",
+          "Url": null,
+          "Texto": "\n...\n\n“Da largura que a terra do Brasil tem para o sertão não trato, porque até agora não houve quem a\n\nandasse por negligencia dos portuguezes, que, sendo grandes conquistadores de terras, não se\n\naproveitam delas, mas contentam-se de as andar arranhando ao longo do mar como caranguejos.\n\n(…)\n\nJá (…) comecei a murmurar da negligencia dos portugueses que não se aproveitavam das terras do\n\nBrasil que conquistam, e agora me é necessário continuar com a murmuração, havendo de tratar\n\ndas minas do Brasil, pois, sendo contigua esta terra com a do Peru, que a não divide mais do que\n\numa linha imaginária indivisível, tendo lá os castelhanos descobertas tantas e tão ricas minas, cá\n\nnem uma passada dão por isso, e quando vão ao sertão é a buscar índios forros (…) ainda que de\n\ncaminho achem mostras ou novas de minas, não as cavam nem ainda as vêm ou as demarcam.”"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "Os portugueses ignoravam as minas encontradas uma vez que os metais e pedras preciosas não eram, naquele momento, importantes para a economia europeia.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "B",
+          "Texto": "A comparação entre portugueses e caranguejos se explica pela ocupação exclusivamente litorânea do território.",
+          "Pontuacao": 4
+        },
+        {
+          "Letra": "C",
+          "Texto": "Os portugueses são retratados como os que souberam conquistar, mas não souberam explorar de forma satisfatória as terras conquistadas.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "D",
+          "Texto": "A linha imaginária indivisível a que se refere o texto é a estabelecida pelo Tratado de Tordesilhas em 1494.",
+          "Pontuacao": 1
+        }
+      ]
+    },
+    {
+      "Olimpiada": "3ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Fácil",
+      "TopicoId": 9,
+      "SubtopicoId": 20,
+      "Enunciado": "A propaganda reflete o processo de industrialização pelo qual o Brasil passava?",
+      "Documentos": [
+        {
+          "Titulo": "Café Predileto – O Malho",
+          "Tipo": "Imagem",
+          "Descricao": "Anúncio veiculado na revista O Malho, destacando o papel da mulher e a mecanização da produção do café.",
+          "Origem": "O Malho, nº 152, 1952",
+          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/3ONHB_primeira_fase_questao_6.jpg",
+          "Texto": "**LEGENDA:**\n\nJá em 1902 as boas donas de casa sabiam escolher o melhor café…\n\nEconômico e delicioso, o Café Predileto está a venda em latas de 1 quilo e pacotes de ½ quilo de\n\nnova embalagem oferecendo, nas latas ou nos pacotes, o rendimento e a qualidade de uma\n\nfabricação perfeita, inteiramente mecânica.\n\nEm seu armazém, exija Predileto, para maior economia em cada pacote… e maior qualidade em cada xícara!\n\n**Café Predileto – O Predileto de todos**"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "A propaganda afirma que o papel social da mulher e a qualidade do café permaneceram inalterados ao longo do tempo.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "B",
+          "Texto": "Na propaganda, a passagem do tempo é demonstrada pelas vestimentas da figura feminina e dos edifícios ao fundo.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "C",
+          "Texto": "O consumo de café se popularizou no Brasil a partir de 1902, como demonstra a propaganda.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "D",
+          "Texto": "A propaganda reflete o processo de industrialização pelo qual o Brasil passava, atingindo o beneficiamento de alimentos, como o café.",
+          "Pontuacao": 4
+        }
+      ]
+    },
+    {
+      "Olimpiada": "3ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Fácil",
+      "TopicoId": 11,
+      "SubtopicoId": null,
+      "Enunciado": "Analisando o tema proposto pela canção composta por Lúcio Barbosa e interpretada por nomes da Música Popular Brasileira como Zé Geraldo e Zé Ramalho, pode-se dizer que:",
+      "Documentos": [
+        {
+          "Titulo": "Cidadão – Lúcio Barbosa",
+          "Tipo": "Texto",
+          "Descricao": "Canção que retrata a migração nordestina e as desigualdades sociais nas grandes cidades do Brasil.",
+          "Origem": "Letra da música \"Cidadão\" (1978)",
+          "Url": null,
+          "Texto": "#### Trecho inicial da canção Cidadão [1978]\n\n...\n\nTá vendo aquele edifício moço?\n\nAjudei a levantar\n\nFoi um tempo de aflição\n\nEram quatro condução\n\nDuas pra ir, duas pra voltar\n\nHoje depois dele pronto\n\nOlho pra cima e fico tonto\n\nMas me chega um cidadão\n\nE me diz desconfiado, “tu tá aí admirado\n\nOu tá querendo roubar?”\n\nMeu domingo tá perdido\n\nVou pra casa entristecido\n\nDá vontade de beber\n\nE pra aumentar o meu tédio\n\nEu nem posso olhar pro prédio\n\nQue eu ajudei a fazer\n\nTá vendo aquele colégio moço?\n\nEu também trabalhei lá\n\nLá eu quase me arrebento\n\nPus a massa fiz cimento\n\nAjudei a rebocar\n\nMinha filha inocente\n\nVem pra mim toda contente\n\n“Pai vou me matricular”\n\nMas me diz um cidadão\n\n“Criança de pé no chão\n\nAqui não pode estudar”\n\nEsta dor doeu mais forte\n\nPor que que eu deixei o norte?\n\nEu me pus a me dizer\n\nLá a seca castigava mas o pouco que eu plantava\n\nTinha direito a comer […]\n\n**Composição:** Lúcio Barbosa"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "Trata-se das memórias de um migrante nortista que veio em busca de uma vida melhor para uma grande cidade emergente e trabalhou na construção civil de obras importantes.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "B",
+          "Texto": "As populações migrantes do Norte e do Nordeste não têm acesso a moradia e escola no Sul e Sudeste.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "C",
+          "Texto": "Lúcio Barbosa trabalha com a ideia metafórica, e ao mesmo tempo real, de que as metrópoles brasileiras do Sul e Sudeste foram construídas pelos migrantes do Norte e Nordeste do Brasil.",
+          "Pontuacao": 4
+        },
+        {
+          "Letra": "D",
+          "Texto": "O autor explora a questão da venda de mão de obra produtiva, dentro de um ciclo de exploração no qual quem produz não tem acesso ao consumo do produto acabado.",
+          "Pontuacao": 5
+        }
+      ]
+    },
+    {
+      "Olimpiada": "3ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Média",
+      "TopicoId": 10,
+      "SubtopicoId": 24,
+      "Enunciado": "Após observar a fotografia, selecione a alternativa mais pertinente:",
+      "Documentos": [
+        {
+          "Titulo": "Obras da Rodovia Acre–Brasília",
+          "Tipo": "Imagem",
+          "Descricao": "Imagem sobre as obras da integração nacional durante o regime militar, destacando rodovias como eixo de expansão.",
+          "Origem": "Arquivo Nacional – Exposição “50 anos de desenvolvimento nacional”",
+          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/3ONHB_primeira_fase_questao_8.jpg",
+          "Texto": "### Exposição virtual: 50 anos de desenvolvimento nacional\n\nVeja a Exposição Virtual no site do Arquivo Nacional\n\n[Exposição virtual: 50 anos de desenvolvimento nacional](link)\n\n### O contexto do \"Plano de Metas\"\n\n[Link](link)\n\nConheça mais um pouco sobre o Plano de Metas:\n\n[Plano de Metas](link)\n\n### Iracema uma Transa Amazônica, 1976\n\nFilme\n\nBrasil, 1970: um motorista de caminhão (Paulo César Pereio) viaja pela rodovia Transamazônica,\n\nestrada que cruza a selva amazônica. Durante o trajeto, conhece uma prostituta (Edna de Cássia)\n\ne, aos poucos, fica a par dos sérios problemas sócio-estruturais que assolam a região. Resultado de\n\numa experiência instigante, inusitada e até revolucionária. Coo-dirigido por Orlando Senna o filme\n\namplia e redimensiona as contribuições legadas pelo Cinema Novo. Sem roteiro pré-determinado e\n\nde expressiva singularidade, o filme ficou proibido por anos no Brasil, fez boa carreira em festivais\n\ninternacionais e só foi descoberto ao ser premiado no festival de Brasília (1981)."
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "É possível concluir que o plano de integração nacional se baseou na ampliação da malha rodoviária, como a rodovia Acre-Brasília sugere.",
+          "Pontuacao": 4
+        },
+        {
+          "Letra": "B",
+          "Texto": "Interiorização, rodovia e progresso eram ideias afins que acabavam por se chocar com outras realidades existentes no interior do Brasil.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "C",
+          "Texto": "O plano de integração nacional possibilitou que o município de Rio Branco, no Estado do Acre, até então completamente isolado, se conectasse ao restante do país.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "D",
+          "Texto": "A fotografia retrata o contexto das ações político-econômicas que visavam à integração nacional ao longo das décadas de 1950 a 1970.",
+          "Pontuacao": 1
+        }
+      ]
+    },
+    {
+      "Olimpiada": "3ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Difícil",
+      "TopicoId": 2,
+      "SubtopicoId": 3,
+      "Enunciado": "A partir do texto, assinale a alternativa mais pertinente:",
+      "Documentos": [
+        {
+          "Titulo": "Fragmentos Setecentistas – Escravidão, cultura e poder",
+          "Tipo": "Texto",
+          "Descricao": "Trecho que aborda as novas abordagens historiográficas sobre a escravidão, a partir da década de 1980, considerando os escravizados como sujeitos históricos.",
+          "Origem": "Documento da 1ª fase da ONHB",
+          "Url": null,
+          "Texto": "\n...\n\n“Nos anos 1980, a história da escravidão no Brasil passou por transformações significativas, que\n\nredimensionaram a abordagem das relações entre senhores e escravos nessa parte do mundo.\n\nRecuperando nuances e ambiguidades que antes poderiam parecer surpreendentes, a experiência\n\nda escravidão começou a ser inquirida de modo a recuperar a perspectiva dos sujeitos em\n\nconfronto. Temas como a família, as fugas e revoltas, as lutas por alforria, as irmandades, as\n\nrelações dos escravos com as instituições senhoriais e tantos outros passaram a ser objeto de vários\n\nestudos. (…) Já não bastava mostrar que os escravos haviam se rebelado ao longo de toda a\n\nvigência da escravidão. (…) Era preciso descobrir as variantes das ações de resistência [e]\n\ncompreender seus significados. (…) \n\nSe inicialmente o volume das pesquisas sobre a escravidão esteve centrado no século XIX, aos\n\npoucos as novas questões e os novos procedimentos de análise foram sendo incorporados às\n\npossibilidades da pesquisa que se dedicava ao período colonial. (…) \n\nA partir dos anos 1990 (…) surgiram novas abordagens sobre as relações de poder no mundo\n\ncolonial, (…) pesquisas sobre as formas de governar os domínios ultramarinos e o funcionamento\n\ndas diversas instituições (…) \n\nAos poucos, os nexos imperiais das políticas metropolitanas e das dinâmicas coloniais foram se\n\nimpondo nas análises, fazendo com que eventos “brasileiros” pudessem ser analisados em conexão\n\ncom outros ocorridos na África ou na Índia. Assim, a dualidade Brasil-Portugal, que havia\n\npresidido boa parte de nossa produção historiográfica, passou a conectar-se às dimensões do\n\nImpério português.”"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "Cada geração de historiadores renega os estudos anteriores, fragmentando o conhecimento em história do Brasil.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "B",
+          "Texto": "A autora descreve como a produção recente sobre a história do Brasil foi se renovando e propondo novas abordagens a temas de estudo já conhecidos.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "C",
+          "Texto": "Abandonar a dualidade Brasil-Portugal e entender o Brasil como parte do Império Português amplia a compreensão dos processos de colonização, domínio e escravidão.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "D",
+          "Texto": "A história da escravidão que considera as experiências dos escravos para além da submissão ou da revolta implica considerá-los como sujeitos de sua própria história.",
+          "Pontuacao": 4
+        }
+      ]
+    }
+  ]
+  
