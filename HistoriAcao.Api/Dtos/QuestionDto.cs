@@ -6,6 +6,7 @@ namespace HistoriAcao.Api.Dtos
     {
 
         public int Fase { get; set; }
+        public string Olimpiada { get; set; }
         public string NivelDificuldade { get; set; } = "Média";
 
         public string Topico { get; set; }

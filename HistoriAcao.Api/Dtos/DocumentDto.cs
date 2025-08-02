@@ -8,6 +8,7 @@ namespace HistoriAcao.Api.Dtos
         public string? Descricao { get; set; }
         public string? Origem { get; set; }
         public string? Url { get; set; }
+        public string? Texto { get; set; }
     }
 
 }
