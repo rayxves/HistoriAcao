@@ -2,9 +2,9 @@
 
 namespace HistoriAcao.Api.Dtos
 {
-    public class QuestionDto
+    public class CreateQuestionDto
     {
-        public int Id { get; set; }
+        
         public int Fase { get; set; }
         public string Olimpiada { get; set; }
         public string NivelDificuldade { get; set; } = "Média";
@@ -12,8 +12,6 @@ namespace HistoriAcao.Api.Dtos
         public string Topico { get; set; }
 
         public string Subtopico { get; set; }
-        public DateTime? DataInicio { get; set; }
-        public DateTime? DataFim { get; set; }
 
         public string Enunciado { get; set; } = string.Empty;
 

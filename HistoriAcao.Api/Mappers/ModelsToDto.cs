@@ -15,12 +15,15 @@ namespace HistoriAcao.Api.Mappers
 
             var questionDto = new QuestionDto
             {
+                Id = question.Id,
                 Enunciado = question.Enunciado,
                 NivelDificuldade = question.NivelDificuldade,
                 Fase = question.Fase,
                 Olimpiada = question.Olimpiada,
                 Topico = topico.Nome,
                 Subtopico = subtopico != null ? subtopico.Nome : null,
+                DataInicio = subtopico != null ? subtopico.DataInicio : topico.DataInicio,
+                DataFim = subtopico != null ? subtopico.DataFim : topico.DataFim,
                 Documentos = question.Documentos?.Select(d => d.MapToDocumentDto()).ToList(),
                 Alternativas = question.Alternativas?.Select(a => a.MapToAlternativeDto()).ToList()
             };

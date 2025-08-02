@@ -15,7 +15,7 @@ namespace HistoriAcao.Api.Services
             _context = context;
         }
 
-        public async Task<QuestionDto> CreateQuestionAsync(QuestionDto questionDto)
+        public async Task<QuestionDto> CreateQuestionAsync(CreateQuestionDto questionDto)
         {
             var topic = await _context.Topics.FirstOrDefaultAsync(t => t.Nome.ToLower() == questionDto.Topico.ToLower());
             if (topic == null)
@@ -73,7 +73,7 @@ namespace HistoriAcao.Api.Services
             _context.Update(newQuestion);
             await _context.SaveChangesAsync();
 
-            return questionDto;
+            return await newQuestion.MapToQuestionDto(_context);
         }
 
         public async Task<bool> DeleteQuestionAsync(int id)
@@ -108,20 +108,16 @@ namespace HistoriAcao.Api.Services
             return questionDtos;
         }
 
-        public async Task<QuestionDto> GetQuestionByEnunciadoAndOlimpiadaAsync(string enunciado, string olimpiada)
-        {
-            var question = await _context.Questions.FirstOrDefaultAsync(q => q.Enunciado == enunciado && q.Olimpiada == olimpiada);
-            if (question == null)
-            {
-                throw new ArgumentNullException("Nenhuma questão foi encontrada.");
-            }
-
-            return await question.MapToQuestionDto(_context);
-        }
+       
 
         public async Task<QuestionDto> GetQuestionByIdAsync(int id)
         {
-           var question = await _context.Questions.FirstOrDefaultAsync(q => q.Id == id);
+            var question = await _context.Questions
+                .Include(q => q.Topico)
+                .Include(q => q.Subtopico)
+                .Include(q => q.Documentos)
+                .Include(q => q.Alternativas)
+                .FirstOrDefaultAsync(q => q.Id == id);
             if (question == null)
             {
                 throw new ArgumentNullException("Nenhuma questão foi encontrada.");
@@ -141,6 +137,8 @@ namespace HistoriAcao.Api.Services
             var query = _context.Questions
                 .Include(q => q.Topico)
                 .Include(q => q.Subtopico)
+                .Include(q => q.Documentos)
+                .Include(q => q.Alternativas)
                 .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(olimpiada))
@@ -189,9 +187,14 @@ namespace HistoriAcao.Api.Services
             return questionDtos;
         }
 
-        public async Task<QuestionDto> UpdateQuestionAsync(QuestionDto questionDto, int id)
+        public async Task<QuestionDto> UpdateQuestionAsync(QuestionDto questionDto)
         {
-            var question = await _context.Questions.FirstOrDefaultAsync(q => q.Id == id);
+            var question = await _context.Questions
+                .Include(q => q.Topico)
+                .Include(q => q.Subtopico)
+                .Include(q => q.Documentos)
+                .Include(q => q.Alternativas)
+                .FirstOrDefaultAsync(q => q.Id == questionDto.Id);
             if (question == null)
             {
                 throw new ArgumentNullException("Nenhuma questão foi encontrada para esse id.");
@@ -244,8 +247,8 @@ namespace HistoriAcao.Api.Services
             return questionDto;
 
         }
-        
 
-        
+
+
     }
 }

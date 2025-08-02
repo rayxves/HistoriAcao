@@ -293,7 +293,7 @@ namespace HistoriAcao.Api.Services
       {
         foreach (var question in questionsFromJson)
         {
-          var existingQuestion = await context.Questions.FirstOrDefaultAsync(q => q.Enunciado.Contains(question.Enunciado));
+          var existingQuestion = await context.Questions.FirstOrDefaultAsync(q => q.Enunciado == question.Enunciado &&  q.TopicoId == question.TopicoId && q.SubtopicoId == question.SubtopicoId && q.Olimpiada == question.Olimpiada);
           var topico = await context.Topics.FindAsync(question.TopicoId);
           if (topico == null)
           {
