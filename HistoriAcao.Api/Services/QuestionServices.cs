@@ -108,7 +108,7 @@ namespace HistoriAcao.Api.Services
             return questionDtos;
         }
 
-       
+
 
         public async Task<QuestionDto> GetQuestionByIdAsync(int id)
         {
@@ -132,7 +132,9 @@ namespace HistoriAcao.Api.Services
             int? fase,
             string? olimpiada,
             DateTime? inicialDate,
-            DateTime? finishDate)
+            DateTime? finishDate,
+            string? enunciado,
+            string? nivelDificuldade)
         {
             var query = _context.Questions
                 .Include(q => q.Topico)
@@ -154,6 +156,17 @@ namespace HistoriAcao.Api.Services
             if (!string.IsNullOrWhiteSpace(subtopicName))
             {
                 query = query.Where(q => q.Subtopico.Nome == subtopicName);
+            }
+
+
+             if (!string.IsNullOrWhiteSpace(enunciado))
+            {
+                query = query.Where(q => q.Enunciado.ToLower() == enunciado.ToLower());
+            }
+
+              if (!string.IsNullOrWhiteSpace(nivelDificuldade))
+            {
+                query = query.Where(q => q.NivelDificuldade.ToLower() == nivelDificuldade.ToLower());
             }
 
             if (fase.HasValue)
