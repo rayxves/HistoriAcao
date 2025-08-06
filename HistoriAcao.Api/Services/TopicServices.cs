@@ -27,11 +27,13 @@ namespace HistoriAcao.Api.Services
 
             return new TopicDto
             {
+                Id = topic.Id,
                 Nome = topic.Nome,
                 DataInicio = topic.DataInicio,
                 DataFim = topic.DataFim,
                 Subtopicos = topic.Subtopicos.Any() ? topic.Subtopicos.Select(s => new SubtopicDto
                 {
+                    Id = s.Id,
                     Nome = s.Nome,
                     DataInicio = s.DataInicio,
                     DataFim = s.DataFim
@@ -54,11 +56,13 @@ namespace HistoriAcao.Api.Services
 
             return topics.Select(t => new TopicDto
             {
+                Id = t.Id,
                 Nome = t.Nome,
                 DataInicio = t.DataInicio,
                 DataFim = t.DataFim,
                 Subtopicos = t.Subtopicos?.Select(s => new SubtopicDto
                 {
+                    Id = s.Id,
                     Nome = s.Nome,
                     DataInicio = s.DataInicio,
                     DataFim = s.DataFim
@@ -114,6 +118,7 @@ namespace HistoriAcao.Api.Services
 
             return topic.Subtopicos.Select(s => new SubtopicDto
             {
+                Id = s.Id,
                 Nome = s.Nome,
                 DataInicio = s.DataInicio,
                 DataFim = s.DataFim
@@ -132,11 +137,13 @@ namespace HistoriAcao.Api.Services
 
             return new TopicDto
             {
+                Id = topic.Id,
                 Nome = topic.Nome,
                 DataInicio = topic.DataInicio,
                 DataFim = topic.DataFim,
                 Subtopicos = topic.Subtopicos.Any() ? topic.Subtopicos.Select(s => new SubtopicDto
                 {
+                    Id = s.Id,
                     Nome = s.Nome,
                     DataInicio = s.DataInicio,
                     DataFim = s.DataFim

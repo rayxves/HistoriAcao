@@ -56,12 +56,12 @@ namespace HistoriAcao.Api.Controllers
             [FromQuery] string? olimpiada,
             [FromQuery] DateTime? inicialDate,
             [FromQuery] DateTime? finishDate,
-            [FromQuery] string? enunciado,
+            [FromQuery] string? search,
             [FromQuery] string? nivelDificuldade)
         {
             try
             {
-                var questions = await _questionService.GetQuestionsByFilterAsync(topicName, subtopicName, fase, olimpiada, inicialDate, finishDate, enunciado, nivelDificuldade);
+                var questions = await _questionService.GetQuestionsByFilterAsync(topicName, subtopicName, fase, olimpiada, inicialDate, finishDate, search, nivelDificuldade);
                 return Ok(questions);
             }
             catch (Exception ex)

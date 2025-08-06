@@ -19,6 +19,21 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
        .EnableSensitiveDataLogging();
 });
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:8080")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+
+                      });
+});
+
+
 builder.Services.AddScoped<ITopicServices, TopicServices>();
 builder.Services.AddScoped<IQuestionServices, QuestionServices>();
 builder.Services.AddEndpointsApiExplorer();
@@ -26,7 +41,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-
+app.UseCors(MyAllowSpecificOrigins);
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {

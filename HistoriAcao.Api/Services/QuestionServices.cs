@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using HistoriAcao.Api.Data;
 using HistoriAcao.Api.Dtos;
 using HistoriAcao.Api.Interfaces;
@@ -133,7 +134,7 @@ namespace HistoriAcao.Api.Services
             string? olimpiada,
             DateTime? inicialDate,
             DateTime? finishDate,
-            string? enunciado,
+            string? search,
             string? nivelDificuldade)
         {
             var query = _context.Questions
@@ -155,16 +156,24 @@ namespace HistoriAcao.Api.Services
 
             if (!string.IsNullOrWhiteSpace(subtopicName))
             {
-                query = query.Where(q => q.Subtopico.Nome == subtopicName);
+                var normalizedSubtopic = subtopicName.Trim().ToLower();
+                query = query.Where(q =>
+                q.Subtopico != null &&
+                q.Subtopico.Nome.ToLower() == normalizedSubtopic);
             }
 
 
-             if (!string.IsNullOrWhiteSpace(enunciado))
+            if (!string.IsNullOrWhiteSpace(search))
             {
-                query = query.Where(q => q.Enunciado.ToLower() == enunciado.ToLower());
+                string searchLower = search.ToLower().Trim();
+
+                query = query.Where(q =>
+                    q.Enunciado.ToLower().Contains(searchLower) ||
+                    q.Alternativas.Any(a => a.Texto.ToLower().Contains(searchLower))
+                );
             }
 
-              if (!string.IsNullOrWhiteSpace(nivelDificuldade))
+            if (!string.IsNullOrWhiteSpace(nivelDificuldade))
             {
                 query = query.Where(q => q.NivelDificuldade.ToLower() == nivelDificuldade.ToLower());
             }
@@ -177,15 +186,15 @@ namespace HistoriAcao.Api.Services
             if (inicialDate.HasValue)
             {
                 query = query.Where(q =>
-                    (q.Topico.DataInicio == null || q.Topico.DataInicio >= inicialDate.Value) &&
-                    (q.Subtopico.DataInicio == null || q.Subtopico.DataInicio >= inicialDate.Value));
+                    (q.Topico.DataFim == null || q.Topico.DataInicio >= inicialDate.Value) &&
+                    (q.Subtopico.DataFim == null || q.Subtopico.DataInicio >= inicialDate.Value));
             }
 
             if (finishDate.HasValue)
             {
                 query = query.Where(q =>
-                    (q.Topico.DataFim == null || q.Topico.DataFim <= finishDate.Value) &&
-                    (q.Subtopico.DataFim == null || q.Subtopico.DataFim <= finishDate.Value));
+                    (q.Topico.DataInicio == null || q.Topico.DataFim <= finishDate.Value) &&
+                    (q.Subtopico.DataInicio == null || q.Subtopico.DataFim <= finishDate.Value));
             }
 
             var filteredQuestions = await query.ToListAsync();

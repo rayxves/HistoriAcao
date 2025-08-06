@@ -1,364 +1,434 @@
-
 [
     {
-      "Olimpiada": "3ONHB",
+      "Olimpiada": "5ONHB",
       "Fase": 1,
       "NivelDificuldade": "Média",
-      "TopicoId": 4,
-      "SubtopicoId": 5,
-      "Enunciado": "A partir do texto, assinale a alternativa mais pertinente:",
-      "Documentos": [
-        {
-          "Titulo": "Mundos do Trabalho",
-          "Tipo": "Texto",
-          "Descricao": null,
-          "Origem": "Documento base da primeira fase da ONHB",
-          "Url": null,
-          "Texto": "### Mundos do Trabalho\n\n... “Mundos do trabalho. O orgulho e a camaradagem por pertencer a um mesmo grupo profissional. Os passatempos, as brincadeiras, os apelidos inventados nos intervalos de descanso. A experiência de compartilhar: refeições, transporte, locais e condições de moradia, e até mesmo um jeito de vestir, de andar e de gesticular. O encontro em torno da música, do baile, do esporte, do lazer, promovido pela empresa, pelo sindicato ou simplesmente por colegas. É nessa convivência que se produz a cultura do mundo do trabalho. É ela que dá aos trabalhadores e trabalhadoras uma linguagem própria na qual formulam sua visão \n\nde mundo e expressam seus interesses. Quando rivalidades e diferenças opõem uns aos outros, é essa experiência comum que garante os valores e princípios sobre os quais sua identidade de classe se constrói e se reconstrói. E é essa identidade que faz a sociedade reconhecê-los como sujeito, quando circulam cotidianamente pelo mundo público ou quando o inundam de criatividade com suas lutas e mobilizações.”"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "Não são apenas as experiências de rotina dentro das fábricas ou acontecimentos como as greves que permitem compreender a realidade dos trabalhadores.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "B",
-          "Texto": "No mundo do trabalho a presença das mulheres é menor e incidental.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "C",
-          "Texto": "Os trabalhadores compartilham experiências e valores que implicam a criação de identidades de classe.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "D",
-          "Texto": "Os mundos do trabalho estão também nas práticas cotidianas, que incluem o lazer e outras formas de sociabilidade.",
-          "Pontuacao": 4
-        }
-      ]
-    },
-    {
-      "Olimpiada": "3ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Fácil",
-      "TopicoId": 7,
-      "SubtopicoId": 15,
-      "Enunciado": "Observe a charge e assinale a alternativa mais pertinente.",
-      "Documentos": [
-        {
-          "Titulo": "Voto de Cabresto",
-          "Tipo": "Imagem",
-          "Descricao": "\n**Legenda:**\n\n**Ella** - É o Zé Besta?\n\n**Elle** - Não, é o Zé Burro!",
-          "Origem": "Revista Tempo",
-          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/3ONHB_primeira_fase_questao_2.jpg",
-          "Texto": "### Revista Tempo\n\nA revista Careta, muito popular durante a Primeira República, era caracterizada pela irreverência\n\nde suas críticas ao regime e seus vícios tornando-se um porta-voz, principalmente, dos setores\n\nurbanos que se sentiam alijados das disputas eleitorais em função dos mecanismos de controle da\n\nmáquina oficial sobre as eleições, especialmente nas áreas rurais marcadas pelo fenômeno do\n\ncoronelismo.\n"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "A prática de voto descrita como “cabresto” estava na base da política dos governadores posta em prática pelos grupos oligárquicos na chamada República Velha, com o objetivo de manterem-se no poder.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "B",
-          "Texto": "A charge mostra o eleitor na forma de um burro sendo levado até as urnas pelo político e recebido por uma mulher representando a “soberania”.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "C",
-          "Texto": "A charge representa uma das fraudes eleitorais da Primeira República, quando o eleitor recebia e depositava na urna um papel com o nome do candidato do coronel da região, sem fazer sua própria escolha.",
-          "Pontuacao": 4
-        },
-        {
-          "Letra": "D",
-          "Texto": "A charge mostra o papel da mulher como eleitora na década de 1920, representada no documento pela soberania.",
-          "Pontuacao": 0
-        }
-      ]
-    },
-    {
-      "Olimpiada": "3ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Média",
-      "TopicoId": 6,
-      "SubtopicoId": 13,
-      "Enunciado": "Sobre o excerto do romance “O Cortiço” (1890) de Aluísio Azevedo, podemos afirmar que:",
-      "Documentos": [
-        {
-          "Titulo": "O Cortiço",
-          "Tipo": "Texto",
-          "Descricao": "Trecho da obra de Aluísio Azevedo que retrata a vida nos cortiços, destacando o cotidiano coletivo, as condições sociais e a representação da realidade urbana.",
-          "Origem": "Domínio público + Artigo acadêmico de Lilian Fessler Vaz",
-          "Url": null,
-          "Texto": "\n“Eram cinco horas da manhã e o cortiço acordava, abrindo, não os olhos, mas a sua infinidade de\n\nportas e janelas alinhadas. Um acordar alegre e farto de quem dormiu de uma assentada sete horas\n\nde chumbo. Como que se sentiam ainda na indolência de neblina as derradeiras notas da última\n\nguitarra da noite antecedente, dissolvendo-se à luz loura e tenra da aurora, que nem um suspiro de\n\nsaudade perdido em terra alheia. (…) Das portas surgiam cabeças congestionadas de sono;\n\nouviam-se amplos bocejos, fortes como o marulhar das ondas; pigarreava-se grosso por toda a\n\nparte; começavam as xícaras a tilintar; o cheiro quente do café aquecia, suplantando todos os\n\noutros; trocavam-se de janela para janela as primeiras palavras, os bons-dias; reatavam-se\n\nconversas interrompidas à noite; a pequenada cá fora traquinava já, e lá dentro das casas vinham\n\nchoros abafados de crianças que ainda não andam. No confuso rumor que se formava,\n\ndestacavam-se risos, sons de vozes que altercavam, sem se saber onde, grasnar de marrecos,\n\ncantar de galos, cacarejar de galinhas. (…) Daí a pouco, em volta das bicas era um zunzum\n\ncrescente; uma aglomeração tumultuosa de machos e fêmeas. Uns, após outros, lavavam a cara,\n\nincomodamente, debaixo do fio de água que escorria da altura de uns cinco palmos. O chão\n\ninundava-se. (…) As portas das latrinas não descansavam, era um abrir e fechar de cada instante,\n\num entrar e sair sem tréguas.”"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "Assim como o cortiço é descrito como se fosse um organismo vivo, as personagens são descritas confundindo-se com os próprios animais que lá viviam.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "B",
-          "Texto": "O autor trata a questão dos cortiços como uma representação coletiva que trazia incômodo a outros grupos sociais.",
-          "Pontuacao": 4
-        },
-        {
-          "Letra": "C",
-          "Texto": "Os cortiços foram os maiores culpados pelo crescimento desordenado da cidade do Rio de Janeiro e pela proliferação de doenças.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "D",
-          "Texto": "O cortiço é um reflexo de um planejamento urbano que não contemplava todas as classes sociais.",
-          "Pontuacao": 5
-        }
-      ]
-    },
-    {
-      "Olimpiada": "3ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Fácil",
-      "TopicoId": 1,
-      "SubtopicoId": null,
-      "Enunciado": "Escolha a alternativa mais pertinente:",
-      "Documentos": [
-        {
-          "Titulo": "O Brasil antes dos brasileiros",
-          "Tipo": "Texto",
-          "Descricao": "Trecho da obra de André Prous que combate estereótipos eurocêntricos sobre os povos pré-históricos no Brasil, destacando sua organização, adaptação ao meio e riqueza de recursos.",
-          "Origem": "André Prous, “O Brasil antes dos brasileiros”, 2006",
-          "Url": null,
-          "Texto": "\n“Aos poucos se vem corrigindo uma série de ideias errôneas, infelizmente enraizadas na cabeça de\n\nmuita gente – e às vezes ensinadas nas escolas. Uma delas é que os primeiros ocupantes do\n\nterritório que hoje chamamos Brasil, como qualquer homem pré-histórico, teriam vivido num\n\nmundo frio e povoado por mamutes ou dinossauros. Refugiando-se dentro de cavernas (mas\n\ntambém nômades, sem domicílio fixo), disporiam essencialmente da pedra para fabricar seus\n\ninstrumentos e passariam muita fome. Seriam primitivos que não imaginavam uma sociedade\n\nracionalmente organizada como a nossa. Esta é obviamente, uma fantasia oriunda das pesquisas\n\nrealizadas na Europa no século XIX, dentro de uma perspectiva evolucionista.\n\nCom efeito, as regiões tropicais não conheceram glaciações durante o Pleistoceno, e os mamutes –\n\nadaptados ao frio – nunca existiram no Brasil. Quanto a viver nas cavernas, teria sido estúpido\n\ninstalar-se em lugares escuros, pouco arejados e onde não se poderia fazer fogo sem ficar\n\ndefumado. Algumas populações utilizaram os abrigos bem abertos ou as entradas de grutas, mas,\n\nmesmo assim, sobretudo para fins ritualísticos ou para preservação de matérias perecíveis. Em\n\ngeral, estabeleciam suas moradias a céu aberto. Por outro lado, instrumentos de pedra são\n\nperfeitamente dispensáveis onde há recursos disponíveis suficientemente variados, como vegetais,\n\nconchas e ossos (…) Enfim, em vez de formar grupos numerosos, tornando difícil a obtenção de\n\nalimentos para todos, muitas populações limitaram sua densidade, garantindo uma relativa\n\nabundância dentro de um território fixo, cujos recursos eram perfeitamente conhecidos.”\n\n**Vocabulário:**\n\n**Pleistoceno:** Período geológico entre 2.000.000 e 10.000 anos atrás; foi marcado por grandes\n\nmudanças climáticas no mundo todo; nas latitudes altas ocorreram fenômenos conhecidos como\n\nglaciações; nas regiões quentes, as oscilações afetaram sobre tudo a pluviosidade; no final do\n\nPleistoceno, por exemplo, o clima de Minas Gerais era muito mais seco que o atual, enquanto o\n\nPiauí era bem mais úmido; as temperaturas eram também mais baixas, mas não a ponto de haver\n\ngeadas em Minas Gerais, a não ser, talvez, nos pontos mais altos das serras do Mar e do\n\nEspinhaço; grandes animais pastavam então nas imensas extensões de cerrado e de pastos.\n\n*Em: André Prous. O Brasil antes dos brasileiros – a pré-história do nosso país. Rio de Janeiro: Jorge Zahar Ed., 2006, pp. 136-137.*"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "As populações pré-históricas organizadas adaptam-se de diferentes maneiras ao meio em que vivem.",
-          "Pontuacao": 4
-        },
-        {
-          "Letra": "B",
-          "Texto": "A imagem estereotipada do homem pré-histórico criada no século XIX ainda é difundida pelos meios de comunicação como cinema e televisão.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "C",
-          "Texto": "O estereótipo europeu do homem pré-histórico não é aplicável aos primeiros habitantes do território hoje chamado de Brasil.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "D",
-          "Texto": "O homem pré-histórico de regiões tropicais vivia em um clima ameno, sem inimigos naturais e com muitos materiais a sua disposição.",
-          "Pontuacao": 0
-        }
-      ]
-    },
-    {
-      "Olimpiada": "3ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Média",
-      "TopicoId": 2,
-      "SubtopicoId": 3,
-      "Enunciado": "Escolha a alternativa mais pertinente:",
-      "Documentos": [
-        {
-          "Titulo": "História do Brasil por Frei Vicente do Salvador",
-          "Tipo": "Texto",
-          "Descricao": "Trecho crítico à ocupação portuguesa do território brasileiro, comparando sua ação à dos caranguejos e mencionando a negligência quanto às minas.",
-          "Origem": "Frei Vicente do Salvador – 1627",
-          "Url": null,
-          "Texto": "\n...\n\n“Da largura que a terra do Brasil tem para o sertão não trato, porque até agora não houve quem a\n\nandasse por negligencia dos portuguezes, que, sendo grandes conquistadores de terras, não se\n\naproveitam delas, mas contentam-se de as andar arranhando ao longo do mar como caranguejos.\n\n(…)\n\nJá (…) comecei a murmurar da negligencia dos portugueses que não se aproveitavam das terras do\n\nBrasil que conquistam, e agora me é necessário continuar com a murmuração, havendo de tratar\n\ndas minas do Brasil, pois, sendo contigua esta terra com a do Peru, que a não divide mais do que\n\numa linha imaginária indivisível, tendo lá os castelhanos descobertas tantas e tão ricas minas, cá\n\nnem uma passada dão por isso, e quando vão ao sertão é a buscar índios forros (…) ainda que de\n\ncaminho achem mostras ou novas de minas, não as cavam nem ainda as vêm ou as demarcam.”"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "Os portugueses ignoravam as minas encontradas uma vez que os metais e pedras preciosas não eram, naquele momento, importantes para a economia europeia.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "B",
-          "Texto": "A comparação entre portugueses e caranguejos se explica pela ocupação exclusivamente litorânea do território.",
-          "Pontuacao": 4
-        },
-        {
-          "Letra": "C",
-          "Texto": "Os portugueses são retratados como os que souberam conquistar, mas não souberam explorar de forma satisfatória as terras conquistadas.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "D",
-          "Texto": "A linha imaginária indivisível a que se refere o texto é a estabelecida pelo Tratado de Tordesilhas em 1494.",
-          "Pontuacao": 1
-        }
-      ]
-    },
-    {
-      "Olimpiada": "3ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Fácil",
-      "TopicoId": 9,
-      "SubtopicoId": 20,
-      "Enunciado": "A propaganda reflete o processo de industrialização pelo qual o Brasil passava?",
-      "Documentos": [
-        {
-          "Titulo": "Café Predileto – O Malho",
-          "Tipo": "Imagem",
-          "Descricao": "Anúncio veiculado na revista O Malho, destacando o papel da mulher e a mecanização da produção do café.",
-          "Origem": "O Malho, nº 152, 1952",
-          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/3ONHB_primeira_fase_questao_6.jpg",
-          "Texto": "**LEGENDA:**\n\nJá em 1902 as boas donas de casa sabiam escolher o melhor café…\n\nEconômico e delicioso, o Café Predileto está a venda em latas de 1 quilo e pacotes de ½ quilo de\n\nnova embalagem oferecendo, nas latas ou nos pacotes, o rendimento e a qualidade de uma\n\nfabricação perfeita, inteiramente mecânica.\n\nEm seu armazém, exija Predileto, para maior economia em cada pacote… e maior qualidade em cada xícara!\n\n**Café Predileto – O Predileto de todos**"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "A propaganda afirma que o papel social da mulher e a qualidade do café permaneceram inalterados ao longo do tempo.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "B",
-          "Texto": "Na propaganda, a passagem do tempo é demonstrada pelas vestimentas da figura feminina e dos edifícios ao fundo.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "C",
-          "Texto": "O consumo de café se popularizou no Brasil a partir de 1902, como demonstra a propaganda.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "D",
-          "Texto": "A propaganda reflete o processo de industrialização pelo qual o Brasil passava, atingindo o beneficiamento de alimentos, como o café.",
-          "Pontuacao": 4
-        }
-      ]
-    },
-    {
-      "Olimpiada": "3ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Fácil",
       "TopicoId": 11,
       "SubtopicoId": null,
-      "Enunciado": "Analisando o tema proposto pela canção composta por Lúcio Barbosa e interpretada por nomes da Música Popular Brasileira como Zé Geraldo e Zé Ramalho, pode-se dizer que:",
+      "Enunciado": "Leia os dois excertos extraídos de blogs de escritores e escolha a alternativa:",
       "Documentos": [
         {
-          "Titulo": "Cidadão – Lúcio Barbosa",
+          "Titulo": "Politicamente incorreto não é transgressor...",
           "Tipo": "Texto",
-          "Descricao": "Canção que retrata a migração nordestina e as desigualdades sociais nas grandes cidades do Brasil.",
-          "Origem": "Letra da música \"Cidadão\" (1978)",
+          "Descricao": "História da Mulher Politicamente Incorreto Século XXI Brasil Preconceito",
+          "Origem": "Lola Aronovich. “Politicamente incorreto não é transgressor, Rafinha”. 09 maio 2011.",
           "Url": null,
-          "Texto": "#### Trecho inicial da canção Cidadão [1978]\n\n...\n\nTá vendo aquele edifício moço?\n\nAjudei a levantar\n\nFoi um tempo de aflição\n\nEram quatro condução\n\nDuas pra ir, duas pra voltar\n\nHoje depois dele pronto\n\nOlho pra cima e fico tonto\n\nMas me chega um cidadão\n\nE me diz desconfiado, “tu tá aí admirado\n\nOu tá querendo roubar?”\n\nMeu domingo tá perdido\n\nVou pra casa entristecido\n\nDá vontade de beber\n\nE pra aumentar o meu tédio\n\nEu nem posso olhar pro prédio\n\nQue eu ajudei a fazer\n\nTá vendo aquele colégio moço?\n\nEu também trabalhei lá\n\nLá eu quase me arrebento\n\nPus a massa fiz cimento\n\nAjudei a rebocar\n\nMinha filha inocente\n\nVem pra mim toda contente\n\n“Pai vou me matricular”\n\nMas me diz um cidadão\n\n“Criança de pé no chão\n\nAqui não pode estudar”\n\nEsta dor doeu mais forte\n\nPor que que eu deixei o norte?\n\nEu me pus a me dizer\n\nLá a seca castigava mas o pouco que eu plantava\n\nTinha direito a comer […]\n\n**Composição:** Lúcio Barbosa"
+          "Texto": "“Eu acho ótimo estarmos vivendo numa época em que boa parte das pessoas fica indignada com piadas contra minorias. Sim, muitas vezes o humor é transgressor. Mas o que esse pessoal que ataca minorias pra fazer piada precisa entender é que eles não estão transgredindo nada. Seus tataravôs já eram racistas, gente. Pode ter certeza que seus tataravôs já comparavam negros com macacos. Aposto como seus tataravôs já faziam gracinhas sobre a sorte que uma moça feia teve em ser estuprada. Vocês não são moderninhos, não são ousados, não são criativos. Vocês estão apenas seguindo uma tradição. E, se naquela época já não era engraçado, imagina agora? Rebeldia é querer mudar o mundo, começando pela forma que falamos. Não há nada de novo ou de rebelde em eternizar velhos preconceitos (…)”\n**Agradecemos à escritora Lola Aronovich pela gentil permissão de uso de seu texto.**"
+        },
+        {
+          "Titulo": "Carta aberta aos humoristas do Brasil...",
+          "Tipo": "Texto",
+          "Descricao": "“Carta aberta aos humoristas do Brasil”, do escritor Alex Castro, publicado em 06 de dezembro de 2012.",
+          "Origem": "Alex Castro",
+          "Url": null,
+          "Texto": "“O machismo mata. Dez mulheres são assassinadas no Brasil, colocando-o no 12º lugar no ranking mundial de homicídios contra a mulher. Uma em cada cinco mulheres já sofreu violência de parte de um homem, em 80% dos casos o seu próprio parceiro. Em 2011, o ABC paulista teve um estupro (reportado!) por dia . Na cidade de São Paulo, uma mulher é agredida a cada sete minutos — além de não ter tempo de fazer nada, essa pobre mulher ainda é agredida no chuveiro, no ônibus, até na privada! Riu? É, mas não tem graça. A solução está na mão dos homens . (…) As mulheres são mortas em tão grandes números, e por seus próprios homens, porque existe uma cultura machista no Brasil, onde as mulheres são vistas como tendo menos valor, onde as mulheres são rotuladas ou como santas ou putas, onde uma mulher viver abertamente sua sexualidade é considerado ofensivo ou repreensível, onde a sexualidade de uma mulher tem impacto direto sobre a honra de seu companheiro. Se você faz piadas que confirmam os lugares-comuns dessa cultura machista, que objetificam a mulher, que estigmatizam seu comportamento sexual, então você possibilita e reforça essa cultura assassina.\n\nVocê é cúmplice. (…) Não reclame da ‘patrulha’. ‘Patrulha’ são soldados armados que podem te matar se você os desobedecer.\n\nTorcer o nariz para as piadas racistas, homofóbicas ou machistas de um comediante não é ‘patrulha’.\n\nÉ o público exercendo pacificamente sua liberdade de expressão de considerar babaca um comediante que faça piadas racistas, homofóbicas ou machistas.\n\nEsses pobres humoristas ‘perseguidos’ que reclamam da ‘patrulha politicamente correta’ não estão defendendo a liberdade de expressão: liberdade de expressão de verdade é o cara poder fazer piada sobre mulher estuprada e nós podermos criticá-lo por isso.\n\nNa verdade, a liberdade que querem esses paladinos do ‘politicamente incorreto’ é a liberdade de falar os maiores absurdos sem nunca serem criticados.\n\nAí é fácil, né? Assim eu também quero. Nunca vi ninguém não-babaca se dizendo ‘politicamente incorreto’.\n\n(…) Falar besteira, qualquer criança fala. Adulto é quem sabe que falar significa se abrir para a possibilidade de ouvir a resposta.\n\nAdulto é quem entende que ele tem a mesma liberdade de falar que seus críticos tem de criticá-lo.”\n**Agradecemos ao escritor Alex Castro pela gentil permissão de uso de seu texto.**"
         }
       ],
       "Alternativas": [
         {
           "Letra": "A",
-          "Texto": "Trata-se das memórias de um migrante nortista que veio em busca de uma vida melhor para uma grande cidade emergente e trabalhou na construção civil de obras importantes.",
+          "Texto": "Ambos os textos, publicados em blogs, atestam as novas formas de comunicação e de divulgação veloz de ideias e opiniões, próprios da era da internet.",
           "Pontuacao": 1
         },
         {
           "Letra": "B",
-          "Texto": "As populações migrantes do Norte e do Nordeste não têm acesso a moradia e escola no Sul e Sudeste.",
-          "Pontuacao": 0
+          "Texto": "O texto 1 questiona a ideia de que haveria rebeldia ou originalidade neste tipo de humor, vendo-o como preconceito historicamente arraigado.",
+          "Pontuacao": 5
         },
         {
           "Letra": "C",
-          "Texto": "Lúcio Barbosa trabalha com a ideia metafórica, e ao mesmo tempo real, de que as metrópoles brasileiras do Sul e Sudeste foram construídas pelos migrantes do Norte e Nordeste do Brasil.",
-          "Pontuacao": 4
+          "Texto": "O texto 2 discorda da ideia de que o “politicamente correto” cerceia a liberdade de expressão dos humoristas.",
+          "Pontuacao": 5
         },
         {
           "Letra": "D",
-          "Texto": "O autor explora a questão da venda de mão de obra produtiva, dentro de um ciclo de exploração no qual quem produz não tem acesso ao consumo do produto acabado.",
-          "Pontuacao": 5
+          "Texto": "Ambos os textos lidam com o tema do preconceito racial e/ou de gênero, questionando os limites do humor.",
+          "Pontuacao": 1
         }
       ]
     },
     {
-      "Olimpiada": "3ONHB",
+      "Olimpiada": "5ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Difícil",
+      "TopicoId": 6,
+      "SubtopicoId": 13,
+      "Enunciado": "A seguir estão dispostos alguns documentos sobre o músico e maestro Carlos Gomes. Analise-os e assinale a melhor alternativa.",
+      "Documentos": [
+        {
+          "Titulo": "História da música ocidental",
+          "Tipo": "Texto",
+          "Descricao": "Primeira República Séculos XIX-XX Indianismo Brasil História da Música",
+          "Origem": "Jean Massin e Brigitte Massin. História da música ocidental, Rio de Janeiro: Nova Fronteira, 1997.",
+          "Url": null,
+          "Texto": "“(…) O ano de 1870 viu justamente aparecer um estranho personagem, brasileiro de origem: Antônio Carlos Gomes (1836-1896) nasceu em Campinas, perto de São Paulo; estudou música em Milão e compôs uma ópera estranha, O Guarani, em que se encontram todos os temas patrióticos tão caros a Verdi. (…) A música da obra é sólida, densa e apresenta por momentos aquela imperiosa urgência que prende a atenção nas óperas de Verdi. Carlos Gomes foi saudado como o herdeiro presuntivo do mestre e, em seguida, foi rapidamente esquecido entre os inúmeros compositores de dramas mais ou menos históricos”."
+        },
+        {
+          "Titulo": "A obra de Carlos Gomes no contexto da transição entre monarquia e república...",
+          "Tipo": "Texto",
+          "Descricao": "Brasil Indianismo História da Música Séculos XIX-XX Primeira República.",
+          "Origem": "Alan Carlos Ghedini. TCC apresentado à Universidade do Estado de Santa Catarina, Florianópolis, 2008",
+          "Url": null,
+          "Texto": "“(…) Essa escolha marcou não só sua estética pessoal, como também sua identificação política no país, haja vista que, com a proximidade da República e sua subsequente proclamação, o embate entre a estética italiana e alemã voltou à cena, porém dessa vez não europeia, mas brasileira. Eram dois estilos estrangeiros identificados às duas realidades políticas em conflito no Brasil. O debate assumiu contornos de verdadeira guerra política na qual, de um lado, figuravam aqueles alinhados à estética alemã, associada à República, entre os quais o novo diretor do Instituto Nacional de Música e autor do hino da República, Leopoldo Miguéz, e de outro, os artistas adeptos ao estilo italiano que por sua vez, associado ao Império, representou a quase exclusão de músicos como o próprio Carlos Gomes, este, relacionado de forma recorrente, no período da Primeira República, à monarquia. (…) É um engano supor que, a despeito de seu sucesso na Itália, fosse ele considerado pelos italianos um seu patrício, havia clara distinção a esse respeito. Elegia-se o maestro como membro do estilo lírico daquele país, mantendo-o, contudo, envolto num ambiente de certa forma ‘exótico’, colocando Carlos em termos de um ‘selvagem’ ou um ‘aborígene’ da ópera.”"
+        },
+        {
+          "Titulo": "A força indômita",
+          "Tipo": "Imagem",
+          "Descricao": "História da Música Primeira República Indianismo Séculos XIX-XX Brasil.",
+          "Origem": "Gazzetta Musicale di Milano, SD. In: Marcus Góes . A força indômita, Belém: SECULT, 1996.",
+          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/5ONHB_primeira_fase_questao_2.jpg",
+          "Texto": null
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "Carlos Gomes foi um dos nomes mais importantes da história da música brasileira, sendo ligado à estética romântica indianista do Brasil.",
+          "Pontuacao": 4
+        },
+        {
+          "Letra": "B",
+          "Texto": "Giuseppe Verdi, importante músico italiano romântico nacionalista, foi referência para Carlos Gomes, cuja obra retratou o processo de Unificação Italiana.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "C",
+          "Texto": "A caricatura de Carlos Gomes publicada no jornal italiano de Milão, Gazzetta Musicale, retrata o artista brasileiro como um ‘selvagem’, tal qual entendiam a temática de sua ópera O Guarani.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "D",
+          "Texto": "Carlos Gomes era conhecido por discursar a favor da monarquia antes de suas apresentações em espaços públicos, em gratidão a D. Pedro II que financiou seus estudos na Itália.",
+          "Pontuacao": 0
+        }
+      ]
+    },
+    {
+      "Olimpiada": "5ONHB",
       "Fase": 1,
       "NivelDificuldade": "Média",
-      "TopicoId": 10,
-      "SubtopicoId": 24,
-      "Enunciado": "Após observar a fotografia, selecione a alternativa mais pertinente:",
+      "TopicoId": 9,
+      "SubtopicoId": 20,
+      "Enunciado": "A partir da leitura da notícia, podemos afirmar que:",
       "Documentos": [
         {
-          "Titulo": "Obras da Rodovia Acre–Brasília",
-          "Tipo": "Imagem",
-          "Descricao": "Imagem sobre as obras da integração nacional durante o regime militar, destacando rodovias como eixo de expansão.",
-          "Origem": "Arquivo Nacional – Exposição “50 anos de desenvolvimento nacional”",
-          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/3ONHB_primeira_fase_questao_8.jpg",
-          "Texto": "### Exposição virtual: 50 anos de desenvolvimento nacional\n\nVeja a Exposição Virtual no site do Arquivo Nacional\n\n[Exposição virtual: 50 anos de desenvolvimento nacional](link)\n\n### O contexto do \"Plano de Metas\"\n\n[Link](link)\n\nConheça mais um pouco sobre o Plano de Metas:\n\n[Plano de Metas](link)\n\n### Iracema uma Transa Amazônica, 1976\n\nFilme\n\nBrasil, 1970: um motorista de caminhão (Paulo César Pereio) viaja pela rodovia Transamazônica,\n\nestrada que cruza a selva amazônica. Durante o trajeto, conhece uma prostituta (Edna de Cássia)\n\ne, aos poucos, fica a par dos sérios problemas sócio-estruturais que assolam a região. Resultado de\n\numa experiência instigante, inusitada e até revolucionária. Coo-dirigido por Orlando Senna o filme\n\namplia e redimensiona as contribuições legadas pelo Cinema Novo. Sem roteiro pré-determinado e\n\nde expressiva singularidade, o filme ficou proibido por anos no Brasil, fez boa carreira em festivais\n\ninternacionais e só foi descoberto ao ser premiado no festival de Brasília (1981)."
+          "Titulo": "Exposição \"Curitiba Anos 50\"",
+          "Tipo": "Texto",
+          "Descricao": "Curitiba História das Cidades Século XX-XXI",
+          "Origem": "Redação Bonde com PMC",
+          "Url": null,
+          "Texto": "Exposição histórica resgata Curitiba dos anos 50\n\nO Salão Paranaguá do Memorial de Curitiba abriga, a partir das 19h desta quinta-feira (29), a exposição histórica “Curitiba Anos 50”, que reúne material do acervo da Casa da Memória, uma das unidades da Fundação Cultural de Curitiba. São textos, fotos, gibis e revistas de época, além de filmes e ambientações que poderão ser vistos até novembro de 2013. A entrada é franca.\n\nA proposta é que o público empreenda uma viagem no tempo. Nos anos dourados, Curitiba sentia bafejar os bons ventos de mudanças e o tom do discurso progressista era dado em novos acordes. A riqueza do café trazia recursos antes impensados, os números da construção civil impressionavam e os horizontes expandiam-se por vias que se prolongavam em direção aos mais distantes arrabaldes. Para deleite dos moradores, o clima era de permanente construção, próprio das grandes metrópoles. A cidade pontuava seu horizonte com prédios cada vez mais altos, anunciados em todas as revistas locais como a tradução do progresso e do clima de euforia do momento. No ano do Centenário, para orgulho dos habitantes, prédios com mais de dez andares já somavam mais de quarenta e as estatísticas apontavam uma média de oito casas construídas por dia útil. A cidade crescia a olhos vistos, como se dizia. A bem da verdade, Curitiba transformou-se num grande canteiro de obras, onde o vaivém de operários, engenheiros, arquitetos e maquinários, reforçavam a imagem de prosperidade.\n\nEmbalados pelo sentimento de euforia progressista, os curitibanos veriam brotar marcos que sacralizariam o modernismo arquitetônico e cultural, a começar pelos edifícios da Biblioteca Pública e do Centro Cívico, o primeiro do país em linguagem totalmente moderna. Tornava-se evidente que o principal signo dos novos tempos eram as linhas de uma arquitetura que colocaria a capital em pé de igualdade com grandes centros urbanos, como Rio de Janeiro e São Paulo.\n\nServiço\nExposição “Curitiba Anos 50”, com material do acervo da Casa da Memória da Fundação Cultural de Curitiba\nOnde: Salão Paranaguá do Memorial de Curitiba (Rua Claudino dos Santos, 79 – Setor Histórico).\nQuando: de 29 de novembro de 2012 (abertura às 19h) a 3 de novembro de 2013.\nHorário de visitas: de terça a sexta-feira, das 9h às 12h e 13h às 18h; sábados, domingos e feriados, das 9h às 15h.”"
         }
       ],
       "Alternativas": [
         {
           "Letra": "A",
-          "Texto": "É possível concluir que o plano de integração nacional se baseou na ampliação da malha rodoviária, como a rodovia Acre-Brasília sugere.",
+          "Texto": "O texto sobre a exposição reconstrói um passado de euforia e entusiasmo que não leva em consideração grande parte dos conflitos decorrentes do pós-guerra tanto no Brasil como no mundo.",
           "Pontuacao": 4
         },
         {
           "Letra": "B",
-          "Texto": "Interiorização, rodovia e progresso eram ideias afins que acabavam por se chocar com outras realidades existentes no interior do Brasil.",
-          "Pontuacao": 5
+          "Texto": "Fotos, textos, filmes e arquitetura são alguns dos itens utilizados pela exposição para apresentar uma cidade que se modernizava rapidamente na década de 1950, desejando equiparar-se a outras capitais como São Paulo e Rio de Janeiro.",
+          "Pontuacao": 1
         },
         {
           "Letra": "C",
-          "Texto": "O plano de integração nacional possibilitou que o município de Rio Branco, no Estado do Acre, até então completamente isolado, se conectasse ao restante do país.",
+          "Texto": "Apesar do esforço de transformação da cidade de Curitiba em uma grande metrópole, a cidade não foi escolhida como uma das sedes dos jogos da Copa do Mundo de Futebol de 1950, que privilegiou as capitais Rio de Janeiro, São Paulo, Belo Horizonte, Porto Alegre e Recife.",
           "Pontuacao": 0
         },
         {
           "Letra": "D",
-          "Texto": "A fotografia retrata o contexto das ações político-econômicas que visavam à integração nacional ao longo das décadas de 1950 a 1970.",
-          "Pontuacao": 1
+          "Texto": "O texto traz uma leitura do passado a partir dos dias atuais, narrando a história da cidade de Curitiba com um discurso celebratório da modernidade e do \"crescimento a olhos vistos\".",
+          "Pontuacao": 5
         }
       ]
     },
     {
-      "Olimpiada": "3ONHB",
+      "Olimpiada": "5ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Fácil",
+      "TopicoId": 6,
+      "SubtopicoId": 13,
+      "Enunciado": "Leia alguns trechos da Lei Rio Branco. Sobre a lei é correto afirmar:",
+      "Documentos": [
+        {
+          "Titulo": "LEI Nº 2.040, DE 28 DE SETEMBRO DE 1871",
+          "Tipo": "Texto",
+          "Descricao": "Emancipação História da Escravidão Século XIX Ventre livre Brasil História do Direito",
+          "Origem": "AULETE, Caldas. Diccionario contemporaneo da lingua portugueza. Lisboa Portugal: Parceria Antonio Maria Pereira, 1925",
+          "Url": null,
+          "Texto": "“(…) Art. 1º Os filhos de mulher escrava que nascerem no Império desde a data desta lei, serão considerados de condição livre. § 1º Os ditos filhos menores ficarão em poder ou sob a autoridade dos senhores de suas mães, os quais terão obrigação de criá-los e tratá-los até a idade de oito anos completos. Chegando o filho da escrava a esta idade, o senhor da mãe terá opção, ou de receber do Estado a indenização de 600$000, ou de utilizar-se dos ser viços do menor até a idade de 21 anos completos. No primeiro caso, o Governo receberá o menor, e lhe dará destino, em conformidade da presente lei. (…) § 2º Qualquer desses menores poderá remir-se do ônus de servir, mediante prévia indenização pecuniária, que por si ou por outrem ofereça ao senhor de sua mãe, procedendo-se à avaliação dos serviços pelo tempo que lhe restar a preencher, se não houver acordo sobre o quanto da mesma indenização. (…) Art. 3º Serão anualmente libertados em cada Província do Império tantos escravos quantos corresponderem à quota anualmente disponível do fundo destinado para a emancipação. § 1º O fundo de emancipação compõe-se: 1º Da taxa de escravos. 2º Dos impostos gerais sobre transmissão de propriedade dos escravos. 3º Do produto de seis loterias anuais, isentas de impostos, e da décima parte das que forem concedidas de agora em diante para correrem na capital do Império. 4º Das multas impostas em virtude desta lei. 5º Das quotas que sejam marcadas no Orçamento geral e nos provinciais e municipais. 6º De subscrições, doações e legados com esse destino. (…) Art. 10. Ficam revogadas as disposições em contrário. (…) \n\n600$000: Seiscentos mil réis. Pecuniária: referente à pecúnia = dinheiro."
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "A criação do fundo de emancipação contemplava os senhores que optassem por entregar ao cuidado do Estados os filhos de escravas nascidos após 1871.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "B",
+          "Texto": "A liberdade de ventre pode ser tomada como uma forma de emancipação gradual, na medida em que eliminava a reprodução da escravidão pelo nascimento.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "C",
+          "Texto": "A lei 2.040 de 28 de setembro de 1871 é chamada de Lei do ventre livre por ser essa a sua resolução mais reconhecida e explorada.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "D",
+          "Texto": "A prestação de serviços ou o pagamento de 600$000 pelo Estado garantia aos senhores uma indenização pela liberdade de ventre de suas escravas.",
+          "Pontuacao": 4
+        }
+      ]
+    },
+    {
+      "Olimpiada": "5ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Difícil",
+      "TopicoId": 10,
+      "SubtopicoId": 24,
+      "Enunciado": "Numa entrevista para Ana de Oliveira no site Tropicália, o poeta e compositor José Carlos Capinan afirmou, sobre a canção “Soy loco por ti, América”, composta em 1967, em parceria com Gilberto Gil:",
+      "Documentos": [
+        {
+          "Titulo": "Entrevista de José Carlos Capinan",
+          "Tipo": "Texto",
+          "Descricao": "História da Música Censura Século XX América Latina",
+          "Origem": "Ana de Oliveira",
+          "Url": null,
+          "Texto": "“A minha intenção era registrar a emoção pela morte de Che Guevara. Não quis dizer que eu era latino-americano, embora me sentisse assim. Sentia Cuba desde a revolução de Fidel Castro. Quando menino, tentava cantar rumbas e boleros em castelhano. E o carnaval baiano tinha muitas versões de rumbas pra frevo, não é? Na letra, busquei palavras do português e do castelhano que não demonstrassem ser de línguas diferentes. Algumas palavras me pareciam sonoramente mais poéticas em castelhano do que em português. Lembravam Federico García Lorca. Além disso, havia a coisa de uma estética do continente, numa época em que as diversas questões de cada país se aproximavam muito. Uma latinidade de mundo alternativo…”"
+        },
+        {
+          "Titulo": "Soy loco por ti, América",
+          "Tipo": "Texto",
+          "Descricao": "Caetano Veloso [1967] Caetano Veloso 1967 Philips R 765.026",
+          "Origem": "Gilberto Gil e Capinan",
+          "Url": null,
+          "Texto": "Soy loco por ti, América, yo voy traer una mujer playera\nQue su nombre sea Marti, que su nombre sea Marti\nSoy loco por ti de amores tenga como colores la espuma blanca de Latinoamérica\nY el cielo como bandera, y el cielo como bandera\n\nSoy loco por ti, América, soy loco por ti de amores\nSorriso de quase nuvem, os rios, canções, o medo\nO corpo cheio de estrelas, o corpo cheio de estrelas\nComo se chama a amante desse país sem nome, esse tango, esse rancho,\nEsse povo, dizei-me, arde o fogo de conhecê-la, o fogo de conhecê-la\n\nSoy loco por ti, América, soy loco por ti de amores\nEl nombre del hombre muerto ya no se puede decirlo, quién sabe?\nAntes que o dia arrebente, antes que o dia arrebente\nEl nombre del hombre muerto antes que a definitiva noite se espalhe em Latinoamérica\nEl nombre del hombre es pueblo, el nombre del hombre es pueblo\n\nSoy loco por ti, América, soy loco por ti de amores\nEspero a manhã que cante, el nombre del hombre muerto\nNão sejam palavras tristes, soy loco por ti de amores\nUm poema ainda existe com palmeiras, com trincheiras, canções de guerra\nQuem sabe canções do mar, ai, hasta te comover, ai, hasta te comover\n\nSoy loco por ti, América, soy loco por ti de amores\nEstou aqui de passagem, sei que adiante um dia vou morrer\nDe susto, de bala ou vício, de susto, de bala ou vício\nNum precipício de luzes entre saudades, soluços, eu vou morrer de bruços\nNos braços, nos olhos, nos braços de uma mulher, nos braços de uma mulher Mais apaixonado ainda dentro dos braços da camponesa, guerrilheira\n\nManequim, ai de mim, nos braços de quem me queira, nos braços de quem me queira\nSoy loco por ti, América, soy loco por ti de amores"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "Ainda hoje, essa canção aparece com sua autoria atribuída também a Torquato Neto, já que o nome deste poeta apareceu como parceiro na primeira edição do LP Caetano Veloso, de 1967.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "B",
+          "Texto": "Na canção, Che Guevara é apresentado como “el hombre muerto” de quem não se podia dizer o nome. Essa foi a forma de os compositores burlarem a censura na ditadura militar.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "C",
+          "Texto": "No verso “Espero a manhã que cante” Capinan utiliza uma imagem comum às canções de protesto dos anos 1960: a ideia de um futuro revolucionário.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "D",
+          "Texto": "Entre os problemas comuns citados pelo compositor estava a grande quantidade de ditaduras de esquerda nos países da América do Sul nas décadas de 1960 e 1970.",
+          "Pontuacao": 0
+        }
+      ]
+    },
+    {
+      "Olimpiada": "5ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Média",
+      "TopicoId": 9,
+      "SubtopicoId": 20,
+      "Enunciado": "Observe a propaganda retirada da revista A Cigarra de 8 de abril de 1954. A partir da leitura da propaganda, escolha uma das alternativas:",
+      "Documentos": [
+        {
+          "Titulo": "A Cigarra",
+          "Tipo": "Imagem",
+          "Descricao": "Propaganda do Leite de Colônia na revista A Cigarra.",
+          "Origem": "A Cigarra, n. 8, abril de 1954, p. 1.",
+          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/5ONHB_primeira_fase_questao_6.jpg",
+          "Texto": "Não arrisque a beleza natural de sua pele! Proteja sua cútis pela vitalizante massagem de beleza com ação medicinal do Leite de Colonia.\n\nO viço… o colorido… a juventude de sua pele não são coisas que possam ser substituídas. Sua cútis, portanto, merece todo cuidado! Para conservar o frescor e a maciez de sua pele, faça diariamente a tonificante “massagem de beleza”… pela manhã e à noite… com a penetrante ação medicinal do insubstituível Leite de Colonia. Revigorando os tecidos da pele, Leite de Colonia evita a flacidez… remove manchas, sardas e espinhas, que antes você tentava, inutilmente, esconder com a maquilagem excessiva. E nada melhor do que Leite de Colonia para a completa limpeza da pele, sejam quais forem os preparados que você usa em seu rosto. Adote agora Leite de Colonia para ter a pele jovem… por muito mais tempo.\n\nÉ o tratamento de beleza mais simples e econômico! Molhe o seu rosto com bastante água. Sem enxugá-lo, friccione algodão embebido de Leite de Colonia, em movimentos circulares de baixo para cima. É o quanto basta!\n\nInsista com Leite de Colonia. É preparado pelo médico Dr. Arthur Studar."
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "Observa-se a criação de um padrão de beleza feminino atrelado, por meio do consumo de cosméticos, à manutenção da juventude.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "B",
+          "Texto": "A maquiagem era considerada uma prática artificial e imoral para a época, e por isso é criticada no presente anúncio.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "C",
+          "Texto": "O texto publicitário, além de trazer uma mensagem que relaciona o uso do produto à conservação da beleza feminina, oferece outras informações, tais como: modo de usar e certificação medicinal.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "D",
+          "Texto": "Anúncios deste período eram frequentemente confeccionados com imagens e textos longos e argumentativos, que tinham como público alvo uma classe média urbana com crescente poder aquisitivo.",
+          "Pontuacao": 4
+        }
+      ]
+    },
+    {
+      "Olimpiada": "5ONHB",
       "Fase": 1,
       "NivelDificuldade": "Difícil",
       "TopicoId": 2,
-      "SubtopicoId": 3,
-      "Enunciado": "A partir do texto, assinale a alternativa mais pertinente:",
+      "SubtopicoId": 2,
+      "Enunciado": "A historiadora, no texto:",
       "Documentos": [
         {
-          "Titulo": "Fragmentos Setecentistas – Escravidão, cultura e poder",
+          "Titulo": "Do espetáculo da natureza à natureza do espetáculo",
           "Tipo": "Texto",
-          "Descricao": "Trecho que aborda as novas abordagens historiográficas sobre a escravidão, a partir da década de 1980, considerando os escravizados como sujeitos históricos.",
-          "Origem": "Documento da 1ª fase da ONHB",
+          "Descricao": "Século XXVII usos e costumes História da medicina",
+          "Origem": "Vera Regina Beltrão Marques.",
           "Url": null,
-          "Texto": "\n...\n\n“Nos anos 1980, a história da escravidão no Brasil passou por transformações significativas, que\n\nredimensionaram a abordagem das relações entre senhores e escravos nessa parte do mundo.\n\nRecuperando nuances e ambiguidades que antes poderiam parecer surpreendentes, a experiência\n\nda escravidão começou a ser inquirida de modo a recuperar a perspectiva dos sujeitos em\n\nconfronto. Temas como a família, as fugas e revoltas, as lutas por alforria, as irmandades, as\n\nrelações dos escravos com as instituições senhoriais e tantos outros passaram a ser objeto de vários\n\nestudos. (…) Já não bastava mostrar que os escravos haviam se rebelado ao longo de toda a\n\nvigência da escravidão. (…) Era preciso descobrir as variantes das ações de resistência [e]\n\ncompreender seus significados. (…) \n\nSe inicialmente o volume das pesquisas sobre a escravidão esteve centrado no século XIX, aos\n\npoucos as novas questões e os novos procedimentos de análise foram sendo incorporados às\n\npossibilidades da pesquisa que se dedicava ao período colonial. (…) \n\nA partir dos anos 1990 (…) surgiram novas abordagens sobre as relações de poder no mundo\n\ncolonial, (…) pesquisas sobre as formas de governar os domínios ultramarinos e o funcionamento\n\ndas diversas instituições (…) \n\nAos poucos, os nexos imperiais das políticas metropolitanas e das dinâmicas coloniais foram se\n\nimpondo nas análises, fazendo com que eventos “brasileiros” pudessem ser analisados em conexão\n\ncom outros ocorridos na África ou na Índia. Assim, a dualidade Brasil-Portugal, que havia\n\npresidido boa parte de nossa produção historiográfica, passou a conectar-se às dimensões do\n\nImpério português.”"
+          "Texto": "Deixamos aqui nossa homenagem à saudosa colega historiadora Vera Regina Beltrão Marques (1953-2013) “Nas correspondências avulsas encetadas entre metrópole e colônia enfatizava-se com frequência a falta de médicos, remédios, hospitais e o grande número de epidemias que grassavam. É possível entretanto identificar nos meandros desses documentos e naqueles não oficiais a presença de outros atores(…) Reclamava-se da falta de médicos, mas convém colocar as seguintes questões: que setores populacionais ressentiam-se da escassez destes profissionais? A quem recorriam os indígenas, escravos e seus descendentes quando adoeciam? Buscavam eles o atendimento médico ou seriam os mandantes portugueses os que mais demandavam a arte de curar dita erudita? (…) Proponho então outro ponto de partida: o florescimento das demais artes de cura esteve intrinsecamente ligado às diferentes raízes culturais das populações aqui residentes (…) Não era a falta de médicos formados que possibilitava a atuação de curadores considerados ilegítimos. As tradições culturais refletidas nas artes de curar dos negros e indígenas abria espaço para que se disseminassem seus próprios curadores e suas terapêuticas. Considerar a medicina lusitana oficial como o saber legítimo e todo poderoso seria desautorizar outros conhecimentos (…) Poder se-ia, ainda, assinalar que tal procedimento historiográfico contribuiria para manter relegados e esquecidos saberes que são constituintes de áreas do conhecimento médico.”"
         }
       ],
       "Alternativas": [
         {
           "Letra": "A",
-          "Texto": "Cada geração de historiadores renega os estudos anteriores, fragmentando o conhecimento em história do Brasil.",
+          "Texto": "Evita corroborar o argumento de que se recorria a curandeiros no Brasil colonial devido à escassez de médicos, propondo um “ponto de partida” que inclua as tradições culturais locais.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "B",
+          "Texto": "Adota um procedimento historiográfico que põe em evidência sujeitos históricos que de outro modo seriam relegados a um papel menor.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "C",
+          "Texto": "Indica que tanto as artes de curar praticadas por indígenas ou negros quanto a medicina oficial lusitana estavam atrasadas em relação aos conhecimentos médicos do restante da Europa.",
+          "Pontuacao": 0
+        },
+        {
+          "Letra": "D",
+          "Texto": "Recusa as primeiras evidências que encontra nas fontes históricas - as correspondências entre metrópole e colônia -buscando outras explicações para o seu tema de pesquisa.",
+          "Pontuacao": 4
+        }
+      ]
+    },
+    {
+      "Olimpiada": "5ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Média",
+      "TopicoId": 7,
+      "SubtopicoId": 15,
+      "Enunciado": "Em seu livro Visão do jogo – primórdios do futebol no Brasil, José Moraes dos Santos Neto escreve:",
+      "Documentos": [
+        {
+          "Titulo": "Visão do jogo",
+          "Tipo": "Texto",
+          "Descricao": "História do Esporte Séculos XIX-XX Sudeste Futebol. José Moraes dos Santos Neto – Visão do jogo.",
+          "Origem": "José Moraes dos Santos Neto. Visão do jogo. Primórdios do futebol no Brasil. São Paulo: Cosac &Naify, 2002. pp.27-37.",
+          "Url": null,
+          "Texto": "“Mas e Charles Miller, o ‘pai do futebol brasileiro’? Onde entra nessa história, se o esporte já era jogado por aqui desde a primeira metade da década de 1880? Afinal, é para este brasileiro de nome inglês que o nosso senso comum aponta quando o assunto é a introdução do futebol no país. Charles Miller nasceu em São Paulo, no dia 24 de novembro de 1874, filho do engenheiro escocês John Miller e de Carlota Fox. Durante boa parte de sua vida, no entanto, morou e foi educado na Inglaterra. Conheceu o futebol no colégio, jogando pelo Banister Court School, depois pelo Corinthian Football Club, pelo St. Mary’s Football Club (atual Southampton Football Club) e pela seleção do condado de Hampshire. Era um atacante rápido, excelente driblador e dono de um chute forte e preciso, qualidades que o destacavam mesmo na Inglaterra, onde o futebol já amadurecera e conquistara um número expressivo de adeptos. Em 1894, retornando ao Brasil, Miller trouxe na mala alguns itens de sua adoração: um livro de regras do association football, uma camisa do Banister School e outra do St. Mary, duas bolas, uma bomba para enchê-las e um par de chuteiras.\n\n(…) Como todo bom oldboy das escolas inglesas, Miller chamou para si a responsabilidade de promover a prática do esporte entre a fina-flor da juventude paulistana.\n\n(…) Várias hipóteses podem explicar a origem do mito segundo o qual Miller seria, além de grande craque e divulgador pioneiro, o ‘pai’ do futebol entre nós. A primeira diz respeito à inserção dos jogos entre os clubes de elite nos jornais paulistas. Obviamente, enquanto foi uma atividade recreativa restrita a colégios, o futebol não mereceu qualquer atenção da imprensa. Além disso, deve-se ter em conta a força cultural desses grupos socialmente dominantes, contumazes inventores de tradições, bem como o fato de os primeiros arquivos sistematizados serem provenientes dos clubes e das ligas que os reuniam (…). Tudo isto, porém, não pode criar uma muralha documental que encubra o fato de que o futebol já era praticado, embora com outro espírito e menor organização, pelos membros das elites nos colégios brasileiros, e que muitos de seus ex-alunos também contribuíram para a difusão do esporte. (…) Mas é difícil derrubar um mito depois que ele é erguido. (…) O jornalista Thomaz Mazzoni, foi, talvez, o único a descrever vários jogos no Brasil antes do retorno de Charles Miller, em 1894. Fez, inclusive, referência ao futebol no Colégio São Luís de Itu, com base no relato de ex-alunos. No jornal A Gazeta e também no A Gazeta Esportiva, sempre iniciava suas matérias sobre o assunto descrevendo algum episódio anterior à chegada de Miller. Conhecia não só a história do futebol nos colégios, como também várias outras possíveis fontes dessa paixão nacional. Sabia que funcionários escoceses e brasileiros da São Paulo Railway, na linha Jundiaí-São Paulo, praticavam o futebol, o mesmo acontecendo com os ferroviários das oficinas da Companhia Paulista, já por volta de 1892, e dispunha de inúmeros relatos de jogos de futebol entre marinheiros estrangeiros em praias brasileiras, quando da passagem de seus navios nos portos do país. Apesar disso tudo, jamais arriscou um artigo mais contundente sobre a questão da gênese do esporte no Brasil, preferindo, ao final de seus textos, resignar-se à versão imposta pela primeira classe dirigente do futebol paulistano. Terminava sempre por corroborar a teses de que Miller foi o ‘pai’ do futebol brasileiro. Essa atitude ambígua foi a tônica de sua abordagem do assunto. Como resposta às dúvidas subliminarmente colocadas por Mazzoni, o também jornalista esportivo Adriano Neiva publicou, durante os anos 50, vários artigos defendendo a ‘tese Miller’. Num deles, enfatiza o modelo inglês como padrão cultural e esportivo no Brasil: ‘Esse fato da fundação do futebol já foi exaustivamente pesquisado e provado. Antes de Charles Miller havia bolas, mas não existia futebol. Como poderá haver mar sem haver natação e touro sem haver tourada?’ (…) Para contradizê-lo, porém, basta recorrer às fontes primárias atualmente disponíveis em Itu, Itaici, São Paulo e Rio de Janeiro. (…) Além da pesquisas nas instituições de ensino da época, a memória dos ferroviários também são fontes riquíssimas e muito pouco exploradas, bem como os relatórios de linha, que contêm informações sobre a prática do futebol por ferroviários escoceses, ingleses e brasileiros, na última década do século XIX.”\n\nAssociation football: sinônimo de “futebol”, foi um termo usado com frequência nas últimas décadas do século XIX e nas iniciais do XX.\nOldboy: substantivo do inglês britânico: homem que foi estudante numa escola particular ou universidade.\nRelatórios de linha: O Relatório de Linha era um procedimento requisitado pelas companhias ferroviárias com o objetivo de controlar a qualidade dos serviços com o fim de evitar acidentes ao longo das estradas de ferro. Existiam relatórios de circulação, de trem e de linha, cada qual atribuído ao pessoal de cada setor. Fichas impressas eram fornecidas pelas próprias empresas aos trabalhadores, que deveriam entregar após a execução das tarefas. O feitor de linha tinha a função de preencher o impresso, pois ele era encarregado de gerenciar o pessoal da manutenção da linha, também chamado de pessoal da soca, que exercia um trabalho muito penoso, como troca de trilhos e dormentes. O Relatório de Linha registrava as condições dos trilhos do ponto de verificação inicial ao final, se houve trocas de dormentes e trilhos, estacas e sobre as condições das sinalizações nas passagens de nível e cruzamentos. Os relatórios também serviam para assegurar a efetiva execução do processo de trabalho.”"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "O autor do texto demonstra como, apesar da apropriação coletiva do futebol após alguns anos de sua introdução no Brasil, o pioneirismo de Charles Miller atesta o poder da ação individual na popularização do jogo.",
           "Pontuacao": 0
         },
         {
           "Letra": "B",
-          "Texto": "A autora descreve como a produção recente sobre a história do Brasil foi se renovando e propondo novas abordagens a temas de estudo já conhecidos.",
+          "Texto": "Embora jornalistas não ignorassem a existência do futebol praticado pelas classes populares, poucos distanciaram-se da ideia de que foi a elite que introduziu este esporte no país.",
+          "Pontuacao": 4
+        },
+        {
+          "Letra": "C",
+          "Texto": "A forma como os antigos clubes sistematizaram seus arquivos teve grande influência sobre a história do futebol no Brasil.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "D",
+          "Texto": "O autor questiona a construção do \"mito fundador\" e da necessidade, no caso brasileiro, de atrelá-lo a uma origem branca, europeia e civilizada – representada na figura de Charles Miller.",
+          "Pontuacao": 5
+        }
+      ]
+    },
+    {
+      "Olimpiada": "5ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Média",
+      "TopicoId": 2,
+      "SubtopicoId": 2,
+      "Enunciado": "Considerado o primeiro livro produzido por um médico sobre o Brasil, História Natural do Brasil (Historia Naturalis Brasiliae), escrito em 1648 pelo holandês Guilherme Piso e complementado por outros autores, é avaliado como uma obra prima do gênero. Redigido em latim e dedicado a Maurício de Nassau, Piso descreveu plantas, animais, doenças e remédios que conheceu no litoral do Nordeste. Muitas imagens ilustraram a obra, dando aos estrangeiros a possibilidade de conhecer animais, flores e frutos que jamais haviam sido vistos antes. Veja uma imagem colorida do frontispício, originalmente publicado em preto e branco. ",
+      "Documentos": [
+        {
+          "Titulo": "Frontispício",
+          "Tipo": "Imagem",
+          "Descricao": "século XVIII Iconografia Brasil Holandês História Natural. Guilherme de Piso. “Frontispício”. História Natural do Brasil. Leiden: Elsevier, 1648.",
+          "Origem": "Guilherme de Piso. “Frontispício”. História Natural do Brasil. Leiden: Elsevier, 1648.",
+          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/5ONHB_primeira_fase_questao_9.jpg",
+          "Texto": null
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "Médicos, pintores, cientistas e astrônomos, dentre outros, acompanharam Maurício de Nassau e indicaram em suas obras aspectos de interesse econômico e cultural da Nova Holanda.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "B",
+          "Texto": "Vemos a natureza brasileira representada numa profusão de detalhes que incluem a flora, a fauna e, de pé, os nativos da terra, ao lado de alegorias e do título do livro.",
           "Pontuacao": 1
         },
         {
           "Letra": "C",
-          "Texto": "Abandonar a dualidade Brasil-Portugal e entender o Brasil como parte do Império Português amplia a compreensão dos processos de colonização, domínio e escravidão.",
-          "Pontuacao": 5
+          "Texto": "O arranjo das árvores, dispostas em fileiras, comprova que o médico Piso não conhecia uma floresta tropical.",
+          "Pontuacao": 0
         },
         {
           "Letra": "D",
-          "Texto": "A história da escravidão que considera as experiências dos escravos para além da submissão ou da revolta implica considerá-los como sujeitos de sua própria história.",
+          "Texto": "O casal de nativos é representado aos moldes de um Adão e Eva às portas de um paraíso tropical, do qual nem mesmo a serpente está ausente.",
           "Pontuacao": 4
         }
       ]
+    },
+    {
+      "Olimpiada": "5ONHB",
+      "Fase": 1,
+      "NivelDificuldade": "Fácil",
+      "TopicoId": 8,
+      "SubtopicoId": 18,
+      "Enunciado": "A seguir há um pequeno trecho do romance Vidas Secas (1937-1938), de Graciliano Ramos. Após lê-lo atentamente, e refletir sobre a obra, assinale a alternativa que julgar a melhor.",
+      "Documentos": [
+        {
+          "Titulo": "Vidas Secas",
+          "Tipo": "Texto",
+          "Descricao": "Nordeste Terra História da Literatura Século XX Migração. Graciliano Ramos. Sinha Vitória, in: Vidas Secas, São Paulo: Ed. Record, 1984",
+          "Origem": "Graciliano Ramos. Vidas Secas, São Paulo: Ed. Record, 1984",
+          "Url": null,
+          "Texto": "“(…) Sinha Vitória desejava possuir uma cama igual à de seu Tomás da bolandeira. Doidice. Não dizia nada para não contrariá-la, mas sabia que era doidice. Cambembes podiam ter luxo? E estavam ali de passagem. Qualquer dia o patrão os botaria fora, e eles ganhariam o mundo, sem rumo, nem teriam meio de conduzir os cacarecos. Viviam de trouxa arrumada, dormiriam bem debaixo de um pau. (…) Seu Tomás tinha uma cama de verdade, feita pelo carpinteiro, um estrado de sucupira alisado a enxó, com as juntas abertas a formão, tudo embutido direito, e um couro cru em cima, bem esticado e bem pregado. Ali podia um cristão estirar os ossos.”\n\nBolandeira: roda movida por força animal, que aciona o rodete de ralar mandioca.\nCambembes: trabalhador assalariado que trabalhava junto com escravos.\nSucupira: nome comum de duas árvores leguminosas (Ormosia ou Robínea coccinea e O. coarctata ou minor, esta última também chamada sucupira-mirim ou sicupira-mirim e acari).\nEnxó: instrumento de carpinteiro e de tanoeiro, de cabo curvo e chapa de aço cortante, que serve para desbastar a madeira.”"
+        }
+      ],
+      "Alternativas": [
+        {
+          "Letra": "A",
+          "Texto": "No romance Vidas Secas, Graciliano Ramos retrata a miséria do sertão focado numa família de retirantes que vive em constante deslocamento e opressão.",
+          "Pontuacao": 1
+        },
+        {
+          "Letra": "B",
+          "Texto": "O pensamento de Sinhá Vitória em querer uma cama ‘de verdade’ traz a simbologia do desejo de fincar raízes, estabelecer um lugar de morada, contrário à vida de retirantes que perambulam pelo sertão.",
+          "Pontuacao": 5
+        },
+        {
+          "Letra": "C",
+          "Texto": "A obra Vidas Secas de Graciliano Ramos reflete o engajamento do autor e sua denúncia social.",
+          "Pontuacao": 4
+        },
+        {
+          "Letra": "D",
+          "Texto": "As décadas de 1930 e 1940 no Brasil foram marcadas por grandes secas no nordeste, retratadas na literatura regionalista, e levaram o presidente Vargas a criar a SUDENE em 1948.",
+          "Pontuacao": 0
+        }
+      ]
     }
-  ]
-  
+]

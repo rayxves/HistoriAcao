@@ -3,6 +3,7 @@ namespace HistoriAcao.Api.Dtos
 {
     public class DocumentDto
     {
+        public int Id { get; set; }
         public string? Titulo { get; set; }
         public string Tipo { get; set; } = string.Empty;
         public string? Descricao { get; set; }

@@ -34,6 +34,7 @@ namespace HistoriAcao.Api.Mappers
         {
             return new DocumentDto
             {
+                Id = doc.Id,
                 Titulo = doc.Titulo,
                 Tipo = doc.Tipo,
                 Texto = doc.Texto,
@@ -47,6 +48,7 @@ namespace HistoriAcao.Api.Mappers
         {
             return new AlternativeDto
             {
+                Id = alt.Id,
                 Texto = alt.Texto,
                 Letra = alt.Letra,
                 Pontuacao = alt.Pontuacao
