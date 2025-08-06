@@ -1,0 +1,6 @@
+[submodule "frontend/historiacao-quiz"]
+	path = frontend/historiacao-quiz
+	url = https://github.com/rayxves/historiacao-quiz.git
+[submodule "historiacao-quiz"]
+	path = historiacao-quiz
+	url = https://github.com/rayxves/historiacao-quiz.git
