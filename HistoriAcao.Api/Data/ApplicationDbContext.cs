@@ -1,9 +1,10 @@
 namespace HistoriAcao.Api.Data
 {
     using HistoriAcao.Api.Models;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -60,7 +61,7 @@ namespace HistoriAcao.Api.Data
             modelBuilder.Entity<Subtopic>()
                 .HasKey(s => s.Id);
 
-           
+
         }
 
     }

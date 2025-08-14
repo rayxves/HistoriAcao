@@ -3,6 +3,11 @@ using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
 using HistoriAcao.Api.Interfaces;
 using HistoriAcao.Api.Services;
+using HistoriAcao.Api.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,9 +19,31 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    options.UseNpgsql(connectionString)
-       .LogTo(Console.WriteLine, LogLevel.Information)
-       .EnableSensitiveDataLogging();
+
+    options.UseNpgsql(connectionString);
+});
+
+builder.Services.AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidIssuer = builder.Configuration["JWT:Issuer"],
+        ValidateAudience = true,
+        ValidAudience = builder.Configuration["JWT:Audience"],
+        ValidateLifetime = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigningKey"]!)),
+        ValidateIssuerSigningKey = true
+    };
 });
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -49,7 +76,8 @@ app.UseSwaggerUI(c =>
     c.RoutePrefix = string.Empty;
 });
 
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
@@ -67,6 +95,33 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+
+
+    var adminConfig = builder.Configuration.GetSection("AdminAccount");
+    var adminEmail = adminConfig["Email"];
+    var adminPassword = adminConfig["Password"];
+
+    var adminUser = await userManager.FindByEmailAsync(adminEmail);
+    if (adminUser == null)
+    {
+        adminUser = new User
+        {
+            UserName = adminEmail,
+            Email = adminEmail,
+            EmailConfirmed = true
+        };
+
+        var result = await userManager.CreateAsync(adminUser, adminPassword);
+        if (result.Succeeded)
+        {
+            await userManager.AddToRoleAsync(adminUser, "Admin");
+        }
+    }
+}
 
 
 await app.RunAsync();

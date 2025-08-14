@@ -1,5 +1,6 @@
 using HistoriAcao.Api.Dtos;
 using HistoriAcao.Api.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HistoriAcao.Api.Controllers
@@ -70,6 +71,7 @@ namespace HistoriAcao.Api.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost("create")]
         public async Task<IActionResult> CreateQuestion([FromBody] CreateQuestionDto questionDto)
         {
@@ -88,6 +90,7 @@ namespace HistoriAcao.Api.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteQuestion(int id)
         {
@@ -106,6 +109,7 @@ namespace HistoriAcao.Api.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPut("update")]
         public async Task<IActionResult> UpdateQuestion([FromBody] QuestionDto questionDto)
         {
