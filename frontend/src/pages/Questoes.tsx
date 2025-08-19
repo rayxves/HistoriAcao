@@ -96,7 +96,6 @@ const Questoes = () => {
     setCurrentPage(1);
   }, [filters, searchTerm]);
 
-  // Paginação
   const totalPages = Math.ceil(questions.length / questionsPerPage);
   const paginatedQuestions = useMemo(() => {
     const startIndex = (currentPage - 1) * questionsPerPage;
@@ -151,7 +150,6 @@ const Questoes = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      {/* Notification Card */}
       {notification.show && (
         <div
           className={`fixed top-4 right-4 z-50 transition-all duration-300 ${
@@ -171,6 +169,7 @@ const Questoes = () => {
               <X className="h-5 w-5 text-red-600 mr-2" />
             )}
             <span
+              data-testId="notification"
               className={`text-sm ${
                 notification.type === "success"
                   ? "text-emerald-800"
@@ -184,10 +183,9 @@ const Questoes = () => {
       )}
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        {/* Header */}
         <div className="mb-6 sm:mb-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6">
-            <div className="mb-4 sm:mb-0">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 sm:mb-6">
+            <div className="mb-4 md:mb-0">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
                 Explorar Questões
               </h1>
@@ -207,7 +205,6 @@ const Questoes = () => {
             )}
           </div>
 
-          {/* Search Bar - ajuste o padding para mobile */}
           <div className="relative mb-4 sm:mb-6">
             <Search
               className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -222,13 +219,13 @@ const Questoes = () => {
             />
           </div>
 
-          {/* Filters Toggle - ajuste o padding */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
             <button
+              data-testId="show-filters-btn"
               onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2 px-3 sm:px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 text-sm sm:text-base"
+              className="flex items-center gap-2 px-3 sm:px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 hover:outline-0 focus:outline-0 hover:border-1 hover:border-gray-300 text-sm sm:text-md"
             >
-              <Filter size={16} />
+              <Filter size={14} />
               Filtros {showFilters ? "−" : "+"}
             </button>
             <div className="flex items-center gap-2 sm:gap-4">
@@ -331,7 +328,6 @@ const Questoes = () => {
         )}
       </main>
 
-      {/* Document Viewer Modal */}
       {viewingDocument && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4"
@@ -363,7 +359,7 @@ const Questoes = () => {
                   <div
                     className="text-sm text-gray-500 p-2 text-center"
                     dangerouslySetInnerHTML={{
-                      __html: marked(viewingDocument.descricao),
+                      __html: marked(viewingDocument.descricao) as string,
                     }}
                   />
                 )}
@@ -375,7 +371,7 @@ const Questoes = () => {
                 <div
                   className="p-6 prose max-w-none"
                   dangerouslySetInnerHTML={{
-                    __html: marked(viewingDocument.texto),
+                    __html: marked(viewingDocument.texto) as string,
                   }}
                 />
                 {viewingDocument.descricao && !viewingDocument.url && (

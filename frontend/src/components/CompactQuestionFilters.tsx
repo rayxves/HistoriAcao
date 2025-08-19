@@ -159,7 +159,7 @@ const CompactQuestionFilters = ({
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("olimpiada")}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm sm:text-base w-full sm:w-auto justify-between"
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
             >
               <span className="text-gray-700 truncate">
                 {filters.olimpiada
@@ -175,7 +175,7 @@ const CompactQuestionFilters = ({
                   <input
                     type="text"
                     placeholder="Buscar olimpíada..."
-                    className="w-full px-3 py-2 mb-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                    className="w-full px-3 py-2 mb-2 border border-gray-200 rounded-lg focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
                     value={olimpiadaInput}
                     onChange={(e) => setOlimpiadaInput(e.target.value)}
                   />
@@ -223,7 +223,7 @@ const CompactQuestionFilters = ({
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("fase")}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm sm:text-base w-full sm:w-auto justify-between"
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
             >
               <span className="text-gray-700">
                 {filters.fase ? `${filters.fase}ª Fase` : "Fase"}
@@ -262,7 +262,7 @@ const CompactQuestionFilters = ({
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("tema")}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm sm:text-base w-full sm:w-auto justify-between"
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
             >
               <span className="text-gray-700 max-w-36 truncate">
                 {filters.topicName || "Tema"}
@@ -302,7 +302,7 @@ const CompactQuestionFilters = ({
             <div className="relative dropdown-container w-full sm:w-auto">
               <button
                 onClick={() => toggleDropdown("subtema")}
-                className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm sm:text-base w-full sm:w-auto justify-between"
+                className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
               >
                 <span className="text-gray-700 max-w-36 truncate">
                   {filters.subtopicName || "Subtema"}
@@ -343,7 +343,7 @@ const CompactQuestionFilters = ({
             <div className="relative dropdown-container w-full sm:w-auto">
               <button
                 onClick={() => toggleDropdown("data")}
-                className="flex items-center space-x-2 px-3 sm:px-5 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm sm:text-base w-full sm:w-auto justify-between"
+                className="flex items-center space-x-2 px-3 sm:px-5 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
               >
                 <div className="flex gap-1 sm:gap-2 h-full items-center">
                   <Calendar size={16} className="text-gray-400" />
@@ -362,7 +362,7 @@ const CompactQuestionFilters = ({
                       </label>
                       <input
                         type="date"
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-200"
                         value={tempDates.start}
                         onChange={(e) =>
                           setTempDates({ ...tempDates, start: e.target.value })
@@ -375,7 +375,7 @@ const CompactQuestionFilters = ({
                       </label>
                       <input
                         type="date"
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+                        className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-200"
                         value={tempDates.end}
                         onChange={(e) =>
                           setTempDates({ ...tempDates, end: e.target.value })
@@ -405,30 +405,40 @@ const CompactQuestionFilters = ({
 
           <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto order-last sm:order-none">
             {" "}
-            {niveis.map((nivel) => (
-              <button
-                key={nivel}
-                onClick={() =>
-                  handleFilterChange(
-                    "nivelDificuldade",
-                    filters.nivelDificuldade === nivel ? undefined : nivel
-                  )
+            {niveis.map((nivel) => {
+              let nivelClass =
+                "bg-slate-50 text-gray-700 border-gray-200 hover:bg-gray-100";
+              if (filters.nivelDificuldade === nivel) {
+                if (filters.nivelDificuldade === "Fácil") {
+                  nivelClass = "bg-green-100 text-green-800 border-green-200";
+                } else if (filters.nivelDificuldade === "Média") {
+                  nivelClass =
+                    "bg-yellow-100 text-yellow-800 border-yellow-200";
+                } else {
+                  nivelClass = "bg-red-100 text-red-800 border-red-200";
                 }
-                className={`px-3 sm:px-4 py-1 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border ${
-                  filters.nivelDificuldade === nivel
-                    ? "bg-emerald-600 text-white border-emerald-600 shadow-lg"
-                    : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
-                }`}
-              >
-                {nivel}
-              </button>
-            ))}
+              }
+              return (
+                <button
+                  key={nivel}
+                  onClick={() =>
+                    handleFilterChange(
+                      "nivelDificuldade",
+                      filters.nivelDificuldade === nivel ? undefined : nivel
+                    )
+                  }
+                  className={`px-3 sm:px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 border ${nivelClass}`}
+                >
+                  {nivel}
+                </button>
+              );
+            })}
           </div>
 
           {hasActiveFilters && (
             <button
               onClick={clearFilters}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 text-xs sm:text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-colors font-medium ml-auto sm:ml-0"
+              className="flex items-center space-x-2 px-3 sm:px-4 py-2 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-colors font-medium ml-auto sm:ml-0"
             >
               <X size={14} />
               <span>Limpar</span>

@@ -258,7 +258,7 @@ const QuizPlayer = ({ questions, onFinish, onBack }: QuizPlayerProps) => {
                   <div
                     className="text-sm text-gray-500 p-2 text-center"
                     dangerouslySetInnerHTML={{
-                      __html: marked(selectedDoc.descricao),
+                      __html: marked.parse(selectedDoc.descricao) as string,
                     }}
                   />
                 )}
@@ -270,7 +270,7 @@ const QuizPlayer = ({ questions, onFinish, onBack }: QuizPlayerProps) => {
                 <div
                   className="p-6 prose max-w-none"
                   dangerouslySetInnerHTML={{
-                    __html: marked(selectedDoc.texto),
+                    __html: marked.parse(selectedDoc.texto) as string,
                   }}
                 />
                 {selectedDoc.descricao && !selectedDoc.url && (

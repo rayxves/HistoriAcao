@@ -143,7 +143,7 @@ export default function QuestionCard({
                     </span>
                   </div>
                   {hasAnswered && (
-                    <span className="font-bold text-xs sm:text-sm text-gray-700">
+                    <span className="font-bold pr-1 text-xs sm:text-sm text-gray-700">
                       {alt.pontuacao} pts
                     </span>
                   )}
