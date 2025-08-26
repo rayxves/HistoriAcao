@@ -89,7 +89,9 @@ export default function QuestionCard({
 
         {question.documentos?.length > 0 && (
           <div>
-            <h4 className="font-semibold text-gray-700 mb-2 text-sm sm:text-lg">Recursos:</h4>
+            <h4 className="font-semibold text-gray-700 mb-2 text-sm sm:text-lg">
+              Recursos:
+            </h4>
             <div className="flex flex-wrap gap-3">
               {question.documentos.map((doc) => (
                 <button
@@ -107,7 +109,9 @@ export default function QuestionCard({
 
         {/* Alternativas */}
         <div>
-          <h4 className="font-semibold text-gray-700 mb-3 text-sm sm:text-lg">Alternativas:</h4>
+          <h4 className="font-semibold text-gray-700 mb-3 text-sm sm:text-lg">
+            Alternativas:
+          </h4>
           <div className="space-y-2">
             {sortedAlternatives.map((alt) => {
               const isSelected = userAnswerId === alt.id;

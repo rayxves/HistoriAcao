@@ -14,21 +14,11 @@ const Header = () => {
       {/* Top institutional bar */}
       <div className="bg-green-700 text-white py-2">
         <div className=" mx-auto px-4">
-          <div className="flex justify-between items-center text-sm">
+          <div className="flex justify-end items-center text-sm">
             <div className="flex items-center space-x-4">
               <span className="hidden md:inline">Instituto Federal Goiano</span>
             </div>
-            <div className="flex items-center space-x-4">
-              <div className="flex space-x-2">
-                <Link to="https://www.ifgoiano.edu.br/home/morrinhos">
-                  <img
-                    src="/lovable-uploads/fdc0dc36-5857-4d56-af96-bfc771d71966.png"
-                    alt="IF Goiano"
-                    className="h-6 w-auto"
-                  />
-                </Link>
-              </div>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -38,7 +28,7 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-3">
               <img
-                src="/lovable-uploads/fdc0dc36-5857-4d56-af96-bfc771d71966.png"
+                src="/if-goiano-icon/fdc0dc36-5857-4d56-af96-bfc771d71966.png"
                 alt="IF Goiano"
                 className="h-12 w-auto"
               />

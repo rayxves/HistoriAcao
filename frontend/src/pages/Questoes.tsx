@@ -215,7 +215,7 @@ const Questoes = () => {
               placeholder="Buscar questões..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 sm:pl-12 pr-4 py-2 sm:py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-sm sm:text-base"
+              className="w-full pl-10 sm:pl-12 pr-4 py-2 sm:py-3 border border-gray-200 rounded-xl focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 outline-none text-sm sm:text-base"
             />
           </div>
 
@@ -334,7 +334,7 @@ const Questoes = () => {
           onClick={() => setViewingDocument(null)}
         >
           <div
-            className="bg-white rounded-lg shadow-xl sm:max-w-[80vw] md:max-w-[70vw] w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-2xl shadow-xl sm:max-w-[80vw] md:max-w-[70vw] w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6 border-b">
