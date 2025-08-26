@@ -19,7 +19,7 @@ export async function getQuestionsByFilters(filters: {
   olimpiada?: string;
   inicialDate?: string;
   finishDate?: string;
-  search?: string
+  search?: string;
   nivelDificuldade?: string;
 }) {
   const response = await api.get<QuestionDto[]>("/question/by-filters", {
