@@ -63,6 +63,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddScoped<ITopicServices, TopicServices>();
 builder.Services.AddScoped<IQuestionServices, QuestionServices>();
+builder.Services.AddScoped<ITokenServices, TokenServices>();
+builder.Services.AddScoped<IAuthServices, AuthServices>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

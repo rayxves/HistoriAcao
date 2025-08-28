@@ -16,20 +16,20 @@ namespace HistoriAcao.Api.Controllers
         }
 
         [HttpPost("login")]
-        public Task<IActionResult> LoginAsync([FromBody] LoginDto loginDto)
+        public async Task<IActionResult> LoginAsync([FromBody] LoginDto loginDto)
         {
             try
             {
-                var token = _authService.LoginAsync(loginDto.Email, loginDto.Password);
-                return Task.FromResult<IActionResult>(Ok(new { Token = token }));
+                var token = await _authService.LoginAsync(loginDto.Email, loginDto.Password);
+                return Ok(token);
             }
             catch (UnauthorizedAccessException ex)
             {
-                return Task.FromResult<IActionResult>(Unauthorized(Problem(ex.Message)));
+                return Unauthorized(ex.Message);
             }
             catch (Exception ex)
             {
-                return Task.FromResult<IActionResult>(StatusCode(500, Problem("Login failed: " + ex.Message)));
+                return BadRequest(ex.Message);
             }
         }
     }
