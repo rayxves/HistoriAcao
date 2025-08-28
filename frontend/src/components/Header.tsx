@@ -18,7 +18,6 @@ const Header = () => {
             <div className="flex items-center space-x-4">
               <span className="hidden md:inline">Instituto Federal Goiano</span>
             </div>
-           
           </div>
         </div>
       </div>
@@ -33,8 +32,11 @@ const Header = () => {
                 className="h-12 w-auto"
               />
               <div>
-                <h1 className="text-2xl font-bold text-gray-800">
-                  HistoriAção
+                <h1
+                
+                  className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 "
+                >
+                  Histori<span className="text-green-700">A</span>ção
                 </h1>
                 <p className="text-sm text-green-700 font-medium">
                   IF Goiano - Campus Morrinhos
@@ -43,7 +45,6 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
@@ -68,7 +69,6 @@ const Header = () => {
             </Link>
           </nav>
 
-          {/* Mobile menu button */}
           <button
             className="md:hidden p-2 text-gray-600 hover:text-green-700"
             onClick={toggleMobileMenu}
@@ -77,13 +77,12 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 py-4 border-t border-gray-200">
-            <div className="flex flex-col space-y-3">
+          <nav className="md:hidden  mt-4 py-4 border-t border-gray-200 ">
+            <div className="flex flex-col w-full justify-end space-y-3">
               <Link
                 to="/"
-                className="flex items-center space-x-2 text-gray-700 hover:text-green-700 transition-colors font-medium px-2 py-2"
+                className="flex w-full items-center space-x-2 text-gray-700 hover:text-green-700 transition-colors font-medium px-2 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Home size={20} />

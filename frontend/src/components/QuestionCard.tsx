@@ -39,11 +39,10 @@ export default function QuestionCard({
   const sortedAlternatives = sortAlternatives(question.alternativas);
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-6">
+    <div className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-4 sm:p-6">
       <div className="space-y-3 sm:space-y-4">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
-          <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+          <div className="flex flex-wrap items-center gap-1 sm:gap-2">
             <div className=" text-xs sm:text-sm py-1 rounded-full font-medium">
               {question.olimpiada}
             </div>
@@ -65,16 +64,15 @@ export default function QuestionCard({
           {isFromQuiz && (
             <button
               onClick={() => onAddToQuiz?.(question)}
-              className="px-3 sm:px-4 py-1 sm:py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 text-xs sm:text-sm"
+              className="px-2 sm:px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 text-xs sm:text-sm"
             >
               Adicionar ao Quiz
             </button>
           )}
         </div>
 
-        {/* Tópico */}
         <div>
-          <h4 className="font-bold text-gray-800 text-base sm:text-lg">
+          <h4 className="font-bold text-gray-800 text-base sm:text-lg mt-2">
             {question.topico}
           </h4>
           {question.subtopico && (
@@ -83,13 +81,13 @@ export default function QuestionCard({
             </p>
           )}
         </div>
-        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+        <p className="text-gray-700 leading-relaxed text-sm sm:text-base mt-2">
           {question.enunciado}
         </p>
 
         {question.documentos?.length > 0 && (
           <div>
-            <h4 className="font-semibold text-gray-700 mb-2 text-sm sm:text-lg">
+            <h4 className="font-semibold text-gray-700 mb-2 text-sm sm:text-lg mt-2">
               Recursos:
             </h4>
             <div className="flex flex-wrap gap-3">
@@ -97,19 +95,20 @@ export default function QuestionCard({
                 <button
                   key={doc.id}
                   onClick={() => onViewDocument?.(doc)}
-                  className="flex items-center space-x-2 bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg border border-blue-200 text-blue-800 text-sm transition-colors"
+                  className="flex max-w-60 items-center space-x-2 bg-blue-50 hover:bg-blue-100 px-3 py-2 rounded-lg border border-blue-200 text-blue-800 text-sm transition-colors overflow-y-hidden"
                 >
-                  <Info size={14} />
-                  <span>{doc.titulo || doc.tipo}</span>
+                  <Info size={14} className="flex-shrink-0" />
+                  <span className="whitespace-nowrap overflow-hidden text-ellipsis">
+                    {doc.titulo || doc.tipo}
+                  </span>
                 </button>
               ))}
             </div>
           </div>
         )}
 
-        {/* Alternativas */}
         <div>
-          <h4 className="font-semibold text-gray-700 mb-3 text-sm sm:text-lg">
+          <h4 className="font-semibold text-gray-700 mb-3 text-sm sm:text-lg mt-3">
             Alternativas:
           </h4>
           <div className="space-y-2">
@@ -139,7 +138,7 @@ export default function QuestionCard({
                   }
                 >
                   <div className="flex items-start space-x-2 sm:space-x-3">
-                    <span className="font-bold text-gray-700 bg-white px-2 py-1 rounded border min-w-[28px] sm:min-w-[32px] text-center text-xs sm:text-sm">
+                    <span className="font-bold text-gray-700 bg-white px-2 py-1 rounded border border-gray-200/50 min-w-[28px] sm:min-w-[32px] text-center text-xs sm:text-sm">
                       {alt.letra}
                     </span>
                     <span className="flex-1 text-gray-800 text-sm sm:text-base">

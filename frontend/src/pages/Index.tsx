@@ -1,194 +1,175 @@
-import { ArrowRight, BookOpen, Users, Trophy, Target } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Users,
+  Trophy,
+  Target,
+  BookText,
+  Filter,
+  CheckSquare,
+  Play,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 const Index = () => {
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100vh",
-        backgroundColor: "white",
-      }}
-    >
+    <div className="w-full h-screen bg-gradient-to-b from-green-50 to-white">
       <Header />
       <Parallax pages={3}>
         <ParallaxLayer
           offset={0}
           speed={0.5}
+          className="flex justify-center items-center relative overflow-hidden"
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("./independencia.jpg"), url("./brasil.jpg")`,
-            backgroundRepeat: "no-repeat",
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("./independencia.jpg")`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <div className="text-center max-w-2xl mx-auto px-4">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Histori<span className="text-green-700">A</span>ção
-            </h1>
-            <p className="text-xl text-gray-900 mb-8 leading-relaxed">
-              Plataforma digital para explorar e criar questionários com
-              questões das Olimpíadas de História do Brasil, desenvolvida pelo
-              IF Goiano.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/questoes"
-                className="inline-flex items-center justify-center mx-2 sm:mx-0 px-8 py-4 bg-green-700 text-white font-medium rounded-lg hover:bg-green-800 transition-colors shadow-modern-lg group"
-              >
-                Explorar Questões
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/quiz"
-                className="inline-flex items-center justify-center mx-2 sm:mx-0  px-8 py-4 border-2 border-green-700 text-green-700 font-medium rounded-lg bg-green-50 opacity-80 hover:opacity-100 transition-colors"
-              >
-                Criar Quiz
-              </Link>
+          <div className="text-center w-full h-full flex flex-col items-center justify-center ">
+            <div className="relative w-full max-w-2xl flex items-center justify-center">
+              <div className="absolute z-[-1] -inset-0.5 mx-3 py-3 bg-gradient-to-r from-ring_independency1 to-ring_independency2 rounded-lg blur  group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+
+              <div className="relative z-10 bg-white/90 backdrop-blur-md rounded-2xl px-6 py-8 md:p-10 border border-green-100 shadow-[15_15_15px_5px] shadow-white/50 w-full mx-4">
+                <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                  Histori<span className="text-green-700">A</span>ção
+                </h1>
+
+                <p className="text-md sm:text-lg text-gray-700 mb-8 leading-relaxed">
+                  Plataforma digital para explorar e criar questionários com
+                  questões das Olimpíadas de História do Brasil, desenvolvida
+                  pelo IF Goiano.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    to="/questoes"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300 group shadow-md hover:shadow-lg"
+                  >
+                    Explorar Questões
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+
+                  <Link
+                    to="/quiz"
+                    className="inline-flex items-center justify-center px-6 py-3 border-2 border-green-600 text-green-600 font-semibold rounded-lg bg-white hover:bg-green-50 transition-all duration-300 shadow-sm"
+                  >
+                    Criar Quiz
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </ParallaxLayer>
+
         <ParallaxLayer
           offset={0.99}
           speed={0.7}
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "flex-start",
-            pointerEvents: "none",
-          }}
+          className="flex justify-end items-start pointer-events-none"
         >
           <img
             src="/anita-removebg-preview.png"
-            alt="Ilustração de Zumbi dos Palmares"
-            className="w-1/4 md:w-1/5 mr-8 rounded-xl"
+            alt="Ilustração de Anita Garibaldi"
+            className="w-1/3 md:w-1/5 mr-4 md:mr-8 opacity-95"
+            style={{
+              filter: "drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.2))",
+            }}
           />
         </ParallaxLayer>
 
-        {/* <ParallaxLayer
-          offset={1}
-          speed={0.1}
-          style={{ backgroundColor: "white" }}
-        /> */}
-
         <ParallaxLayer
           offset={1}
-          speed={0.8}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-            background: "white",
-          }}
+          speed={1}
+          className="flex justify-center items-center flex-col px-4 py-16 bg-gradient-to-b from-white to-green-50"
         >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12 max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Como funciona
             </h2>
-            <p className="text-gray-800 max-w-2xl mx-auto">
+            <p className="text-gray-700 text-lg md:text-xl">
               Uma ferramenta completa para professores e estudantes explorarem
               as questões das Olimpíadas de História no Brasil.
             </p>
           </div>
-          <div className="container-width grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="h-8 w-8 text-green-600" />
+
+          <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+            {[
+              {
+                icon: BookText,
+                title: "Explorar",
+                desc: "Navegue por questões organizadas por olimpíada, tema, fase, ano e dificuldade",
+              },
+              {
+                icon: Filter,
+                title: "Filtrar",
+                desc: "Use filtros inteligentes para encontrar exatamente o que precisa",
+              },
+              {
+                icon: CheckSquare,
+                title: "Selecionar",
+                desc: "Adicione questões ao seu quiz personalizado com um clique",
+              },
+              {
+                icon: Play,
+                title: "Aplicar",
+                desc: "Use o quiz criado em suas aulas ou estudos",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="text-center p-6 bg-white rounded-xl border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="h-7 w-7 text-green-600" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Explorar</h3>
-              <p className="text-gray-800 text-sm">
-                Navegue por questões organizadas por tema, fase, ano e
-                dificuldade
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="h-8 w-8 text-green-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Filtrar</h3>
-              <p className="text-gray-800 text-sm">
-                Use filtros inteligentes para encontrar exatamente o que precisa
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-green-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Selecionar</h3>
-              <p className="text-gray-800 text-sm">
-                Adicione questões ao seu quiz personalizado com um clique
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Trophy className="h-8 w-8 text-green-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Aplicar</h3>
-              <p className="text-gray-800 text-sm">
-                Use o quiz criado em suas aulas ou estudos
-              </p>
-            </div>
+            ))}
           </div>
         </ParallaxLayer>
         <ParallaxLayer
-          offset={1.95}
-          speed={0.1}
-          style={{
-            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("./independencia.jpg"), url("./brasil.jpg")`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
+          offset={1.9}
+          speed={0.7}
+          className="flex justify-start items-center pointer-events-none"
+        >
+          <img
+            src="/zumbi.png"
+            alt="Ilustração de Zumbi dos Palmares"
+            className="w-1/3 md:w-1/5 mr-4 md:mr-8 opacity-85"
+            style={{
+              filter: "drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.2))",
+            }}
+          />
+        </ParallaxLayer>
+
         <ParallaxLayer
           offset={2}
           speed={1}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "#15803d",
-            position: "relative",
-            backgroundImage: `
-            linear-gradient(
-              to bottom right, 
-              #15803d 50%, 
-              transparent 100%
-            ), 
-            url("./brasil.jpg")
-  `,
-
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="flex justify-center items-center relative bg-gradient-to-br from-green-600 to-green-700"
         >
-          <div className="container-width text-center justify-between z-10">
-            <h2 className="text-3xl font-bold text-white mb-4">Comece agora</h2>
-            <p className="text-gray-50 text-lg mb-8 max-w-2xl mx-6 sm:mx-4 md:mx-auto ">
-              Descubra uma nova forma de ensinar e aprender História com
-              questões cuidadosamente selecionadas das Olimpíadas.
-            </p>
-            <Link
-              to="/questoes"
-              className="inline-flex items-center px-5 py-2.5 sm:px-8 sm:py-4 bg-white text-green-700 font-medium rounded-lg hover:bg-gray-50 transition-colors shadow-modern-lg"
-            >
-              Começar Exploração
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+          <div className="text-center w-full h-full flex flex-col items-center justify-center px-4 backdrop-blur-sm">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-10 border border-white/20 max-w-2xl ">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Comece agora
+              </h2>
+              <p className="text-md sm:text-lg md:text-xl text-green-100 mb-8 leading-relaxed">
+                Descubra uma nova forma de ensinar e aprender História com
+                questões cuidadosamente selecionadas das Olimpíadas.
+              </p>
+              <Link
+                to="/questoes"
+                className="inline-flex items-center px-6 py-3 bg-white text-green-700 font-semibold rounded-lg hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Começar Exploração
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
           </div>
-
-          <img
-            src="/zumbi-removebg-preview.png"
-            alt="Ilustração de Zumbi dos Palmares"
-            className="absolute bottom-0 left-0 w-[30%] sm:w-[20%] md:w-[15%] opacity-90"
-          />
         </ParallaxLayer>
       </Parallax>
     </div>

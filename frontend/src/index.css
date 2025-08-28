@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern typography */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-
-/* Definition of the design system based on IF Goiano colors */
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -18,7 +14,6 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* IF Goiano primary green - mais escuro para corresponder à identidade */
     --primary: 142 85% 20%;
     --primary-foreground: 210 40% 98%;
 
@@ -105,8 +100,10 @@
     display: none;
   }
 
-  body, html, *{
-   -ms-overflow-style: none;
+  body,
+  html,
+  * {
+    -ms-overflow-style: none;
     scrollbar-width: none;
   }
 
@@ -124,6 +121,12 @@
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
+  }
+
+  #index-h1 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
   }
   h2 {
     font-size: 2rem;

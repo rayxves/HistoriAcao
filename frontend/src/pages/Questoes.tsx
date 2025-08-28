@@ -96,6 +96,26 @@ const Questoes = () => {
     setCurrentPage(1);
   }, [filters, searchTerm]);
 
+  const getVisiblePages = () => {
+    const maxVisible = 4;
+    if (totalPages <= maxVisible) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+
+    let start = currentPage - Math.floor(maxVisible / 2);
+    let end = currentPage + Math.floor(maxVisible / 2);
+
+    if (start < 1) {
+      start = 1;
+      end = maxVisible;
+    } else if (end > totalPages) {
+      end = totalPages;
+      start = totalPages - maxVisible + 1;
+    }
+
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+  };
+
   const totalPages = Math.ceil(questions.length / questionsPerPage);
   const paginatedQuestions = useMemo(() => {
     const startIndex = (currentPage - 1) * questionsPerPage;
@@ -184,6 +204,18 @@ const Questoes = () => {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="mb-6 sm:mb-8">
+          {isFromQuiz && (
+            <div className="w-full flex justify-end">
+              {" "}
+              <button
+                onClick={() => navigate("/quiz")}
+                className="flex items-center space-x-1 px-3 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-sm sm:text-base"
+              >
+                <span>Voltar ao Quiz</span>
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          )}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 sm:mb-6">
             <div className="mb-4 md:mb-0">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
@@ -194,20 +226,11 @@ const Questoes = () => {
                 mais.
               </p>
             </div>
-            {isFromQuiz && (
-              <button
-                onClick={() => navigate("/quiz")}
-                className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-sm sm:text-base"
-              >
-                <ChevronLeft size={16} />
-                <span>Voltar ao Quiz</span>
-              </button>
-            )}
           </div>
 
           <div className="relative mb-4 sm:mb-6">
             <Search
-              className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+              className="absolute right-4 md:right-6 top-1/2 transform -translate-y-1/2 text-gray-400"
               size={18}
             />
             <input
@@ -215,7 +238,7 @@ const Questoes = () => {
               placeholder="Buscar questões..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 sm:pl-12 pr-4 py-2 sm:py-3 border border-gray-200 rounded-xl focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 outline-none text-sm sm:text-base"
+              className="w-full px-4 md:pl-6 py-2 sm:py-3 border border-gray-200 rounded-xl focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 outline-none text-sm sm:text-base"
             />
           </div>
 
@@ -223,7 +246,7 @@ const Questoes = () => {
             <button
               data-testId="show-filters-btn"
               onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2 px-3 sm:px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 hover:outline-0 focus:outline-0 hover:border-1 hover:border-gray-300 text-sm sm:text-md"
+              className="flex items-center gap-2 px-3 sm:px-4 py-2 ring-1 ring-gray-300/[.50] shadow-sm rounded-lg bg-white/90 hover:outline-0 focus:outline-0 hover:border-1 hover:border-gray-300 text-sm sm:text-md"
             >
               <Filter size={14} />
               Filtros {showFilters ? "−" : "+"}
@@ -237,7 +260,6 @@ const Questoes = () => {
           </div>
         </div>
 
-        {/* Filters */}
         {showFilters && (
           <div className="mb-8">
             <CompactQuestionFilters
@@ -248,7 +270,6 @@ const Questoes = () => {
           </div>
         )}
 
-        {/* Content Area */}
         {isLoading ? (
           <div className="flex justify-center items-center py-16">
             <Loader2 className="h-12 w-12 text-emerald-600 animate-spin" />
@@ -292,32 +313,30 @@ const Questoes = () => {
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="flex items-center space-x-2 px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center px-2 sm:px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <ChevronLeft size={16} />
                   <span className="hidden md:inline">Anterior</span>
                 </button>
                 <div className="flex space-x-1">
-                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(
-                    (page) => (
-                      <button
-                        key={page}
-                        onClick={() => handlePageChange(page)}
-                        className={`px-4 py-2 rounded-lg text-sm md:text-base ${
-                          currentPage === page
-                            ? "bg-emerald-600 text-white"
-                            : "border border-gray-200 hover:bg-gray-50"
-                        }`}
-                      >
-                        {page}
-                      </button>
-                    )
-                  )}
+                  {getVisiblePages().map((page) => (
+                    <button
+                      key={page}
+                      onClick={() => handlePageChange(page)}
+                      className={`px-4 py-2 rounded-lg text-sm md:text-base ${
+                        currentPage === page
+                          ? "bg-emerald-600 text-white"
+                          : "border border-gray-200 hover:bg-gray-50"
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  ))}
                 </div>
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="flex items-center space-x-2 px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center px-2 sm:px-4 py-2 border border-gray-200 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <span className="hidden md:inline">Próxima</span>
                   <ChevronRight size={16} />

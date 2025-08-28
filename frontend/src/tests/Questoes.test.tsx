@@ -1,7 +1,6 @@
 import Questoes from "@/pages/Questoes";
 import {
-  findByRole,
-  findByText,
+
   fireEvent,
   render,
   screen,

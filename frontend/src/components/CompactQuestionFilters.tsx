@@ -154,12 +154,12 @@ const CompactQuestionFilters = ({
 
   return (
     <div className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6">
+      <div className="max-w-7xl mx-auto px-4 py-4 sm:py-6">
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("olimpiada")}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+              className="flex items-center space-x-2 ring-1 ring-green-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
             >
               <span className="text-gray-700 truncate">
                 {filters.olimpiada
@@ -195,7 +195,6 @@ const CompactQuestionFilters = ({
                     Todas as Olimpíadas
                   </button>
 
-                  {/* Lista com scroll */}
                   <div className="max-h-60 overflow-y-auto">
                     {filteredOlimpiadas.map((number) => (
                       <button
@@ -223,7 +222,7 @@ const CompactQuestionFilters = ({
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("fase")}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+              className="flex items-center space-x-2 ring-1 ring-green-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
             >
               <span className="text-gray-700">
                 {filters.fase ? `${filters.fase}ª Fase` : "Fase"}
@@ -262,7 +261,7 @@ const CompactQuestionFilters = ({
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("tema")}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+              className="flex items-center space-x-2 ring-1 ring-green-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
             >
               <span className="text-gray-700 max-w-36 truncate">
                 {filters.topicName || "Tema"}
@@ -302,7 +301,7 @@ const CompactQuestionFilters = ({
             <div className="relative dropdown-container w-full sm:w-auto">
               <button
                 onClick={() => toggleDropdown("subtema")}
-                className="flex items-center space-x-2 px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+                className="flex items-center space-x-2 ring-1 ring-green-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
               >
                 <span className="text-gray-700 max-w-36 truncate">
                   {filters.subtopicName || "Subtema"}
@@ -343,7 +342,7 @@ const CompactQuestionFilters = ({
             <div className="relative dropdown-container w-full sm:w-auto">
               <button
                 onClick={() => toggleDropdown("data")}
-                className="flex items-center space-x-2 px-3 sm:px-5 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+                className="flex items-center space-x-2 ring-1 ring-green-300/[.55] px-3 sm:px-5 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
               >
                 <div className="flex gap-1 sm:gap-2 h-full items-center">
                   <Calendar size={16} className="text-gray-400" />
@@ -403,11 +402,11 @@ const CompactQuestionFilters = ({
             </div>
           )}
 
-          <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto order-last sm:order-none">
+          <div className="flex flex-wrap items-center gap-2 w-full mt-2 sm:mt-0 lg:ml-4 sm:w-auto order-last sm:order-none">
             {" "}
             {niveis.map((nivel) => {
               let nivelClass =
-                "bg-slate-50 text-gray-700 border-gray-200 hover:bg-gray-100";
+                "bg-slate-50 text-gray-700 ring-1 ring-gray-300/[.50] hover:bg-gray-100";
               if (filters.nivelDificuldade === nivel) {
                 if (filters.nivelDificuldade === "Fácil") {
                   nivelClass = "bg-green-100 text-green-800 border-green-200";
@@ -427,7 +426,7 @@ const CompactQuestionFilters = ({
                       filters.nivelDificuldade === nivel ? undefined : nivel
                     )
                   }
-                  className={`px-3 sm:px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 border ${nivelClass}`}
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 border ${nivelClass}`}
                 >
                   {nivel}
                 </button>
@@ -438,7 +437,7 @@ const CompactQuestionFilters = ({
           {hasActiveFilters && (
             <button
               onClick={clearFilters}
-              className="flex items-center space-x-2 px-3 sm:px-4 py-2 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-colors font-medium ml-auto sm:ml-0"
+              className="flex items-center space-x-2 px-4 py-2 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-colors font-medium ml-auto sm:ml-0"
             >
               <X size={14} />
               <span>Limpar</span>
