@@ -159,7 +159,7 @@ const CompactQuestionFilters = ({
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("olimpiada")}
-              className="flex items-center space-x-2 ring-1 ring-green-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+              className="flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
             >
               <span className="text-gray-700 truncate">
                 {filters.olimpiada
@@ -222,7 +222,7 @@ const CompactQuestionFilters = ({
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("fase")}
-              className="flex items-center space-x-2 ring-1 ring-green-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+              className="flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
             >
               <span className="text-gray-700">
                 {filters.fase ? `${filters.fase}ª Fase` : "Fase"}
@@ -261,7 +261,7 @@ const CompactQuestionFilters = ({
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("tema")}
-              className="flex items-center space-x-2 ring-1 ring-green-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+              className="flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
             >
               <span className="text-gray-700 max-w-36 truncate">
                 {filters.topicName || "Tema"}
@@ -301,7 +301,7 @@ const CompactQuestionFilters = ({
             <div className="relative dropdown-container w-full sm:w-auto">
               <button
                 onClick={() => toggleDropdown("subtema")}
-                className="flex items-center space-x-2 ring-1 ring-green-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+                className="flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
               >
                 <span className="text-gray-700 max-w-36 truncate">
                   {filters.subtopicName || "Subtema"}
@@ -342,7 +342,7 @@ const CompactQuestionFilters = ({
             <div className="relative dropdown-container w-full sm:w-auto">
               <button
                 onClick={() => toggleDropdown("data")}
-                className="flex items-center space-x-2 ring-1 ring-green-300/[.55] px-3 sm:px-5 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+                className="flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-3 sm:px-5 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
               >
                 <div className="flex gap-1 sm:gap-2 h-full items-center">
                   <Calendar size={16} className="text-gray-400" />
