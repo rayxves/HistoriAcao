@@ -65,11 +65,6 @@ const Quiz = () => {
   setQuizState("empty");
 };
   
- 
-  const handleFinishQuiz = (score: number, answers: Record<number, number>) => {
-    console.log("Quiz finalizado:", { score, answers });
-   
-  };
 
   const handleBackToCreating = () => {
     setQuizState("creating");
@@ -86,7 +81,7 @@ const Quiz = () => {
       <div className="min-h-screen bg-gray-50">
         <Header />
         <main className="max-w-4xl mx-auto px-4 py-8">
-          <QuizPlayer questions={selectedQuestions} onFinish={handleFinishQuiz} onBack={handleBackToCreating}/>
+          <QuizPlayer questions={selectedQuestions} onBack={handleBackToCreating}/>
         </main>
       </div>
     );

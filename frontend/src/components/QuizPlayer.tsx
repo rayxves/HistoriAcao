@@ -7,7 +7,6 @@ import {
   CheckCircle,
   TrendingUp,
   Award,
-  X,
 } from "lucide-react";
 import QuestionCard from "@/components/QuestionCard";
 import { DocumentDto } from "@/types/document";
@@ -15,7 +14,6 @@ import { marked } from "marked";
 
 interface QuizPlayerProps {
   questions: QuestionDto[];
-  onFinish: (score: number, answers: Record<number, number>) => void;
   onBack: () => void;
 }
 
@@ -32,7 +30,7 @@ interface QuizResults {
   }[];
 }
 
-const QuizPlayer = ({ questions, onFinish, onBack }: QuizPlayerProps) => {
+const QuizPlayer = ({ questions, onBack }: QuizPlayerProps) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
   const [timeSpent, setTimeSpent] = useState(0);
@@ -70,10 +68,6 @@ const QuizPlayer = ({ questions, onFinish, onBack }: QuizPlayerProps) => {
 
   const handleViewDocument = (doc: DocumentDto) => {
     setSelectedDoc(doc);
-  };
-
-  const closeDocumentModal = () => {
-    setSelectedDoc(null);
   };
 
   const calculateResults = (): QuizResults => {
@@ -126,9 +120,6 @@ const QuizPlayer = ({ questions, onFinish, onBack }: QuizPlayerProps) => {
   };
 
   const handleFinalClose = () => {
-    if (quizResults) {
-      onFinish(quizResults.score, userAnswers);
-    }
     onBack();
   };
 
@@ -296,7 +287,6 @@ const QuizPlayer = ({ questions, onFinish, onBack }: QuizPlayerProps) => {
 
       <div className="max-w-[95vw] mx-auto py-4 sm:py-8">
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
-          {/* Header */}
           <div className="p-6 border-b flex justify-between items-center">
             <div className="flex items-center gap-4">
               <button
@@ -315,7 +305,6 @@ const QuizPlayer = ({ questions, onFinish, onBack }: QuizPlayerProps) => {
             </div>
           </div>
 
-          {/* Question Content */}
           <div className="p-2 sm:p-6">
             <QuestionCard
               question={currentQuestion}

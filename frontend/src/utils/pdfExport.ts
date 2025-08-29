@@ -449,7 +449,7 @@ class PDFBuilder {
         fontSize: fonts.small,
         overflow: "linebreak",
         lineWidth: 0.1,
-        borderColor: "#DDDDDD",
+        lineColor: "#DDDDDD",
       },
       columnStyles: {
         0: { cellWidth: 25, halign: "center" },
@@ -507,7 +507,7 @@ export async function exportQuestionsToPDF(
       builder.addAnswerKey(questions);
     }
 
-    const totalPages = doc.internal.getNumberOfPages();
+    const totalPages = doc.getNumberOfPages();
     for (let i = 1; i <= totalPages; i++) {
       doc.setPage(i);
       addFooter(doc, i, totalPages);
