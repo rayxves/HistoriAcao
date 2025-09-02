@@ -1,6 +1,7 @@
 bin/
 obj/
 out/
+
 *.dll
 *.exe
 *.app
@@ -11,7 +12,9 @@ out/
 
 appsettings.Development.json
 appsettings.json
+appsettings.Test.json
 secrets.json
+docker-compose.test.yml
 
 .vscode/
 .idea/
