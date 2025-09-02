@@ -3,6 +3,7 @@ import { QuestionApiFilters } from "@/types/question";
 import { TopicDto } from "@/types/topic";
 import { ChevronDown, X, Calendar } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import * as filterUtils from "@/utils/filtersUtils";
 
 interface CompactQuestionFiltersProps {
   filters: QuestionApiFilters;
@@ -29,35 +30,18 @@ const CompactQuestionFilters = ({
   const fases = [1, 2, 3, 4, 5];
   const niveis = ["Fácil", "Média", "Difícil"];
 
-  const filteredOlimpiadas = useMemo(() => {
-    const allOlimpiadas = Array.from({ length: 17 }, (_, i) => i + 1);
-    if (!olimpiadaInput) return allOlimpiadas;
-    return allOlimpiadas.filter((num) =>
-      num.toString().includes(olimpiadaInput)
-    );
-  }, [olimpiadaInput]);
+  const filteredOlimpiadas = useMemo(
+    () => filterUtils.filterOlimpiadas(olimpiadaInput),
+    [olimpiadaInput]
+  );
 
-  const subtopics = useMemo(() => {
-    if (!filters.topicName) return [];
-    const selectedTopic = allTopics.find((t) => t.nome === filters.topicName);
-    return selectedTopic ? selectedTopic.subtopicos : [];
-  }, [filters.topicName, allTopics]);
+  const subtopics = useMemo(
+    () => filterUtils.getSubtopics({ topicName: filters.topicName }, allTopics),
+    [filters, allTopics]
+  );
 
   const toUTCISOString = (dateStr: string): string | undefined => {
-    if (!dateStr) return undefined;
-    try {
-      const localDate = new Date(dateStr + "T00:00:00");
-      return new Date(
-        Date.UTC(
-          localDate.getFullYear(),
-          localDate.getMonth(),
-          localDate.getDate()
-        )
-      ).toISOString();
-    } catch (e) {
-      console.error("Invalid date format", e);
-      return undefined;
-    }
+    return filterUtils.toUTCISOString(dateStr);
   };
 
   useEffect(() => {
@@ -136,20 +120,10 @@ const CompactQuestionFilters = ({
   };
 
   const formatDateDisplay = () => {
-    if (!filters.inicialDate && !filters.finishDate) return "Período";
-
-    const start = filters.inicialDate
-      ? new Date(filters.inicialDate).toLocaleDateString("pt-BR", {
-          timeZone: "UTC",
-        })
-      : "";
-    const end = filters.finishDate
-      ? new Date(filters.finishDate).toLocaleDateString("pt-BR", {
-          timeZone: "UTC",
-        })
-      : "";
-
-    return `${start} ${start && end ? "-" : ""} ${end}`.trim();
+    return filterUtils.formatDateDisplay(
+      filters.inicialDate,
+      filters.finishDate
+    );
   };
 
   return (
