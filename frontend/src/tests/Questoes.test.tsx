@@ -17,8 +17,11 @@ import { QuestionDto } from "@/types/question";
 import { DocumentDto } from "@/types/document";
 
 jest.mock("marked", () => ({
-  marked: (md: string) => `<p>${md}</p>`,
+  marked: {
+    parse: (md: string) => `<p>${md}</p>`,
+  },
 }));
+
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
