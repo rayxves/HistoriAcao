@@ -8,7 +8,9 @@ import {
   FileText,
   ArrowLeft,
   Trash,
+  Plus,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface QuizCreatorProps {
   selectedQuestions: QuestionDto[];
@@ -83,7 +85,6 @@ const QuizCreator = ({
         </div>
       </div>
 
-      {/* Quiz Configuration */}
       <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
         <h2 className="text-2xl font-semibold text-gray-900 mb-6">
           Configurações do Quiz
@@ -104,19 +105,28 @@ const QuizCreator = ({
 
       {/* Selected Questions */}
       <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
-        <div className="flex flex-col gap-2 sm:gap-0 sm:flex-row justify-between items-center mb-6">
+        <div className="flex flex-col gap-2 md:gap-0 md:flex-row justify-between items-center mb-6">
           <h3 className="text-2xl font-semibold text-gray-900">
             Questões Selecionadas
           </h3>
-          {selectedQuestions.length > 0 && (
-            <button
-              onClick={onRemoveAllQuestions}
-              className="flex h-full items-center gap-1 sm:gap-2 px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 rounded-lg transition-colors text-sm sm:text-md"
+          <div className="flex justify-between gap-2 h-fit w-fit">
+            {selectedQuestions.length > 0 && (
+              <button
+                onClick={onRemoveAllQuestions}
+                className="flex h-fit w-fit items-center gap-1  px-2 py-2 bg-red-50 text-red-600 hover:bg-red-100 rounded-lg transition-colors text-xs sm:text-sm md:text-md"
+              >
+                <Trash className="h-3 sm:h-4" />
+                Remover Todas
+              </button>
+            )}
+            <Link
+              to="/questoes?from=quiz"
+              className="flex w-fit h-fit items-center  px-2 py-2 bg-emerald-600 text-white text-xs sm:text-sm md:text-md font-semibold rounded-lg hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl transform hover:scale-102 duration-200"
             >
-              <Trash className="h-4 " />
-              Remover Todas
-            </button>
-          )}
+              <Plus className="h-3 sm:h-4" />
+              Add Questões
+            </Link>
+          </div>
         </div>
 
         {selectedQuestions.length === 0 ? (
@@ -167,7 +177,6 @@ const QuizCreator = ({
         )}
       </div>
 
-      {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-4">
         <button
           onClick={handleStartQuiz}

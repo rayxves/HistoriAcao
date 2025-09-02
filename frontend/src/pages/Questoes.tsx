@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { marked } from "marked";
+import DOMPurify from "dompurify";
 import { getQuestionsByFilters } from "@/services/questionServices";
 import { getAllTopics } from "@/services/topicServices";
 import { QuestionDto, QuestionApiFilters } from "@/types/question";
@@ -18,6 +19,7 @@ import {
   X,
 } from "lucide-react";
 import QuestionCard from "@/components/QuestionCard";
+import ImageWithLoader from "@/components/ImageWithLoader";
 
 const Questoes = () => {
   const [questions, setQuestions] = useState<QuestionDto[]>([]);
@@ -31,6 +33,7 @@ const Questoes = () => {
   const [viewingDocument, setViewingDocument] = useState<DocumentDto | null>(
     null
   );
+  const [isModalLoading, setIsModalLoading] = useState(true);
   const [notification, setNotification] = useState<{
     show: boolean;
     type: "success" | "error";
@@ -44,6 +47,21 @@ const Questoes = () => {
 
   const isFromQuiz =
     location.state?.fromQuiz === true || searchParams.get("from") === "quiz";
+    
+  useEffect(() => {
+    if (!viewingDocument) return;
+
+    if (viewingDocument.url) {
+      setIsModalLoading(true);
+      const img = new Image();
+      img.src = viewingDocument.url;
+      img.onload = () => setIsModalLoading(false);
+      img.onerror = () => setIsModalLoading(false);
+    } else {
+      setIsModalLoading(false);
+    }
+  }, [viewingDocument]);
+
 
   useEffect(() => {
     const fetchTopics = async () => {
@@ -98,6 +116,7 @@ const Questoes = () => {
 
   const getVisiblePages = () => {
     const maxVisible = 4;
+    const totalPages = Math.ceil(questions.length / questionsPerPage);
     if (totalPages <= maxVisible) {
       return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
@@ -145,6 +164,10 @@ const Questoes = () => {
     } else {
       showNotification("error", "Esta questão já foi adicionada ao quiz!");
     }
+  };
+  
+  const handleViewDocument = (doc: DocumentDto) => {
+    setViewingDocument(doc);
   };
 
   const showNotification = (type: "success" | "error", message: string) => {
@@ -302,12 +325,11 @@ const Questoes = () => {
                   userAnswerId={userAnswers[question.id]}
                   onAnswerSelect={handleAnswerSelect}
                   onAddToQuiz={handleAddToQuiz}
-                  onViewDocument={setViewingDocument}
+                  onViewDocument={handleViewDocument}
                 />
               ))}
             </div>
 
-            {/* Pagination */}
             {totalPages > 1 && (
               <div className="flex justify-center items-center space-x-2 md:space-x-4 mt-8">
                 <button
@@ -353,7 +375,7 @@ const Questoes = () => {
           onClick={() => setViewingDocument(null)}
         >
           <div
-            className="bg-white rounded-2xl shadow-xl sm:max-w-[80vw] md:max-w-[70vw] w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-2xl shadow-xl sm:max-w-[80vw] md:max-w-[70vw] w-full max-h-[90vh] overflow-y-auto flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6 border-b">
@@ -367,43 +389,57 @@ const Questoes = () => {
               </p>
             </div>
 
-            {viewingDocument.url && (
-              <div className="p-6">
-                <img
-                  src={viewingDocument.url}
-                  alt=""
-                  className="mx-auto max-h-[70vh]"
-                />
-                {viewingDocument.descricao && (
-                  <div
-                    className="text-sm text-gray-500 p-2 text-center"
-                    dangerouslySetInnerHTML={{
-                      __html: marked(viewingDocument.descricao) as string,
-                    }}
-                  />
+            {isModalLoading ? (
+               <div className="flex-grow flex items-center justify-center p-6 min-h-[200px]">
+                <Loader2 className="h-10 w-10 text-emerald-600 animate-spin" />
+              </div>
+            ) : (
+              <div className="overflow-y-auto">
+                {viewingDocument.url && (
+                  <div className="p-6">
+                    <ImageWithLoader
+                      src={viewingDocument.url}
+                      alt={viewingDocument.titulo || "Documento"}
+                      containerClassName="mx-auto"
+                      className="max-h-[70vh] object-contain"
+                    />
+                    {viewingDocument.descricao && (
+                      <div
+                        className="text-sm text-gray-500 p-2 text-center"
+                        dangerouslySetInnerHTML={{
+                          __html: DOMPurify.sanitize(
+                            marked.parse(viewingDocument.descricao) as string
+                          ),
+                        }}
+                      />
+                    )}
+                  </div>
+                )}
+
+                {viewingDocument.texto && (
+                  <>
+                    <div
+                      className="p-6 prose max-w-none"
+                      dangerouslySetInnerHTML={{
+                        __html: DOMPurify.sanitize(
+                          marked.parse(viewingDocument.texto) as string
+                        ),
+                      }}
+                    />
+                    {viewingDocument.descricao && !viewingDocument.url && (
+                      <div>
+                        <p className="text-sm text-gray-500 p-2 text-center">
+                          {viewingDocument.descricao}
+                        </p>
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             )}
 
-            {viewingDocument.texto && (
-              <>
-                <div
-                  className="p-6 prose max-w-none"
-                  dangerouslySetInnerHTML={{
-                    __html: marked(viewingDocument.texto) as string,
-                  }}
-                />
-                {viewingDocument.descricao && !viewingDocument.url && (
-                  <div>
-                    <p className="text-sm text-gray-500 p-2 text-center">
-                      {viewingDocument.descricao}
-                    </p>
-                  </div>
-                )}
-              </>
-            )}
 
-            <div className="p-4 bg-gray-50 border-t text-right">
+            <div className="p-4 bg-gray-50 border-t text-right mt-auto">
               <button
                 onClick={() => setViewingDocument(null)}
                 className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700"

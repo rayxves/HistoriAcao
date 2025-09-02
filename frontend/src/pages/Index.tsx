@@ -16,7 +16,9 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 const Index = () => {
   return (
     <div className="w-full h-screen bg-gradient-to-b from-green-50 to-white">
-      <Header />
+      <div className="absolute w-full top-0 z-20">
+        <Header />
+      </div>
       <Parallax pages={3}>
         <ParallaxLayer
           offset={0}

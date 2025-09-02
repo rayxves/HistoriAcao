@@ -7,10 +7,13 @@ import {
   CheckCircle,
   TrendingUp,
   Award,
+  Loader2,
 } from "lucide-react";
 import QuestionCard from "@/components/QuestionCard";
 import { DocumentDto } from "@/types/document";
 import { marked } from "marked";
+import DOMPurify from "dompurify";
+import ImageWithLoader from "@/components/ImageWithLoader";
 
 interface QuizPlayerProps {
   questions: QuestionDto[];
@@ -37,8 +40,23 @@ const QuizPlayer = ({ questions, onBack }: QuizPlayerProps) => {
   const [quizResults, setQuizResults] = useState<QuizResults | null>(null);
   const [isQuizFinished, setIsQuizFinished] = useState(false);
   const [selectedDoc, setSelectedDoc] = useState<DocumentDto | null>(null);
+  const [isModalLoading, setIsModalLoading] = useState(true);
 
   const currentQuestion = questions[currentQuestionIndex];
+  
+  useEffect(() => {
+    if (!selectedDoc) return;
+
+    if (selectedDoc.url) {
+      setIsModalLoading(true);
+      const img = new Image();
+      img.src = selectedDoc.url;
+      img.onload = () => setIsModalLoading(false);
+      img.onerror = () => setIsModalLoading(false);
+    } else {
+      setIsModalLoading(false);
+    }
+  }, [selectedDoc]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -225,7 +243,7 @@ const QuizPlayer = ({ questions, onBack }: QuizPlayerProps) => {
           onClick={() => setSelectedDoc(null)}
         >
           <div
-            className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6 border-b">
@@ -238,42 +256,56 @@ const QuizPlayer = ({ questions, onBack }: QuizPlayerProps) => {
               </p>
             </div>
 
-            {selectedDoc.url && (
-              <div className="p-6">
-                <img
-                  src={selectedDoc.url}
-                  alt=""
-                  className="mx-auto max-h-[70vh]"
-                />
-                {selectedDoc.descricao && (
-                  <div
-                    className="text-sm text-gray-500 p-2 text-center"
-                    dangerouslySetInnerHTML={{
-                      __html: marked.parse(selectedDoc.descricao) as string,
-                    }}
-                  />
+            {isModalLoading ? (
+              <div className="flex-grow flex items-center justify-center p-6 min-h-[200px]">
+                <Loader2 className="h-10 w-10 text-emerald-600 animate-spin" />
+              </div>
+            ) : (
+               <div className="overflow-y-auto">
+                {selectedDoc.url && (
+                  <div className="p-6">
+                    <ImageWithLoader
+                      src={selectedDoc.url}
+                      alt={selectedDoc.titulo || "Documento"}
+                      containerClassName="mx-auto"
+                      className="max-h-[70vh] object-contain"
+                    />
+                    {selectedDoc.descricao && (
+                      <div
+                        className="text-sm text-gray-500 p-2 text-center"
+                        dangerouslySetInnerHTML={{
+                          __html: DOMPurify.sanitize(
+                            marked.parse(selectedDoc.descricao) as string
+                          ),
+                        }}
+                      />
+                    )}
+                  </div>
+                )}
+
+                {selectedDoc.texto && (
+                  <>
+                    <div
+                      className="p-6 prose max-w-none"
+                      dangerouslySetInnerHTML={{
+                        __html: DOMPurify.sanitize(
+                          marked.parse(selectedDoc.texto) as string
+                        ),
+                      }}
+                    />
+                    {selectedDoc.descricao && !selectedDoc.url && (
+                      <div>
+                        <p className="text-sm text-gray-500 p-2 text-center">
+                          {selectedDoc.descricao}
+                        </p>
+                      </div>
+                    )}
+                  </>
                 )}
               </div>
             )}
-
-            {selectedDoc.texto && (
-              <>
-                <div
-                  className="p-6 prose max-w-none"
-                  dangerouslySetInnerHTML={{
-                    __html: marked.parse(selectedDoc.texto) as string,
-                  }}
-                />
-                {selectedDoc.descricao && !selectedDoc.url && (
-                  <div>
-                    <p className="text-sm text-gray-500 p-2 text-center">
-                      {selectedDoc.descricao}
-                    </p>
-                  </div>
-                )}
-              </>
-            )}
-            <div className="p-4 bg-gray-50 border-t text-right">
+            
+            <div className="p-4 bg-gray-50 border-t text-right mt-auto">
               <button
                 onClick={() => setSelectedDoc(null)}
                 className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700"
