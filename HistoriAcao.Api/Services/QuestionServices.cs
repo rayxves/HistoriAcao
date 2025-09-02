@@ -3,6 +3,7 @@ using HistoriAcao.Api.Data;
 using HistoriAcao.Api.Dtos;
 using HistoriAcao.Api.Interfaces;
 using HistoriAcao.Api.Models;
+using HistoriAcao.Api.Mappers;
 
 namespace HistoriAcao.Api.Services
 {
@@ -87,44 +88,40 @@ namespace HistoriAcao.Api.Services
 
         public async Task<List<QuestionDto>> GetAllQuestionsAsync()
         {
-            return await _context.Questions
-                .Select(q => new QuestionDto
-                {
-                    Id = q.Id,
-                    Enunciado = q.Enunciado,
-                    Olimpiada = q.Olimpiada,
-                    Fase = q.Fase,
-                    NivelDificuldade = q.NivelDificuldade,
-                    Topico = q.Topico.Nome,
-                    Subtopico = q.Subtopico != null ? q.Subtopico.Nome : null
-                })
+            var questions = await _context.Questions
+                .Include(q => q.Topico)
+                .Include(q => q.Subtopico)
+                .Include(q => q.Documentos)
+                .Include(q => q.Alternativas)
                 .ToListAsync();
+
+            var questionDtos = new List<QuestionDto>();
+            foreach (var q in questions)
+            {
+                var dto = await q.MapToQuestionDto(_context);
+                questionDtos.Add(dto);
+            }
+
+            return questionDtos;
+
         }
 
         public async Task<QuestionDto> GetQuestionByIdAsync(int id)
         {
             var question = await _context.Questions
-                .Where(q => q.Id == id)
-                .Select(q => new QuestionDto
-                {
-                    Id = q.Id,
-                    Enunciado = q.Enunciado,
-                    Olimpiada = q.Olimpiada,
-                    Fase = q.Fase,
-                    NivelDificuldade = q.NivelDificuldade,
-                    Topico = q.Topico.Nome,
-                    Subtopico = q.Subtopico != null ? q.Subtopico.Nome : null,
-                    Alternativas = q.Alternativas.Select(a => new AlternativeDto { Letra = a.Letra, Texto = a.Texto, Pontuacao = a.Pontuacao }).ToList(),
-                    Documentos = q.Documentos.Select(d => new DocumentDto { Titulo = d.Titulo, Tipo = d.Tipo, Texto = d.Texto, Url = d.Url, Descricao = d.Descricao, Origem = d.Origem }).ToList()
-                })
-                .FirstOrDefaultAsync();
+                .Include(q => q.Topico)
+                .Include(q => q.Subtopico)
+                .Include(q => q.Documentos)
+                .Include(q => q.Alternativas)
+                .FirstOrDefaultAsync(q => q.Id == id);
+
 
             if (question == null)
             {
                 throw new ArgumentNullException(nameof(id), "Nenhuma questão foi encontrada.");
             }
 
-            return question;
+            return await question.MapToQuestionDto(_context);
         }
 
         public async Task<List<QuestionDto>> GetQuestionsByFilterAsync(string? topicName, string? subtopicName, int? fase, string? olimpiada, DateTime? inicialDate, DateTime? finishDate, string? search, string? nivelDificuldade)
@@ -174,18 +171,16 @@ namespace HistoriAcao.Api.Services
                     (q.Subtopico != null && q.Subtopico.DataInicio == null || q.Subtopico != null && q.Subtopico.DataFim <= finishDate.Value));
             }
 
-            return await query
-                .Select(q => new QuestionDto
-                {
-                    Id = q.Id,
-                    Enunciado = q.Enunciado,
-                    Olimpiada = q.Olimpiada,
-                    Fase = q.Fase,
-                    NivelDificuldade = q.NivelDificuldade,
-                    Topico = q.Topico.Nome,
-                    Subtopico = q.Subtopico != null ? q.Subtopico.Nome : null
-                })
-                .ToListAsync();
+            var filteredQuestions = await query.ToListAsync();
+
+            var questionDtos = new List<QuestionDto>();
+            foreach (var q in filteredQuestions)
+            {
+                var dto = await q.MapToQuestionDto(_context);
+                questionDtos.Add(dto);
+            }
+
+            return questionDtos;
         }
 
         public async Task<QuestionDto> UpdateQuestionAsync(QuestionDto questionDto)
