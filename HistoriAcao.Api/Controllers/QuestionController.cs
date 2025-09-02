@@ -1,7 +1,10 @@
 using HistoriAcao.Api.Dtos;
 using HistoriAcao.Api.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace HistoriAcao.Api.Controllers
 {
@@ -26,7 +29,7 @@ namespace HistoriAcao.Api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, Problem("Erro ao buscar questões: " + ex.Message));
+                return StatusCode(500, Problem(ex.Message, StatusCodes.Status500InternalServerError));
             }
         }
 
@@ -40,11 +43,11 @@ namespace HistoriAcao.Api.Controllers
             }
             catch (ArgumentNullException ex)
             {
-                return NotFound(Problem(ex.Message));
+                return NotFound(Problem(ex.Message, StatusCodes.Status404NotFound));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, Problem("Erro ao buscar questão por ID: " + ex.Message));
+                return StatusCode(500, Problem(ex.Message, StatusCodes.Status500InternalServerError));
             }
         }
 
@@ -67,7 +70,7 @@ namespace HistoriAcao.Api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, Problem("Erro ao aplicar filtros nas questões: " + ex.Message));
+                return StatusCode(500, Problem(ex.Message, StatusCodes.Status500InternalServerError));
             }
         }
 
@@ -82,11 +85,11 @@ namespace HistoriAcao.Api.Controllers
             }
             catch (ArgumentNullException ex)
             {
-                return BadRequest(Problem(ex.Message));
+                return BadRequest(Problem(ex.Message, StatusCodes.Status400BadRequest));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, Problem("Erro ao criar questão: " + ex.Message));
+                return StatusCode(500, Problem(ex.Message, StatusCodes.Status500InternalServerError));
             }
         }
 
@@ -101,11 +104,11 @@ namespace HistoriAcao.Api.Controllers
             }
             catch (ArgumentNullException ex)
             {
-                return NotFound(Problem(ex.Message));
+                return NotFound(Problem(ex.Message, StatusCodes.Status404NotFound));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, Problem("Erro ao deletar questão: " + ex.Message));
+                return StatusCode(500, Problem(ex.Message, StatusCodes.Status500InternalServerError));
             }
         }
 
@@ -120,21 +123,21 @@ namespace HistoriAcao.Api.Controllers
             }
             catch (ArgumentNullException ex)
             {
-                return NotFound(Problem(ex.Message));
+                return NotFound(Problem(ex.Message, StatusCodes.Status404NotFound));
             }
             catch (Exception ex)
             {
-                return StatusCode(500, Problem("Erro ao atualizar questão: " + ex.Message));
+                return StatusCode(500, Problem(ex.Message, StatusCodes.Status500InternalServerError));
             }
         }
 
-        private ProblemDetails Problem(string detail, string? title = null)
+        private ProblemDetails Problem(string detail, int statusCode, string? title = null)
         {
             return new ProblemDetails
             {
                 Title = title ?? "Erro na API",
                 Detail = detail,
-                Status = 500,
+                Status = statusCode,
                 Instance = HttpContext?.Request?.Path
             };
         }

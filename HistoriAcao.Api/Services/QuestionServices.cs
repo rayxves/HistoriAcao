@@ -1,10 +1,8 @@
-using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore;
 using HistoriAcao.Api.Data;
 using HistoriAcao.Api.Dtos;
 using HistoriAcao.Api.Interfaces;
-using HistoriAcao.Api.Mappers;
 using HistoriAcao.Api.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace HistoriAcao.Api.Services
 {
@@ -21,16 +19,16 @@ namespace HistoriAcao.Api.Services
             var topic = await _context.Topics.FirstOrDefaultAsync(t => t.Nome.ToLower() == questionDto.Topico.ToLower());
             if (topic == null)
             {
-                throw new ArgumentNullException("Tópico não foi encontrado, tente inserir o nome exato novamente.");
+                throw new ArgumentNullException(nameof(questionDto.Topico), "Tópico não foi encontrado.");
             }
 
-            Subtopic? subtopico = null;
+            Subtopic? subtopic = null;
             if (!string.IsNullOrWhiteSpace(questionDto.Subtopico))
             {
-                subtopico = await _context.Subtopics.FirstOrDefaultAsync(t => t.Nome.ToLower() == questionDto.Subtopico.ToLower());
-                if (subtopico == null)
+                subtopic = await _context.Subtopics.FirstOrDefaultAsync(t => t.Nome.ToLower() == questionDto.Subtopico.ToLower());
+                if (subtopic == null)
                 {
-                    throw new ArgumentNullException("Subtópico não foi encontrado, tente inserir o nome exato novamente.");
+                    throw new ArgumentNullException(nameof(questionDto.Subtopico), "Subtópico não foi encontrado.");
                 }
             }
 
@@ -40,41 +38,38 @@ namespace HistoriAcao.Api.Services
                 Olimpiada = questionDto.Olimpiada,
                 Fase = questionDto.Fase,
                 NivelDificuldade = questionDto.NivelDificuldade,
-                Topico = topic,
-                Subtopico = subtopico,
                 TopicoId = topic.Id,
-                SubtopicoId = subtopico != null ? subtopico.Id : null,
+                SubtopicoId = subtopic?.Id,
+                Alternativas = questionDto.Alternativas?.Select(a => new Alternative
+                {
+                    Texto = a.Texto,
+                    Letra = a.Letra,
+                    Pontuacao = a.Pontuacao,
+                }).ToList() ?? new List<Alternative>(),
+                Documentos = questionDto.Documentos?.Select(d => new Document
+                {
+                    Titulo = d.Titulo,
+                    Tipo = d.Tipo,
+                    Texto = d.Texto,
+                    Url = d.Url,
+                    Descricao = d.Descricao,
+                    Origem = d.Origem
+                }).ToList() ?? new List<Document>()
             };
 
-            _context.Add(newQuestion);
+            await _context.Questions.AddAsync(newQuestion);
             await _context.SaveChangesAsync();
 
-            var documents = questionDto.Documentos?.Select(q => new Document
+            return new QuestionDto
             {
-                Titulo = q.Titulo,
-                Tipo = q.Tipo,
-                Texto = q.Texto,
-                Url = q.Url,
-                Descricao = q.Descricao,
-                Questao = newQuestion,
-                QuestaoId = newQuestion.Id
-            }).ToList();
-
-            var alternatives = questionDto.Alternativas.Select(a => new Alternative
-            {
-                Texto = a.Texto,
-                Letra = a.Letra,
-                Pontuacao = a.Pontuacao,
-                Questao = newQuestion,
-                QuestaoId = newQuestion.Id
-            }).ToList();
-
-            newQuestion.Documentos = documents;
-            newQuestion.Alternativas = alternatives;
-            _context.Update(newQuestion);
-            await _context.SaveChangesAsync();
-
-            return await newQuestion.MapToQuestionDto(_context);
+                Id = newQuestion.Id,
+                Enunciado = newQuestion.Enunciado,
+                Olimpiada = newQuestion.Olimpiada,
+                Fase = newQuestion.Fase,
+                NivelDificuldade = newQuestion.NivelDificuldade,
+                Topico = topic.Nome,
+                Subtopico = subtopic?.Nome
+            };
         }
 
         public async Task<bool> DeleteQuestionAsync(int id)
@@ -82,7 +77,7 @@ namespace HistoriAcao.Api.Services
             var question = await _context.Questions.FirstOrDefaultAsync(q => q.Id == id);
             if (question == null)
             {
-                throw new ArgumentNullException("Nenhuma questão foi encontrada para esse id.");
+                throw new ArgumentNullException(nameof(id), "Nenhuma questão foi encontrada para esse id.");
             }
 
             _context.Remove(question);
@@ -92,121 +87,105 @@ namespace HistoriAcao.Api.Services
 
         public async Task<List<QuestionDto>> GetAllQuestionsAsync()
         {
-            var questions = await _context.Questions
-                .Include(q => q.Topico)
-                .Include(q => q.Subtopico)
-                .Include(q => q.Documentos)
-                .Include(q => q.Alternativas)
+            return await _context.Questions
+                .Select(q => new QuestionDto
+                {
+                    Id = q.Id,
+                    Enunciado = q.Enunciado,
+                    Olimpiada = q.Olimpiada,
+                    Fase = q.Fase,
+                    NivelDificuldade = q.NivelDificuldade,
+                    Topico = q.Topico.Nome,
+                    Subtopico = q.Subtopico != null ? q.Subtopico.Nome : null
+                })
                 .ToListAsync();
-
-            var questionDtos = new List<QuestionDto>();
-            foreach (var q in questions)
-            {
-                var dto = await q.MapToQuestionDto(_context);
-                questionDtos.Add(dto);
-            }
-
-            return questionDtos;
         }
-
-
 
         public async Task<QuestionDto> GetQuestionByIdAsync(int id)
         {
             var question = await _context.Questions
-                .Include(q => q.Topico)
-                .Include(q => q.Subtopico)
-                .Include(q => q.Documentos)
-                .Include(q => q.Alternativas)
-                .FirstOrDefaultAsync(q => q.Id == id);
+                .Where(q => q.Id == id)
+                .Select(q => new QuestionDto
+                {
+                    Id = q.Id,
+                    Enunciado = q.Enunciado,
+                    Olimpiada = q.Olimpiada,
+                    Fase = q.Fase,
+                    NivelDificuldade = q.NivelDificuldade,
+                    Topico = q.Topico.Nome,
+                    Subtopico = q.Subtopico != null ? q.Subtopico.Nome : null,
+                    Alternativas = q.Alternativas.Select(a => new AlternativeDto { Letra = a.Letra, Texto = a.Texto, Pontuacao = a.Pontuacao }).ToList(),
+                    Documentos = q.Documentos.Select(d => new DocumentDto { Titulo = d.Titulo, Tipo = d.Tipo, Texto = d.Texto, Url = d.Url, Descricao = d.Descricao, Origem = d.Origem }).ToList()
+                })
+                .FirstOrDefaultAsync();
+
             if (question == null)
             {
-                throw new ArgumentNullException("Nenhuma questão foi encontrada.");
+                throw new ArgumentNullException(nameof(id), "Nenhuma questão foi encontrada.");
             }
 
-            return await question.MapToQuestionDto(_context);
+            return question;
         }
 
-        public async Task<List<QuestionDto>> GetQuestionsByFilterAsync(
-            string? topicName,
-            string? subtopicName,
-            int? fase,
-            string? olimpiada,
-            DateTime? inicialDate,
-            DateTime? finishDate,
-            string? search,
-            string? nivelDificuldade)
+        public async Task<List<QuestionDto>> GetQuestionsByFilterAsync(string? topicName, string? subtopicName, int? fase, string? olimpiada, DateTime? inicialDate, DateTime? finishDate, string? search, string? nivelDificuldade)
         {
             var query = _context.Questions
-                .Include(q => q.Topico)
-                .Include(q => q.Subtopico)
-                .Include(q => q.Documentos)
-                .Include(q => q.Alternativas)
-                .AsQueryable();
-
+               .Include(q => q.Topico)
+               .Include(q => q.Subtopico)
+               .Include(q => q.Documentos)
+               .Include(q => q.Alternativas)
+               .AsQueryable();
             if (!string.IsNullOrWhiteSpace(olimpiada))
             {
                 query = query.Where(q => q.Olimpiada == olimpiada);
             }
-
             if (!string.IsNullOrWhiteSpace(topicName))
             {
                 query = query.Where(q => q.Topico.Nome == topicName);
             }
-
             if (!string.IsNullOrWhiteSpace(subtopicName))
             {
-                var normalizedSubtopic = subtopicName.Trim().ToLower();
-                query = query.Where(q =>
-                q.Subtopico != null &&
-                q.Subtopico.Nome.ToLower() == normalizedSubtopic);
+                query = query.Where(q => q.Subtopico != null && q.Subtopico.Nome.ToLower() == subtopicName.Trim().ToLower());
             }
-
-
             if (!string.IsNullOrWhiteSpace(search))
             {
                 string searchLower = search.ToLower().Trim();
-
-                query = query.Where(q =>
-                    q.Enunciado.ToLower().Contains(searchLower) ||
-                    q.Alternativas.Any(a => a.Texto.ToLower().Contains(searchLower))
-                );
+                query = query.Where(q => q.Enunciado.ToLower().Contains(searchLower) || q.Alternativas.Any(a => a.Texto.ToLower().Contains(searchLower)));
             }
-
             if (!string.IsNullOrWhiteSpace(nivelDificuldade))
             {
                 query = query.Where(q => q.NivelDificuldade.ToLower() == nivelDificuldade.ToLower());
             }
-
             if (fase.HasValue)
             {
                 query = query.Where(q => q.Fase == fase.Value);
             }
-
             if (inicialDate.HasValue)
             {
                 query = query.Where(q =>
                     (q.Topico.DataFim == null || q.Topico.DataInicio >= inicialDate.Value) &&
-                    (q.Subtopico.DataFim == null || q.Subtopico.DataInicio >= inicialDate.Value));
+                    (q.Subtopico != null && q.Subtopico.DataFim == null || q.Subtopico != null && q.Subtopico.DataInicio >= inicialDate.Value));
             }
 
             if (finishDate.HasValue)
             {
                 query = query.Where(q =>
                     (q.Topico.DataInicio == null || q.Topico.DataFim <= finishDate.Value) &&
-                    (q.Subtopico.DataInicio == null || q.Subtopico.DataFim <= finishDate.Value));
+                    (q.Subtopico != null && q.Subtopico.DataInicio == null || q.Subtopico != null && q.Subtopico.DataFim <= finishDate.Value));
             }
 
-            var filteredQuestions = await query.ToListAsync();
-
-            var questionDtos = new List<QuestionDto>();
-            foreach (var q in filteredQuestions)
-            {
-                var dto = await q.MapToQuestionDto(_context);
-                questionDtos.Add(dto);
-            }
-
-            return questionDtos;
+            return await query
+                .Select(q => new QuestionDto
+                {
+                    Id = q.Id,
+                    Enunciado = q.Enunciado,
+                    Olimpiada = q.Olimpiada,
+                    Fase = q.Fase,
+                    NivelDificuldade = q.NivelDificuldade,
+                    Topico = q.Topico.Nome,
+                    Subtopico = q.Subtopico != null ? q.Subtopico.Nome : null
+                })
+                .ToListAsync();
         }
 
         public async Task<QuestionDto> UpdateQuestionAsync(QuestionDto questionDto)
@@ -214,63 +193,58 @@ namespace HistoriAcao.Api.Services
             var question = await _context.Questions
                 .Include(q => q.Topico)
                 .Include(q => q.Subtopico)
-                .Include(q => q.Documentos)
                 .Include(q => q.Alternativas)
+                .Include(q => q.Documentos)
                 .FirstOrDefaultAsync(q => q.Id == questionDto.Id);
+
             if (question == null)
             {
-                throw new ArgumentNullException("Nenhuma questão foi encontrada para esse id.");
+                throw new ArgumentNullException(nameof(questionDto.Id), "Nenhuma questão foi encontrada para esse id.");
             }
+
             var topic = await _context.Topics.FirstOrDefaultAsync(t => t.Nome.ToLower() == questionDto.Topico.ToLower());
             if (topic == null)
             {
-                throw new ArgumentNullException("Tópico não foi encontrado, tente inserir o nome exato novamente.");
+                throw new ArgumentNullException(nameof(questionDto.Topico), "Tópico não foi encontrado.");
             }
 
-            Subtopic? subtopico = null;
+            Subtopic? subtopic = null;
             if (!string.IsNullOrWhiteSpace(questionDto.Subtopico))
             {
-                subtopico = await _context.Subtopics.FirstOrDefaultAsync(t => t.Nome.ToLower() == questionDto.Subtopico.ToLower());
-                if (subtopico == null)
+                subtopic = await _context.Subtopics.FirstOrDefaultAsync(t => t.Nome.ToLower() == questionDto.Subtopico.ToLower());
+                if (subtopic == null)
                 {
-                    throw new ArgumentNullException("Subtópico não foi encontrado, tente inserir o nome exato novamente.");
+                    throw new ArgumentNullException(nameof(questionDto.Subtopico), "Subtópico não foi encontrado.");
                 }
             }
 
             question.Enunciado = questionDto.Enunciado;
             question.Fase = questionDto.Fase;
-            question.Subtopico = subtopico;
-            question.Topico = topic;
-            question.SubtopicoId = subtopico?.Id;
-            question.TopicoId = topic.Id;
             question.Olimpiada = questionDto.Olimpiada;
-            question.Alternativas = questionDto.Alternativas.Select(a => new Alternative
-            {
-                Texto = a.Texto,
-                Letra = a.Letra,
-                Pontuacao = a.Pontuacao,
-                Questao = question,
-                QuestaoId = question.Id
-            }).ToList();
-            question.Documentos = questionDto.Documentos.Select(d => new Document
-            {
-                Tipo = d.Tipo,
-                Texto = d.Texto,
-                Titulo = d.Titulo,
-                Descricao = d.Descricao,
-                Origem = d.Origem,
-                Url = d.Url,
-                Questao = question,
-                QuestaoId = question.Id
-            }).ToList();
+            question.NivelDificuldade = questionDto.NivelDificuldade;
+            question.TopicoId = topic.Id;
+            question.SubtopicoId = subtopic?.Id;
 
-            _context.Update(question);
+            question.Alternativas.Clear();
+            if (questionDto.Alternativas != null)
+            {
+                foreach (var altDto in questionDto.Alternativas)
+                {
+                    question.Alternativas.Add(new Alternative { Letra = altDto.Letra, Texto = altDto.Texto, Pontuacao = altDto.Pontuacao });
+                }
+            }
+
+            question.Documentos.Clear();
+            if (questionDto.Documentos != null)
+            {
+                foreach (var docDto in questionDto.Documentos)
+                {
+                    question.Documentos.Add(new Document { Titulo = docDto.Titulo, Tipo = docDto.Tipo, Texto = docDto.Texto, Url = docDto.Url, Descricao = docDto.Descricao, Origem = docDto.Origem });
+                }
+            }
+
             await _context.SaveChangesAsync();
             return questionDto;
-
         }
-
-
-
     }
 }
