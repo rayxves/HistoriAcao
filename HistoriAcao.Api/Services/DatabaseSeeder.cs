@@ -10,6 +10,8 @@ namespace HistoriAcao.Api.Services
 {
     public static class DatabaseSeeder
     {
+        private static readonly HttpClient httpClient = new HttpClient();
+
         private static DateTime Utc(int year, int month, int day)
         {
             return DateTime.SpecifyKind(new DateTime(year, month, day), DateTimeKind.Utc);
@@ -276,20 +278,24 @@ namespace HistoriAcao.Api.Services
                 },
             };
         }
-        public static async Task SeedAsync(ApplicationDbContext context)
+        public static async Task SeedAsync(ApplicationDbContext context, IConfiguration configuration)
         {
             if (!await context.Topics.AnyAsync())
             {
-                var topics = GetTopics(); 
-                await context.Topics.AddRangeAsync(topics); 
-                await context.SaveChangesAsync(); 
+                var topics = GetTopics();
+                await context.Topics.AddRangeAsync(topics);
+                await context.SaveChangesAsync();
             }
-            var path = "questions.json";
-            if (!File.Exists(path))
-                throw new FileNotFoundException("Arquivo questions.json não encontrado");
+             var path = configuration.GetValue<string>("QuestionsUrl");
 
+            if (string.IsNullOrEmpty(path))
+            {
+                throw new Exception("A URL 'QuestionsUrl' não foi encontrada no appsettings.json.");
+            }
+
+            var jsonContent = await httpClient.GetStringAsync(path);
             var questionsFromJson = JsonSerializer.Deserialize<List<Question>>(
-                await File.ReadAllTextAsync(path),
+                jsonContent,
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
             ) ?? throw new Exception("Falha na desserialização do JSON");
 

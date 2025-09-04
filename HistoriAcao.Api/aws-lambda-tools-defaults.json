@@ -1,0 +1,14 @@
+{
+  "Information": [
+    "Este arquivo armazena as configurações padrão para o deploy com as ferramentas do AWS Lambda.",
+    "https://github.com/aws/aws-lambda-dotnet"
+  ],
+  "profile": "default", 
+  "region": "sa-east-1",
+  "configuration": "Release",
+  "framework": "net8.0",
+  "function-name": "HistoriAcaoApi",
+  "function-memory-size": 512,
+  "function-timeout": 30,
+  "function-handler": "HistoriAcao.Api::HistoriAcao.Api.LambdaEntryPoint::FunctionHandlerAsync"
+}

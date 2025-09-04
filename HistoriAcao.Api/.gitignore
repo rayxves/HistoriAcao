@@ -9,7 +9,7 @@ out/
 
 *.log
 
-
+api.zip
 appsettings.Development.json
 appsettings.json
 appsettings.Test.json

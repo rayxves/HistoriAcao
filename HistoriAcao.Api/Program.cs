@@ -70,6 +70,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UsePathBase("/default/HistoriAcaoApi");
+
+
 app.UseCors(MyAllowSpecificOrigins);
 app.UseSwagger();
 app.UseSwaggerUI(c =>
@@ -88,7 +91,9 @@ using (var scope = app.Services.CreateScope())
     try
     {
         var context = services.GetRequiredService<ApplicationDbContext>();
-        await DatabaseSeeder.SeedAsync(context);
+        var configuration = services.GetRequiredService<IConfiguration>(); // Pega a configuração
+
+        await DatabaseSeeder.SeedAsync(context, configuration);
     }
     catch (Exception ex)
     {
