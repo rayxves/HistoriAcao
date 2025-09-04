@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
+import axios from "axios";
 import { getQuestionsByFilters } from "@/services/questionServices";
 import { getAllTopics } from "@/services/topicServices";
 import { QuestionDto, QuestionApiFilters } from "@/types/question";
@@ -17,6 +18,7 @@ import {
   Loader2,
   Check,
   X,
+  AlertTriangle,
 } from "lucide-react";
 import QuestionCard from "@/components/QuestionCard";
 import ImageWithLoader from "@/components/ImageWithLoader";
@@ -28,6 +30,7 @@ const Questoes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  const [fetchError, setFetchError] = useState<string | null>(null);
   const [showFilters, setShowFilters] = useState(true);
   const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
   const [viewingDocument, setViewingDocument] = useState<DocumentDto | null>(
@@ -47,7 +50,14 @@ const Questoes = () => {
 
   const isFromQuiz =
     location.state?.fromQuiz === true || searchParams.get("from") === "quiz";
-    
+
+  const showNotification = (type: "success" | "error", message: string) => {
+    setNotification({ show: true, type, message });
+    setTimeout(() => {
+      setNotification({ show: false, type, message: "" });
+    }, 3000);
+  };
+
   useEffect(() => {
     if (!viewingDocument) return;
 
@@ -62,14 +72,16 @@ const Questoes = () => {
     }
   }, [viewingDocument]);
 
-
   useEffect(() => {
     const fetchTopics = async () => {
       try {
         const topicsData = await getAllTopics();
         setAllTopics(topicsData);
       } catch (error) {
-        console.error("Erro ao buscar tópicos:", error);
+        showNotification(
+          "error",
+          "Falha ao carregar os temas."
+        );
       }
     };
     fetchTopics();
@@ -78,6 +90,7 @@ const Questoes = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       setIsLoading(true);
+      setFetchError(null);
       try {
         const activeFilters: QuestionApiFilters = { ...filters };
         if (searchTerm) {
@@ -103,8 +116,19 @@ const Questoes = () => {
         const data = await getQuestionsByFilters(activeFilters);
         setQuestions(data);
       } catch (error) {
-        console.error("Erro ao buscar questões:", error);
         setQuestions([]);
+        let errorMessage =
+          "Ocorreu uma falha de comunicação. Verifique sua conexão e tente novamente.";
+
+        if (axios.isAxiosError(error) && error.response) {
+          const apiError = error.response.data;
+          if (apiError && apiError.detail) {
+            errorMessage = apiError.detail;
+          } else {
+            errorMessage = `Erro ${error.response.status}: A resposta do servidor não pôde ser processada.`;
+          }
+        }
+        setFetchError(errorMessage);
       } finally {
         setIsLoading(false);
       }
@@ -165,16 +189,9 @@ const Questoes = () => {
       showNotification("error", "Esta questão já foi adicionada ao quiz!");
     }
   };
-  
+
   const handleViewDocument = (doc: DocumentDto) => {
     setViewingDocument(doc);
-  };
-
-  const showNotification = (type: "success" | "error", message: string) => {
-    setNotification({ show: true, type, message });
-    setTimeout(() => {
-      setNotification({ show: false, type, message: "" });
-    }, 3000);
   };
 
   const clearFilters = () => {
@@ -297,6 +314,14 @@ const Questoes = () => {
           <div className="flex justify-center items-center py-16">
             <Loader2 className="h-12 w-12 text-emerald-600 animate-spin" />
           </div>
+        ) : fetchError ? (
+          <div className="text-center py-16 bg-red-50 text-red-700 border border-red-200 rounded-lg">
+            <AlertTriangle className="h-16 w-16 text-red-400 mx-auto mb-6" />
+            <h3 className="text-xl font-semibold mb-2">
+              Ocorreu um Erro
+            </h3>
+            <p className="text-red-600">{fetchError}</p>
+          </div>
         ) : questions.length === 0 ? (
           <div className="text-center py-16">
             <Search className="h-16 w-16 text-gray-400 mx-auto mb-6" />
@@ -390,7 +415,7 @@ const Questoes = () => {
             </div>
 
             {isModalLoading ? (
-               <div className="flex-grow flex items-center justify-center p-6 min-h-[200px]">
+              <div className="flex-grow flex items-center justify-center p-6 min-h-[200px]">
                 <Loader2 className="h-10 w-10 text-emerald-600 animate-spin" />
               </div>
             ) : (
@@ -437,7 +462,6 @@ const Questoes = () => {
                 )}
               </div>
             )}
-
 
             <div className="p-4 bg-gray-50 border-t text-right mt-auto">
               <button

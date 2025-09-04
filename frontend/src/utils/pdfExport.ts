@@ -467,7 +467,6 @@ export async function exportQuestionsToPDF(
   options?: { includeAnswerKey?: boolean; watermark?: string }
 ): Promise<void> {
   if (!questions || questions.length === 0) {
-    console.warn("Nenhuma questão fornecida para exportação");
     return;
   }
   if (!questions.every((q) => q.enunciado && q.alternativas?.length >= 2)) {
@@ -518,7 +517,6 @@ export async function exportQuestionsToPDF(
       .slice(0, 10)}.pdf`;
     doc.save(fileName);
   } catch (error) {
-    console.error("Erro ao gerar PDF:", error);
     throw new Error(
       "Falha ao gerar PDF. Verifique o console para mais detalhes."
     );

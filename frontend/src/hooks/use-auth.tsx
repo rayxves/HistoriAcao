@@ -14,7 +14,6 @@ export const useAuth = () => {
 
   const login = async (email: string, password: string) => {
     const response = await loginAsync(email, password);
-    console.log(response);
     Cookies.set("auth_user", response.data, { expires: 1 });
     setUser(response);
     return response;

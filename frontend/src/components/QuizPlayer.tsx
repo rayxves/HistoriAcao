@@ -226,7 +226,7 @@ const QuizPlayer = ({ questions, onBack }: QuizPlayerProps) => {
                 onClick={handleFinalClose}
                 className="px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors font-medium"
               >
-                Voltar para a lista de questões
+                Voltar para o quiz
               </button>
             </div>
           </div>

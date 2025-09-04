@@ -38,7 +38,6 @@ const QuizCreator = ({
     try {
       await exportQuestionsToPDF(selectedQuestions, title);
     } catch (error) {
-      console.error("Falha ao exportar PDF:", error);
       alert(
         "Ocorreu um erro ao gerar o PDF. Verifique o console para mais detalhes."
       );
