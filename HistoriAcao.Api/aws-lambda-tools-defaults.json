@@ -8,7 +8,8 @@
   "configuration": "Release",
   "framework": "net8.0",
   "function-name": "HistoriAcaoApi",
-  "function-memory-size": 512,
-  "function-timeout": 30,
+  "function-memory-size": 1024,
+  "function-reserved-concurrency-limit": 5,
+  "function-timeout": 300,
   "function-handler": "HistoriAcao.Api::HistoriAcao.Api.LambdaEntryPoint::FunctionHandlerAsync"
 }

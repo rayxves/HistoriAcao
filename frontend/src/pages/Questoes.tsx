@@ -3,7 +3,7 @@ import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
 import axios from "axios";
-import { getQuestionsByFilters } from "@/services/questionServices";
+import { getAllQuestions } from "@/services/questionServices";
 import { getAllTopics } from "@/services/topicServices";
 import { QuestionDto, QuestionApiFilters } from "@/types/question";
 import { TopicDto } from "@/types/topic";
@@ -22,16 +22,17 @@ import {
 } from "lucide-react";
 import QuestionCard from "@/components/QuestionCard";
 import ImageWithLoader from "@/components/ImageWithLoader";
+import { applyFrontendFilters } from "../utils/questionFilterUtils";
 
 const Questoes = () => {
-  const [questions, setQuestions] = useState<QuestionDto[]>([]);
+  const [allQuestions, setAllQuestions] = useState<QuestionDto[]>([]);
   const [allTopics, setAllTopics] = useState<TopicDto[]>([]);
   const [filters, setFilters] = useState<QuestionApiFilters>({});
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState<string | null>(null);
-  const [showFilters, setShowFilters] = useState(true);
+  const [showFilters, setShowFilters] = useState(false);
   const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
   const [viewingDocument, setViewingDocument] = useState<DocumentDto | null>(
     null
@@ -48,6 +49,7 @@ const Questoes = () => {
   const [searchParams] = useSearchParams();
   const questionsPerPage = 5;
 
+  const isDataLoaded = !isLoading;
   const isFromQuiz =
     location.state?.fromQuiz === true || searchParams.get("from") === "quiz";
 
@@ -58,9 +60,17 @@ const Questoes = () => {
     }, 3000);
   };
 
+  const handleDisabledClick = () => {
+    if (!isDataLoaded) {
+      showNotification(
+        "error",
+        "Aguarde o carregamento para interagir com os filtros."
+      );
+    }
+  };
+
   useEffect(() => {
     if (!viewingDocument) return;
-
     if (viewingDocument.url) {
       setIsModalLoading(true);
       const img = new Image();
@@ -73,81 +83,57 @@ const Questoes = () => {
   }, [viewingDocument]);
 
   useEffect(() => {
-    const fetchTopics = async () => {
-      try {
-        const topicsData = await getAllTopics();
-        setAllTopics(topicsData);
-      } catch (error) {
-        showNotification(
-          "error",
-          "Falha ao carregar os temas."
-        );
-      }
-    };
-    fetchTopics();
-  }, []);
-
-  useEffect(() => {
-    const fetchQuestions = async () => {
+    const fetchAllData = async () => {
       setIsLoading(true);
       setFetchError(null);
       try {
-        const activeFilters: QuestionApiFilters = { ...filters };
-        if (searchTerm) {
-          activeFilters.search = searchTerm;
-        }
-
-        if (
-          (filters.topicName || filters.subtopicName) &&
-          !searchParams.get("dataManual")
-        ) {
-          delete activeFilters.inicialDate;
-          delete activeFilters.finishDate;
-        }
-
-        Object.keys(activeFilters).forEach((key) => {
-          if (
-            activeFilters[key as keyof QuestionApiFilters] == null ||
-            activeFilters[key as keyof QuestionApiFilters] === ""
-          ) {
-            delete activeFilters[key as keyof QuestionApiFilters];
-          }
-        });
-        const data = await getQuestionsByFilters(activeFilters);
-        setQuestions(data);
+        const [questionsData, topicsData] = await Promise.all([
+          getAllQuestions(),
+          getAllTopics(),
+        ]);
+        setAllQuestions(questionsData);
+        setAllTopics(topicsData);
       } catch (error) {
-        setQuestions([]);
         let errorMessage =
           "Ocorreu uma falha de comunicação. Verifique sua conexão e tente novamente.";
-
-        if (axios.isAxiosError(error) && error.response) {
-          const apiError = error.response.data;
-          if (apiError && apiError.detail) {
-            errorMessage = apiError.detail;
-          } else {
-            errorMessage = `Erro ${error.response.status}: A resposta do servidor não pôde ser processada.`;
-          }
+        if (axios.isAxiosError(error) && error.response?.status === 503) {
+          errorMessage =
+            "Serviço temporariamente indisponível. A página será recarregada automaticamente em alguns segundos...";
+          setTimeout(() => window.location.reload(), 5000);
         }
         setFetchError(errorMessage);
+        setAllQuestions([]);
+        setAllTopics([]);
       } finally {
         setIsLoading(false);
       }
     };
+    fetchAllData();
+  }, []);
 
-    fetchQuestions();
+  const filteredQuestions = useMemo(
+    () =>
+      applyFrontendFilters({
+        allQuestions,
+        filters,
+        searchTerm,
+      }),
+    [allQuestions, filters, searchTerm]
+  );
+
+  useEffect(() => {
     setCurrentPage(1);
   }, [filters, searchTerm]);
 
+  const totalPages = Math.ceil(filteredQuestions.length / questionsPerPage);
+
   const getVisiblePages = () => {
     const maxVisible = 4;
-    const totalPages = Math.ceil(questions.length / questionsPerPage);
     if (totalPages <= maxVisible) {
       return Array.from({ length: totalPages }, (_, i) => i + 1);
     }
-
     let start = currentPage - Math.floor(maxVisible / 2);
     let end = currentPage + Math.floor(maxVisible / 2);
-
     if (start < 1) {
       start = 1;
       end = maxVisible;
@@ -155,21 +141,16 @@ const Questoes = () => {
       end = totalPages;
       start = totalPages - maxVisible + 1;
     }
-
     return Array.from({ length: end - start + 1 }, (_, i) => start + i);
   };
 
-  const totalPages = Math.ceil(questions.length / questionsPerPage);
   const paginatedQuestions = useMemo(() => {
     const startIndex = (currentPage - 1) * questionsPerPage;
-    return questions.slice(startIndex, startIndex + questionsPerPage);
-  }, [questions, currentPage]);
+    return filteredQuestions.slice(startIndex, startIndex + questionsPerPage);
+  }, [filteredQuestions, currentPage]);
 
   const handleAnswerSelect = (questionId: number, alternativeId: number) => {
-    setUserAnswers((prev) => ({
-      ...prev,
-      [questionId]: alternativeId,
-    }));
+    setUserAnswers((prev) => ({ ...prev, [questionId]: alternativeId }));
   };
 
   const handleAddToQuiz = (question: QuestionDto) => {
@@ -177,7 +158,6 @@ const Questoes = () => {
     const selectedQuestions: QuestionDto[] = savedQuestions
       ? JSON.parse(savedQuestions)
       : [];
-
     if (!selectedQuestions.find((q) => q.id === question.id)) {
       selectedQuestions.push(question);
       localStorage.setItem(
@@ -209,7 +189,6 @@ const Questoes = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-
       {notification.show && (
         <div
           className={`fixed top-4 right-4 z-50 transition-all duration-300 ${
@@ -241,12 +220,10 @@ const Questoes = () => {
           </div>
         </div>
       )}
-
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="mb-6 sm:mb-8">
           {isFromQuiz && (
             <div className="w-full flex justify-end">
-              {" "}
               <button
                 onClick={() => navigate("/quiz")}
                 className="flex items-center space-x-1 px-3 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-sm sm:text-base"
@@ -267,8 +244,7 @@ const Questoes = () => {
               </p>
             </div>
           </div>
-
-          <div className="relative mb-4 sm:mb-6">
+          <div className="relative mb-4 sm:mb-6" onClick={handleDisabledClick}>
             <Search
               className="absolute right-4 md:right-6 top-1/2 transform -translate-y-1/2 text-gray-400"
               size={18}
@@ -278,10 +254,11 @@ const Questoes = () => {
               placeholder="Buscar questões..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 md:pl-6 py-2 sm:py-3 border border-gray-200 rounded-xl focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 outline-none text-sm sm:text-base"
+              className="w-full px-4 md:pl-6 py-2 sm:py-3 border border-gray-200 rounded-xl focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 outline-none text-sm sm:text-base disabled:cursor-not-allowed disabled:bg-gray-50"
+              disabled={!isDataLoaded}
+              onClick={handleDisabledClick}
             />
           </div>
-
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
             <button
               data-testId="show-filters-btn"
@@ -293,23 +270,24 @@ const Questoes = () => {
             </button>
             <div className="flex items-center gap-2 sm:gap-4">
               <span className="text-xs sm:text-sm text-gray-600">
-                {questions.length} quest{questions.length !== 1 ? "ões" : "ão"}{" "}
-                encontrada{questions.length !== 1 ? "s" : ""}
+                {filteredQuestions.length} quest
+                {filteredQuestions.length !== 1 ? "ões" : "ão"} encontrada
+                {filteredQuestions.length !== 1 ? "s" : ""}
               </span>
             </div>
           </div>
         </div>
-
         {showFilters && (
           <div className="mb-8">
             <CompactQuestionFilters
               filters={filters}
               onFiltersChange={setFilters}
               allTopics={allTopics}
+              isDataLoaded={isDataLoaded}
+              onDisabledClick={handleDisabledClick}
             />
           </div>
         )}
-
         {isLoading ? (
           <div className="flex justify-center items-center py-16">
             <Loader2 className="h-12 w-12 text-emerald-600 animate-spin" />
@@ -317,12 +295,10 @@ const Questoes = () => {
         ) : fetchError ? (
           <div className="text-center py-16 bg-red-50 text-red-700 border border-red-200 rounded-lg">
             <AlertTriangle className="h-16 w-16 text-red-400 mx-auto mb-6" />
-            <h3 className="text-xl font-semibold mb-2">
-              Ocorreu um Erro
-            </h3>
+            <h3 className="text-xl font-semibold mb-2">Ocorreu um Erro</h3>
             <p className="text-red-600">{fetchError}</p>
           </div>
-        ) : questions.length === 0 ? (
+        ) : paginatedQuestions.length === 0 ? (
           <div className="text-center py-16">
             <Search className="h-16 w-16 text-gray-400 mx-auto mb-6" />
             <h3 className="text-xl font-semibold text-gray-700 mb-2">
@@ -354,7 +330,6 @@ const Questoes = () => {
                 />
               ))}
             </div>
-
             {totalPages > 1 && (
               <div className="flex justify-center items-center space-x-2 md:space-x-4 mt-8">
                 <button
@@ -393,7 +368,6 @@ const Questoes = () => {
           </>
         )}
       </main>
-
       {viewingDocument && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4"
@@ -413,7 +387,6 @@ const Questoes = () => {
                   `- Origem: ${viewingDocument.origem}`}
               </p>
             </div>
-
             {isModalLoading ? (
               <div className="flex-grow flex items-center justify-center p-6 min-h-[200px]">
                 <Loader2 className="h-10 w-10 text-emerald-600 animate-spin" />
@@ -440,7 +413,6 @@ const Questoes = () => {
                     )}
                   </div>
                 )}
-
                 {viewingDocument.texto && (
                   <>
                     <div
@@ -462,7 +434,6 @@ const Questoes = () => {
                 )}
               </div>
             )}
-
             <div className="p-4 bg-gray-50 border-t text-right mt-auto">
               <button
                 onClick={() => setViewingDocument(null)}

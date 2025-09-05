@@ -1,20 +1,23 @@
 import { useState, useEffect, useMemo } from "react";
 import { QuestionApiFilters } from "@/types/question";
 import { TopicDto } from "@/types/topic";
-import { ChevronDown, X, Calendar } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { ChevronDown, X, Calendar, Loader2 } from "lucide-react";
 import * as filterUtils from "@/utils/filtersUtils";
 
 interface CompactQuestionFiltersProps {
   filters: QuestionApiFilters;
   onFiltersChange: (newFilters: QuestionApiFilters) => void;
   allTopics: TopicDto[];
+  isDataLoaded: boolean;
+  onDisabledClick: () => void;
 }
 
 const CompactQuestionFilters = ({
   filters,
   onFiltersChange,
   allTopics,
+  isDataLoaded,
+  onDisabledClick,
 }: CompactQuestionFiltersProps) => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [olimpiadaInput, setOlimpiadaInput] = useState("");
@@ -26,9 +29,10 @@ const CompactQuestionFilters = ({
       ? new Date(filters.finishDate).toISOString().split("T")[0]
       : "",
   });
-  const navigate = useNavigate();
+
   const fases = [1, 2, 3, 4, 5];
   const niveis = ["Fácil", "Média", "Difícil"];
+  const isLoadingTopics = !isDataLoaded && allTopics.length === 0;
 
   const filteredOlimpiadas = useMemo(
     () => filterUtils.filterOlimpiadas(olimpiadaInput),
@@ -70,18 +74,9 @@ const CompactQuestionFilters = ({
 
     if (key === "topicName") {
       newFilters.subtopicName = undefined;
-      newFilters.inicialDate = null;
-      newFilters.finishDate = null;
+      newFilters.inicialDate = undefined;
+      newFilters.finishDate = undefined;
     }
-
-    if (key === "subtopicName") {
-      const selectedSubtopic = subtopics.find((st) => st.nome === value);
-      if (selectedSubtopic) {
-        newFilters.inicialDate = null;
-        newFilters.finishDate = null;
-      }
-    }
-
     onFiltersChange(newFilters);
   };
 
@@ -95,27 +90,15 @@ const CompactQuestionFilters = ({
   };
 
   const hasActiveFilters = Object.values(filters).some(
-    (value) => value !== undefined && value !== ""
+    (value) => value != null && value !== ""
   );
 
   const applyDateFilters = () => {
-    const newFilters = { ...filters };
-
-    newFilters.inicialDate = tempDates.start
-      ? toUTCISOString(tempDates.start)
-      : undefined;
-    newFilters.finishDate = tempDates.end
-      ? toUTCISOString(tempDates.end)
-      : undefined;
-
-    onFiltersChange(newFilters);
-
-    const params = new URLSearchParams(location.search);
-    params.set("dataManual", "true");
-    navigate(`${location.pathname}?${params.toString()}`, {
-      replace: true,
+    onFiltersChange({
+      ...filters,
+      inicialDate: tempDates.start ? toUTCISOString(tempDates.start) : undefined,
+      finishDate: tempDates.end ? toUTCISOString(tempDates.end) : undefined,
     });
-
     setOpenDropdown(null);
   };
 
@@ -126,14 +109,25 @@ const CompactQuestionFilters = ({
     );
   };
 
+  const buttonClasses =
+    "flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm w-full sm:w-auto justify-between disabled:cursor-not-allowed disabled:hover:border-gray-200";
+
   return (
-    <div className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 py-4 sm:py-6">
+    <div
+      className="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm rounded-xl"
+      onClick={onDisabledClick}
+    >
+      <div
+        className={`max-w-7xl mx-auto px-4 py-4 sm:py-6 ${
+          !isDataLoaded ? "opacity-50" : ""
+        }`}
+      >
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("olimpiada")}
-              className="flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+              className={buttonClasses}
+              disabled={!isDataLoaded}
             >
               <span className="text-gray-700 truncate">
                 {filters.olimpiada
@@ -144,7 +138,6 @@ const CompactQuestionFilters = ({
             </button>
             {openDropdown === "olimpiada" && (
               <div className="absolute top-full mt-1 left-0 right-0 sm:left-auto sm:right-auto sm:w-64 bg-white border border-gray-200 rounded-xl shadow-lg z-50">
-                {" "}
                 <div className="p-2">
                   <input
                     type="text"
@@ -153,7 +146,6 @@ const CompactQuestionFilters = ({
                     value={olimpiadaInput}
                     onChange={(e) => setOlimpiadaInput(e.target.value)}
                   />
-
                   <button
                     onClick={() => {
                       handleFilterChange("olimpiada", undefined);
@@ -168,7 +160,6 @@ const CompactQuestionFilters = ({
                   >
                     Todas as Olimpíadas
                   </button>
-
                   <div className="max-h-60 overflow-y-auto">
                     {filteredOlimpiadas.map((number) => (
                       <button
@@ -192,11 +183,11 @@ const CompactQuestionFilters = ({
               </div>
             )}
           </div>
-
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("fase")}
-              className="flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+              className={buttonClasses}
+              disabled={!isDataLoaded}
             >
               <span className="text-gray-700">
                 {filters.fase ? `${filters.fase}ª Fase` : "Fase"}
@@ -231,11 +222,11 @@ const CompactQuestionFilters = ({
               </div>
             )}
           </div>
-
           <div className="relative dropdown-container w-full sm:w-auto">
             <button
               onClick={() => toggleDropdown("tema")}
-              className="flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+              className={buttonClasses}
+              disabled={!isDataLoaded}
             >
               <span className="text-gray-700 max-w-36 truncate">
                 {filters.topicName || "Tema"}
@@ -244,38 +235,45 @@ const CompactQuestionFilters = ({
             </button>
             {openDropdown === "tema" && (
               <div className="absolute top-full mt-2 w-64 bg-white border border-gray-200 rounded-xl shadow-lg z-50 max-h-64 overflow-y-auto">
-                <div className="py-2">
-                  <button
-                    onClick={() => {
-                      handleFilterChange("topicName", undefined);
-                      setOpenDropdown(null);
-                    }}
-                    className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 font-medium"
-                  >
-                    Todos os Temas
-                  </button>
-                  {allTopics.map((topic) => (
+                {isLoadingTopics ? (
+                  <div className="flex items-center justify-center gap-2 p-4 text-sm text-gray-500">
+                    <Loader2 size={16} className="animate-spin" />
+                    <span>Carregando temas...</span>
+                  </div>
+                ) : (
+                  <div className="py-2">
                     <button
-                      key={topic.id}
                       onClick={() => {
-                        handleFilterChange("topicName", topic.nome);
+                        handleFilterChange("topicName", undefined);
                         setOpenDropdown(null);
                       }}
                       className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 font-medium"
                     >
-                      {topic.nome}
+                      Todos os Temas
                     </button>
-                  ))}
-                </div>
+                    {allTopics.map((topic) => (
+                      <button
+                        key={topic.id}
+                        onClick={() => {
+                          handleFilterChange("topicName", topic.nome);
+                          setOpenDropdown(null);
+                        }}
+                        className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 font-medium"
+                      >
+                        {topic.nome}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </div>
-
           {filters.topicName && subtopics.length > 0 && (
             <div className="relative dropdown-container w-full sm:w-auto">
               <button
                 onClick={() => toggleDropdown("subtema")}
-                className="flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-4 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+                className={buttonClasses}
+                disabled={!isDataLoaded}
               >
                 <span className="text-gray-700 max-w-36 truncate">
                   {filters.subtopicName || "Subtema"}
@@ -311,12 +309,12 @@ const CompactQuestionFilters = ({
               )}
             </div>
           )}
-
           {!filters.topicName && !filters.subtopicName && (
             <div className="relative dropdown-container w-full sm:w-auto">
               <button
                 onClick={() => toggleDropdown("data")}
-                className="flex items-center space-x-2 ring-1 ring-gray-300/[.55] px-3 sm:px-5 py-2 bg-white border border-gray-200 rounded-xl hover:border-emerald-300 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500 transition-colors font-medium text-sm  w-full sm:w-auto justify-between"
+                className={buttonClasses}
+                disabled={!isDataLoaded}
               >
                 <div className="flex gap-1 sm:gap-2 h-full items-center">
                   <Calendar size={16} className="text-gray-400" />
@@ -375,21 +373,19 @@ const CompactQuestionFilters = ({
               )}
             </div>
           )}
-
           <div className="flex flex-wrap items-center gap-2 w-full mt-2 sm:mt-0 lg:ml-4 sm:w-auto order-last sm:order-none">
-            {" "}
             {niveis.map((nivel) => {
+              const isActive = filters.nivelDificuldade === nivel;
               let nivelClass =
                 "bg-slate-50 text-gray-700 ring-1 ring-gray-300/[.50] hover:bg-gray-100";
-              if (filters.nivelDificuldade === nivel) {
-                if (filters.nivelDificuldade === "Fácil") {
+              if (isActive) {
+                if (nivel === "Fácil")
                   nivelClass = "bg-green-100 text-green-800 border-green-200";
-                } else if (filters.nivelDificuldade === "Média") {
+                else if (nivel === "Média")
                   nivelClass =
                     "bg-yellow-100 text-yellow-800 border-yellow-200";
-                } else {
+                else
                   nivelClass = "bg-red-100 text-red-800 border-red-200";
-                }
               }
               return (
                 <button
@@ -397,28 +393,28 @@ const CompactQuestionFilters = ({
                   onClick={() =>
                     handleFilterChange(
                       "nivelDificuldade",
-                      filters.nivelDificuldade === nivel ? undefined : nivel
+                      isActive ? undefined : nivel
                     )
                   }
-                  className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 border ${nivelClass}`}
+                  className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 border ${nivelClass} disabled:cursor-not-allowed`}
+                  disabled={!isDataLoaded}
                 >
                   {nivel}
                 </button>
               );
             })}
           </div>
-
           {hasActiveFilters && (
             <button
               onClick={clearFilters}
-              className="flex items-center space-x-2 px-4 py-2 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-colors font-medium ml-auto sm:ml-0"
+              className="flex items-center space-x-2 px-4 py-2 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-xl transition-colors font-medium ml-auto sm:ml-0 disabled:text-gray-400 disabled:hover:bg-transparent"
+              disabled={!isDataLoaded}
             >
               <X size={14} />
               <span>Limpar</span>
             </button>
           )}
         </div>
-
         {(filters.inicialDate || filters.finishDate) && (
           <div className="flex items-center gap-4 mt-4 text-sm text-gray-600">
             <div className="flex items-center gap-2">

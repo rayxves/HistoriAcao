@@ -42,7 +42,7 @@ const ImageWithLoader = ({
         ref={imgRef}
         src={src}
         alt={alt}
-        className={`${className} transition-opacity duration-500 ${
+        className={`${className} transition-opacity duration-500 rounded-lg ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
         onLoad={handleLoad}

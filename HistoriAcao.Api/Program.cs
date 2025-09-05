@@ -19,9 +19,20 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    options.UseNpgsql(connectionString, o =>
+       {
+           o.CommandTimeout(120);
+       });
+}
 
+);
+
+builder.Services.AddDbContextPool<ApplicationDbContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseNpgsql(connectionString);
-});
+},
+  poolSize: 1024);
 
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -46,20 +57,29 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+var isLambda = !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("AWS_LAMBDA_FUNCTION_NAME"));
+
+var corsPolicy = "_myAllowSpecificOrigins";
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins,
+    options.AddPolicy(name: corsPolicy,
                       policy =>
                       {
-                          policy.WithOrigins("http://localhost:8080")
-                                .AllowAnyHeader()
-                                .AllowAnyMethod();
-
+                          if (isLambda)
+                          {
+                              policy.AllowAnyOrigin()
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                          }
+                          else
+                          {
+                              policy.WithOrigins("http://localhost:8080")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                          }
                       });
 });
-
 
 builder.Services.AddScoped<ITopicServices, TopicServices>();
 builder.Services.AddScoped<IQuestionServices, QuestionServices>();
@@ -70,41 +90,47 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UsePathBase("/default/HistoriAcaoApi");
-
-
-app.UseCors(MyAllowSpecificOrigins);
-app.UseSwagger();
-app.UseSwaggerUI(c =>
+if (!isLambda)
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "HistoriAcao API V1");
-    c.RoutePrefix = string.Empty;
-});
+    app.UsePathBase("/default/HistoriAcaoApi");
+}
+
+app.UseCors(corsPolicy);
+
+if (app.Environment.IsDevelopment() && !isLambda)
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "HistoriAcao API V1");
+        c.RoutePrefix = string.Empty;
+    });
+}
 
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
-using (var scope = app.Services.CreateScope())
+if (!isLambda)
 {
-    var services = scope.ServiceProvider;
-    try
+    using (var scope = app.Services.CreateScope())
     {
-        var context = services.GetRequiredService<ApplicationDbContext>();
-        var configuration = services.GetRequiredService<IConfiguration>(); // Pega a configuração
+        var services = scope.ServiceProvider;
+        try
+        {
+            var context = services.GetRequiredService<ApplicationDbContext>();
+            var configuration = services.GetRequiredService<IConfiguration>();
 
-        await DatabaseSeeder.SeedAsync(context, configuration);
-    }
-    catch (Exception ex)
-    {
-        var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "Ocorreu um erro durante o seeding do banco de dados.");
+            await DatabaseSeeder.SeedAsync(context, configuration);
+        }
+        catch (Exception ex)
+        {
+            var logger = services.GetRequiredService<ILogger<Program>>();
+            logger.LogError(ex, "Ocorreu um erro durante o seeding do banco de dados.");
+        }
     }
 }
-
-
 
 await app.RunAsync();
 
 public partial class Program { }
-

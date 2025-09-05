@@ -85,7 +85,6 @@ namespace HistoriAcao.Api.Services
             await _context.SaveChangesAsync();
             return true;
         }
-
         public async Task<List<QuestionDto>> GetAllQuestionsAsync()
         {
             var questions = await _context.Questions
@@ -93,45 +92,53 @@ namespace HistoriAcao.Api.Services
                 .Include(q => q.Subtopico)
                 .Include(q => q.Documentos)
                 .Include(q => q.Alternativas)
+                .AsNoTracking()
+                .Select(q => new QuestionDto
+                {
+                    Id = q.Id,
+                    Enunciado = q.Enunciado,
+                    Olimpiada = q.Olimpiada,
+                    Fase = q.Fase,
+                    NivelDificuldade = q.NivelDificuldade,
+                    Topico = q.Topico.Nome,
+                    DataInicio = q.Topico.DataInicio,
+                    DataFim = q.Topico.DataFim,
+                    Subtopico = q.Subtopico != null ? q.Subtopico.Nome : null,
+                    Alternativas = q.Alternativas.Select(a => new AlternativeDto
+                    {
+                        Id = a.Id,
+                        Letra = a.Letra,
+                        Texto = a.Texto,
+                        Pontuacao = a.Pontuacao
+                    }).ToList(),
+                    Documentos = q.Documentos.Select(d => new DocumentDto
+                    {
+                        Id = d.Id,
+                        Titulo = d.Titulo,
+                        Tipo = d.Tipo,
+                        Texto = d.Texto,
+                        Url = d.Url,
+                        Descricao = d.Descricao,
+                        Origem = d.Origem
+                    }).ToList()
+                })
                 .ToListAsync();
 
-            var questionDtos = new List<QuestionDto>();
-            foreach (var q in questions)
-            {
-                var dto = await q.MapToQuestionDto(_context);
-                questionDtos.Add(dto);
-            }
-
-            return questionDtos;
-
+            return questions;
         }
 
-        public async Task<QuestionDto> GetQuestionByIdAsync(int id)
+        public async Task<List<QuestionDto>> GetQuestionsByFilterAsync(
+            string? topicName, string? subtopicName, int? fase, string? olimpiada,
+            DateTime? inicialDate, DateTime? finishDate, string? search, string? nivelDificuldade)
         {
-            var question = await _context.Questions
+            var query = _context.Questions
                 .Include(q => q.Topico)
                 .Include(q => q.Subtopico)
                 .Include(q => q.Documentos)
                 .Include(q => q.Alternativas)
-                .FirstOrDefaultAsync(q => q.Id == id);
+                .AsNoTracking()
+                .AsQueryable();
 
-
-            if (question == null)
-            {
-                throw new ArgumentNullException(nameof(id), "Nenhuma questão foi encontrada.");
-            }
-
-            return await question.MapToQuestionDto(_context);
-        }
-
-        public async Task<List<QuestionDto>> GetQuestionsByFilterAsync(string? topicName, string? subtopicName, int? fase, string? olimpiada, DateTime? inicialDate, DateTime? finishDate, string? search, string? nivelDificuldade)
-        {
-            var query = _context.Questions
-               .Include(q => q.Topico)
-               .Include(q => q.Subtopico)
-               .Include(q => q.Documentos)
-               .Include(q => q.Alternativas)
-               .AsQueryable();
             if (!string.IsNullOrWhiteSpace(olimpiada))
             {
                 query = query.Where(q => q.Olimpiada == olimpiada);
@@ -170,17 +177,57 @@ namespace HistoriAcao.Api.Services
                     (q.Topico.DataInicio == null || q.Topico.DataFim <= finishDate.Value) &&
                     (q.Subtopico != null && q.Subtopico.DataInicio == null || q.Subtopico != null && q.Subtopico.DataFim <= finishDate.Value));
             }
+            var filteredQuestions = await query
+                .Select(q => new QuestionDto
+                {
+                    Id = q.Id,
+                    Enunciado = q.Enunciado,
+                    Olimpiada = q.Olimpiada,
+                    Fase = q.Fase,
+                    NivelDificuldade = q.NivelDificuldade,
+                    Topico = q.Topico.Nome,
+                    DataInicio = q.Topico.DataInicio,
+                    DataFim = q.Topico.DataFim,
+                    Subtopico = q.Subtopico != null ? q.Subtopico.Nome : null,
+                    Alternativas = q.Alternativas.Select(a => new AlternativeDto
+                    {
+                        Id = a.Id,
+                        Letra = a.Letra,
+                        Texto = a.Texto,
+                        Pontuacao = a.Pontuacao
+                    }).ToList(),
+                    Documentos = q.Documentos.Select(d => new DocumentDto
+                    {
+                        Id = d.Id,
+                        Titulo = d.Titulo,
+                        Tipo = d.Tipo,
+                        Texto = d.Texto,
+                        Url = d.Url,
+                        Descricao = d.Descricao,
+                        Origem = d.Origem
+                    }).ToList()
+                })
+                .ToListAsync();
 
-            var filteredQuestions = await query.ToListAsync();
+            return filteredQuestions;
+        }
 
-            var questionDtos = new List<QuestionDto>();
-            foreach (var q in filteredQuestions)
+        public async Task<QuestionDto> GetQuestionByIdAsync(int id)
+        {
+            var question = await _context.Questions
+                .Include(q => q.Topico)
+                .Include(q => q.Subtopico)
+                .Include(q => q.Documentos)
+                .Include(q => q.Alternativas)
+                .FirstOrDefaultAsync(q => q.Id == id);
+
+
+            if (question == null)
             {
-                var dto = await q.MapToQuestionDto(_context);
-                questionDtos.Add(dto);
+                throw new ArgumentNullException(nameof(id), "Nenhuma questão foi encontrada.");
             }
 
-            return questionDtos;
+            return await question.MapToQuestionDto(_context);
         }
 
         public async Task<QuestionDto> UpdateQuestionAsync(QuestionDto questionDto)

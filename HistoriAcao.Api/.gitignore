@@ -6,9 +6,10 @@ out/
 *.exe
 *.app
 *.pdb
-
+lambda-package.zip
+lambda_deploy_script.sh
 *.log
-
+leep 5
 api.zip
 appsettings.Development.json
 appsettings.json
