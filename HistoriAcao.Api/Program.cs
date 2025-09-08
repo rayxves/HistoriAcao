@@ -16,23 +16,28 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
 });
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
+ builder.Services.AddDbContextPool<ApplicationDbContext>(options =>
+    {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    options.UseNpgsql(connectionString, o =>
-       {
-           o.CommandTimeout(120);
-       });
-}
+     options.UseNpgsql(connectionString, npgsqlOptions =>
+     {
+         npgsqlOptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
 
-);
+         npgsqlOptions.CommandTimeout(60);
 
-builder.Services.AddDbContextPool<ApplicationDbContext>(options =>
-{
-    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    options.UseNpgsql(connectionString);
-},
-  poolSize: 1024);
+         npgsqlOptions.EnableRetryOnFailure(
+             maxRetryCount: 2,
+             maxRetryDelay: TimeSpan.FromSeconds(3),
+             errorCodesToAdd: null
+         );
+     });
+
+     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+
+     options.EnableSensitiveDataLogging(false);
+
+    }, poolSize: 32);
+
 
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()

@@ -88,10 +88,6 @@ namespace HistoriAcao.Api.Services
         public async Task<List<QuestionDto>> GetAllQuestionsAsync()
         {
             var questions = await _context.Questions
-                .Include(q => q.Topico)
-                .Include(q => q.Subtopico)
-                .Include(q => q.Documentos)
-                .Include(q => q.Alternativas)
                 .AsNoTracking()
                 .Select(q => new QuestionDto
                 {

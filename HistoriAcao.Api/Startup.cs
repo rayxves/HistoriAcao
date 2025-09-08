@@ -35,11 +35,11 @@ public class Startup
      {
          npgsqlOptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
 
-         npgsqlOptions.CommandTimeout(180);
+         npgsqlOptions.CommandTimeout(60);
 
          npgsqlOptions.EnableRetryOnFailure(
-             maxRetryCount: 3,
-             maxRetryDelay: TimeSpan.FromSeconds(5),
+             maxRetryCount: 2,
+             maxRetryDelay: TimeSpan.FromSeconds(3),
              errorCodesToAdd: null
          );
      });
@@ -48,7 +48,7 @@ public class Startup
 
      options.EnableSensitiveDataLogging(false);
 
-    }, poolSize: 128);
+    }, poolSize: 32);
 
         services.AddIdentity<User, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()

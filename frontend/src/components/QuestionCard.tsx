@@ -23,7 +23,10 @@ const sortAlternatives = (alternatives: QuestionDto["alternativas"]) => {
   const letterOrder = ["A", "B", "C", "D"];
 
   return [...alternatives].sort((a, b) => {
-    return letterOrder.indexOf(a.letra) - letterOrder.indexOf(b.letra);
+    return (
+      letterOrder.indexOf(a.letra.toLowerCase()) -
+      letterOrder.indexOf(b.letra.toLowerCase())
+    );
   });
 };
 
@@ -53,7 +56,7 @@ export default function QuestionCard({
               className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium border ${
                 question.nivelDificuldade === "Fácil"
                   ? "bg-green-100 text-green-800 border-green-200"
-                  : question.nivelDificuldade === "Médio"
+                  : question.nivelDificuldade === "Média"
                   ? "bg-yellow-100 text-yellow-800 border-yellow-200"
                   : "bg-red-100 text-red-800 border-red-200"
               }`}

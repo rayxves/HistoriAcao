@@ -62,7 +62,12 @@ export const applyFrontendFilters = ({
     return filtered;
   }
 
-  return filtered.filter((question) =>
-    question.enunciado.toLowerCase().includes(searchTerm.toLowerCase())
+  return filtered.filter(
+    (question) =>
+      question.enunciado.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      question.alternativas.forEach((alt) =>
+        alt.texto.toLowerCase().includes(searchTerm.toLowerCase())
+      ) ||
+      question.topico.toLowerCase().includes(searchTerm.toLowerCase())
   );
 };
