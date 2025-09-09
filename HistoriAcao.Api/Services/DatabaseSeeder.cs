@@ -280,114 +280,122 @@ namespace HistoriAcao.Api.Services
         }
         public static async Task SeedAsync(ApplicationDbContext context, IConfiguration configuration)
         {
-            if (!await context.Topics.AnyAsync())
+            var strategy = context.Database.CreateExecutionStrategy();
+            await strategy.ExecuteAsync(async () =>
             {
-                var topics = GetTopics();
-                await context.Topics.AddRangeAsync(topics);
-                await context.SaveChangesAsync();
-            }
-             var path = configuration.GetValue<string>("QuestionsUrl");
-
-            if (string.IsNullOrEmpty(path))
-            {
-                throw new Exception("A URL 'QuestionsUrl' não foi encontrada no appsettings.json.");
-            }
-
-            var jsonContent = await httpClient.GetStringAsync(path);
-            var questionsFromJson = JsonSerializer.Deserialize<List<Question>>(
-                jsonContent,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
-            ) ?? throw new Exception("Falha na desserialização do JSON");
-
-            using var transaction = await context.Database.BeginTransactionAsync();
-
-            try
-            {
-                foreach (var question in questionsFromJson)
+                if (!await context.Topics.AnyAsync())
                 {
-                    var existingQuestion = await context.Questions.FirstOrDefaultAsync(q => q.Enunciado == question.Enunciado && q.TopicoId == question.TopicoId && q.SubtopicoId == question.SubtopicoId && q.Olimpiada == question.Olimpiada);
-                    var topico = await context.Topics.FindAsync(question.TopicoId);
-                    if (topico == null)
-                    {
-                        throw new ArgumentNullException("Tópico não encontrado");
-                    }
-                    var subtopico = await context.Subtopics.FindAsync(question.SubtopicoId);
+                    var topics = GetTopics();
+                    await context.Topics.AddRangeAsync(topics);
+                    await context.SaveChangesAsync();
+                }
+                var path = configuration.GetValue<string>("QuestionsUrl");
 
-                    if (existingQuestion == null)
-                    {
-                        var newQuestion = new Question
-                        {
-                            Fase = question.Fase,
-                            Enunciado = question.Enunciado,
-                            Olimpiada = question.Olimpiada,
-                            NivelDificuldade = question.NivelDificuldade,
-                            Topico = topico,
-                            TopicoId = question.TopicoId,
-                            Subtopico = subtopico,
-                            SubtopicoId = question.SubtopicoId
-                        };
-
-                        context.Add(newQuestion);
-                        topico.Questoes.Add(newQuestion);
-                        context.Update(topico);
-
-                        if (subtopico != null)
-                        {
-                            subtopico.Questoes.Add(newQuestion);
-                            context.Update(subtopico);
-                        }
-
-                        await context.SaveChangesAsync();
-
-                        if (question.Documentos.Any())
-                        {
-                            var newDocs = question.Documentos.Select(d => new Document
-                            {
-                                Tipo = d.Tipo,
-                                Descricao = d.Descricao,
-                                Texto = d.Texto,
-                                Titulo = d.Titulo,
-                                Url = d.Url,
-                                Origem = d.Origem,
-                                Questao = newQuestion,
-                                QuestaoId = newQuestion.Id
-                            }).ToList();
-
-                            foreach (var doc in newDocs)
-                            {
-                                newQuestion.Documentos.Add(doc);
-                            }
-                        }
-
-                        if (question.Alternativas.Any())
-                        {
-                            var newAlternative = question.Alternativas.Select(a => new Alternative
-                            {
-                                Texto = a.Texto,
-                                Letra = a.Letra,
-                                Pontuacao = a.Pontuacao,
-                                Questao = newQuestion,
-                                QuestaoId = newQuestion.Id
-                            });
-
-                            foreach (var alt in newAlternative)
-                            {
-                                newQuestion.Alternativas.Add(alt);
-                            }
-                        }
-
-                        context.Update(newQuestion);
-                        await context.SaveChangesAsync();
-                    }
+                if (string.IsNullOrEmpty(path))
+                {
+                    throw new Exception("A URL 'QuestionsUrl' não foi encontrada no appsettings.json.");
                 }
 
-                await transaction.CommitAsync();
-            }
-            catch (Exception)
-            {
-                await transaction.RollbackAsync();
-                throw;
-            }
+                var jsonContent = await httpClient.GetStringAsync(path);
+                var questionsFromJson = JsonSerializer.Deserialize<List<Question>>(
+                    jsonContent,
+                    new JsonSerializerOptions { PropertyNameCaseInsensitive = true }
+                ) ?? throw new Exception("Falha na desserialização do JSON");
+
+                using var transaction = await context.Database.BeginTransactionAsync();
+
+                try
+                {
+                    foreach (var question in questionsFromJson)
+                    {
+                        var existingQuestion = await context.Questions.FirstOrDefaultAsync(q => q.Enunciado == question.Enunciado && q.TopicoId == question.TopicoId && q.SubtopicoId == question.SubtopicoId && q.Olimpiada == question.Olimpiada);
+                        var topico = await context.Topics.FindAsync(question.TopicoId);
+                        if (topico == null)
+                        {
+                            throw new ArgumentNullException("Tópico não encontrado");
+                        }
+                        var subtopico = await context.Subtopics.FindAsync(question.SubtopicoId);
+
+                        if (existingQuestion == null)
+                        {
+                            var newQuestion = new Question
+                            {
+                                Fase = question.Fase,
+                                Enunciado = question.Enunciado,
+                                Olimpiada = question.Olimpiada,
+                                NivelDificuldade = question.NivelDificuldade,
+                                Topico = topico,
+                                TopicoId = question.TopicoId,
+                                Subtopico = subtopico,
+                                SubtopicoId = question.SubtopicoId
+                            };
+
+                            context.Add(newQuestion);
+                            topico.Questoes.Add(newQuestion);
+                            context.Update(topico);
+
+                            if (subtopico != null)
+                            {
+                                subtopico.Questoes.Add(newQuestion);
+                                context.Update(subtopico);
+                            }
+
+                            await context.SaveChangesAsync();
+
+                            if (question.Documentos.Any())
+                            {
+                                var newDocs = question.Documentos.Select(d => new Document
+                                {
+                                    Tipo = d.Tipo,
+                                    Descricao = d.Descricao,
+                                    Texto = d.Texto,
+                                    Titulo = d.Titulo,
+                                    Url = d.Url,
+                                    Origem = d.Origem,
+                                    Questao = newQuestion,
+                                    QuestaoId = newQuestion.Id
+                                }).ToList();
+
+                                foreach (var doc in newDocs)
+                                {
+                                    newQuestion.Documentos.Add(doc);
+                                }
+                            }
+
+                            if (question.Alternativas.Any())
+                            {
+                                var newAlternative = question.Alternativas.Select(a => new Alternative
+                                {
+                                    Texto = a.Texto,
+                                    Letra = a.Letra,
+                                    Pontuacao = a.Pontuacao,
+                                    Questao = newQuestion,
+                                    QuestaoId = newQuestion.Id
+                                });
+
+                                foreach (var alt in newAlternative)
+                                {
+                                    newQuestion.Alternativas.Add(alt);
+                                }
+                            }
+
+                            context.Update(newQuestion);
+                            await context.SaveChangesAsync();
+
+                        }
+
+                    }
+
+
+                    await transaction.CommitAsync();
+
+                }
+                catch (Exception)
+                {
+                    await transaction.RollbackAsync();
+                    throw;
+                }
+            });
         }
 
     }
