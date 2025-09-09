@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import {
   Card,
@@ -18,46 +18,88 @@ import {
   Calendar,
   Download,
   AlertCircle,
+  Loader2,
+  Smartphone,
+  MapPin,
 } from "lucide-react";
 import Header from "@/components/Header";
 import { AuthContext } from "@/context/AuthContext";
-
-const mockData = {
-  overview: {
-    totalUsers: 15420,
-    pageViews: 45280,
-    avgSessionDuration: "3m 42s",
-    bounceRate: "42.3%",
-  },
-  topPages: [
-    { path: "/", views: 12580, users: 8420 },
-    { path: "/analytics", views: 8940, users: 5620 },
-    { path: "/dashboard", views: 6720, users: 4180 },
-    { path: "/login", views: 3890, users: 3890 },
-    { path: "/about", views: 2150, users: 1830 },
-  ],
-  traffic: [
-    { source: "Google", users: 8420, percentage: 54.6 },
-    { source: "Direct", users: 3890, percentage: 25.2 },
-    { source: "Social Media", users: 1850, percentage: 12.0 },
-    { source: "Referral", users: 980, percentage: 6.4 },
-    { source: "Email", users: 280, percentage: 1.8 },
-  ],
-};
+import { analyticsApi } from "@/services/analyticsServices";
+import {
+  AnalyticsOverview,
+  TopPage,
+  TrafficSource,
+  DeviceData, 
+  LocationData, 
+} from "@/types/analytics";
 
 const Analytics = () => {
   const { user } = useContext(AuthContext);
+
+  const [overview, setOverview] = useState<AnalyticsOverview>({
+    totalUsers: 0,
+    pageViews: 0,
+    avgSessionDuration: "0m 0s",
+    bounceRate: "0%",
+  });
+  const [topPages, setTopPages] = useState<TopPage[]>([]);
+  const [trafficSources, setTrafficSources] = useState<TrafficSource[]>([]);
+  const [deviceData, setDeviceData] = useState<DeviceData[]>([]);
+  const [locationData, setLocationData] = useState<LocationData[]>([]);
+  
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchAnalyticsData = async () => {
+    if (!user) return;
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const [
+        overviewData,
+        topPagesData,
+        trafficData,
+        devicesData,
+        locationsData,
+      ] = await Promise.all([
+        analyticsApi.getOverview(),
+        analyticsApi.getTopPages(undefined, undefined, 5),
+        analyticsApi.getTrafficSources(),
+        analyticsApi.getDeviceData(), 
+        analyticsApi.getLocationData(undefined, undefined, 5),
+      ]);
+
+      setOverview(overviewData);
+      setTopPages(topPagesData);
+      setTrafficSources(trafficData);
+      setDeviceData(devicesData); 
+      setLocationData(locationsData); 
+    } catch (err) {
+      console.error("Erro ao carregar dados do analytics:", err);
+      setError("Erro ao carregar dados do Analytics. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchAnalyticsData();
+  }, [user]);
 
   const StatCard = ({
     title,
     value,
     icon: Icon,
     trend,
+    isLoading = false,
   }: {
     title: string;
     value: string;
     icon: any;
     trend?: string;
+    isLoading?: boolean;
   }) => (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -67,12 +109,21 @@ const Analytics = () => {
         <Icon className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold">{value}</div>
-        {trend && (
-          <p className="text-xs text-muted-foreground">
-            <TrendingUp className="inline h-3 w-3 mr-1" />
-            {trend} vs mês anterior
-          </p>
+        {isLoading ? (
+          <div className="flex items-center space-x-2">
+            <Loader2 className="h-4 w-4 animate-spin" />
+            <span className="text-muted-foreground">Carregando...</span>
+          </div>
+        ) : (
+          <>
+            <div className="text-2xl font-bold">{value}</div>
+            {trend && (
+              <p className="text-xs text-muted-foreground">
+                <TrendingUp className="inline h-3 w-3 mr-1" />
+                {trend} vs mês anterior
+              </p>
+            )}
+          </>
         )}
       </CardContent>
     </Card>
@@ -113,49 +164,73 @@ const Analytics = () => {
               </p>
             </div>
             <div className="flex items-center space-x-2 mt-4 sm:mt-0">
-              <Button variant="outline" size="sm">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => fetchAnalyticsData()}
+                disabled={loading}
+              >
                 <Calendar className="w-4 h-4 mr-2" />
-                Últimos 30 dias
+                {loading ? "Atualizando..." : "Últimos 30 dias"}
               </Button>
-              <Button variant="outline" size="sm">
-                <Download className="w-4 h-4 mr-2" />
-                Exportar
-              </Button>
+             
             </div>
           </div>
         </div>
 
+        {error && (
+          <div className="mb-6">
+            <Card className="border-destructive">
+              <CardContent className="flex items-center space-x-2 p-4">
+                <AlertCircle className="h-4 w-4 text-destructive" />
+                <span className="text-sm text-destructive">{error}</span>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={fetchAnalyticsData}
+                  className="ml-auto"
+                >
+                  Tentar novamente
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <StatCard
             title="Usuários Totais"
-            value={mockData.overview.totalUsers.toLocaleString()}
+            value={overview.totalUsers.toLocaleString()}
             icon={Users}
-            trend="+12.5%"
+            
+            isLoading={loading}
           />
           <StatCard
             title="Visualizações"
-            value={mockData.overview.pageViews.toLocaleString()}
+            value={overview.pageViews.toLocaleString()}
             icon={Eye}
-            trend="+8.2%"
+            isLoading={loading}
           />
           <StatCard
             title="Duração Média"
-            value={mockData.overview.avgSessionDuration}
+            value={overview.avgSessionDuration}
             icon={Clock}
-            trend="+5.1%"
+            isLoading={loading}
           />
           <StatCard
-            title="Taxa de Rejeição"
-            value={mockData.overview.bounceRate}
+            title="Taxa de Rejeição (Visitantes que não iteragem com o site)"
+            value={overview.bounceRate}
             icon={TrendingUp}
-            trend="-2.3%"
+            isLoading={loading}
           />
         </div>
 
-        <Tabs defaultValue="pages" className="space-y-4">
-          <TabsList className="grid w-full lg:w-[400px] grid-cols-2">
+<Tabs defaultValue="pages" className="flex flex-col gap-4">          
+          <TabsList className="grid h-auto w-full grid-cols-2 sm:grid-cols-4 mb-2">
             <TabsTrigger value="pages">Páginas Populares</TabsTrigger>
             <TabsTrigger value="traffic">Fontes de Tráfego</TabsTrigger>
+            <TabsTrigger value="devices">Dispositivos</TabsTrigger>
+            <TabsTrigger value="locations">Localização</TabsTrigger>
           </TabsList>
 
           <TabsContent value="pages">
@@ -171,38 +246,53 @@ const Analytics = () => {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  {mockData.topPages.map((page, index) => (
-                    <div
-                      key={page.path}
-                      className="flex items-center justify-between p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
-                    >
-                      <div className="flex items-center space-x-4">
-                        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-sm font-medium text-primary">
-                            {index + 1}
-                          </span>
+                {loading ? (
+                  <div className="flex items-center justify-center p-8">
+                    <Loader2 className="h-6 w-6 animate-spin mr-2" />
+                    <span className="text-muted-foreground">
+                      Carregando páginas...
+                    </span>
+                  </div>
+                ) : topPages.length === 0 ? (
+                  <div className="flex items-center justify-center p-8">
+                    <span className="text-muted-foreground">
+                      Nenhum dado disponível
+                    </span>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {topPages.map((page, index) => (
+                      <div
+                        key={page.path}
+                        className="flex items-center justify-between p-4 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                      >
+                        <div className="flex items-center space-x-4">
+                          <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                            <span className="text-sm font-medium text-primary">
+                              {index + 1}
+                            </span>
+                          </div>
+                          <div>
+                            <p className="font-medium text-foreground">
+                              {page.path}
+                            </p>
+                            <p className="text-sm text-muted-foreground">
+                              {page.users.toLocaleString()} usuários únicos
+                            </p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="font-medium text-foreground">
-                            {page.path}
+                        <div className="text-right">
+                          <p className="text-lg font-semibold text-foreground">
+                            {page.views.toLocaleString()}
                           </p>
                           <p className="text-sm text-muted-foreground">
-                            {page.users.toLocaleString()} usuários únicos
+                            visualizações
                           </p>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <p className="text-lg font-semibold text-foreground">
-                          {page.views.toLocaleString()}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          visualizações
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
@@ -216,36 +306,164 @@ const Analytics = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4">
-                  {mockData.traffic.map((source) => (
-                    <div
-                      key={source.source}
-                      className="flex items-center justify-between p-4 rounded-lg border bg-card"
-                    >
-                      <div className="flex items-center space-x-4">
-                        <div className="w-3 h-3 rounded-full bg-primary"></div>
-                        <div>
-                          <p className="font-medium text-foreground">
-                            {source.source}
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            {source.users.toLocaleString()} usuários
-                          </p>
+                {loading ? (
+                  <div className="flex items-center justify-center p-8">
+                    <Loader2 className="h-6 w-6 animate-spin mr-2" />
+                    <span className="text-muted-foreground">
+                      Carregando fontes de tráfego...
+                    </span>
+                  </div>
+                ) : trafficSources.length === 0 ? (
+                  <div className="flex items-center justify-center p-8">
+                    <span className="text-muted-foreground">
+                      Nenhum dado disponível
+                    </span>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {trafficSources.map((source) => (
+                      <div
+                        key={source.source}
+                        className="flex items-center justify-between p-4 rounded-lg border bg-card"
+                      >
+                        <div className="flex items-center space-x-4">
+                          <div className="w-3 h-3 rounded-full bg-primary"></div>
+                          <div>
+                            <p className="font-medium text-foreground">
+                              {source.source}
+                            </p>
+                            <p className="text-sm text-muted-foreground">
+                              {source.users.toLocaleString()} usuários
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="text-right">
+                            <Badge variant="secondary">
+                              {source.percentage}%
+                            </Badge>
+                          </div>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        <div className="text-right">
-                          <Badge variant="secondary">
-                            {source.percentage}%
-                          </Badge>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
+
+          <TabsContent value="devices">
+            <Card>
+              <CardHeader>
+                <CardTitle>Acesso por Dispositivo</CardTitle>
+                <CardDescription>
+                  Usuários por categoria de dispositivo
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {loading ? (
+                  <div className="flex items-center justify-center p-8">
+                    <Loader2 className="h-6 w-6 animate-spin mr-2" />
+                    <span className="text-muted-foreground">
+                      Carregando dados de dispositivos...
+                    </span>
+                  </div>
+                ) : deviceData.length === 0 ? (
+                  <div className="flex items-center justify-center p-8">
+                    <span className="text-muted-foreground">
+                      Nenhum dado disponível
+                    </span>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {deviceData.map((device) => (
+                      <div
+                        key={device.deviceCategory}
+                        className="flex items-center justify-between p-4 rounded-lg border bg-card"
+                      >
+                        <div className="flex items-center space-x-4">
+                           <Smartphone className="w-4 h-4 text-muted-foreground" />
+                          <div>
+                            <p className="font-medium text-foreground">
+                              {device.deviceCategory}
+                            </p>
+                             <p className="text-sm text-muted-foreground">
+                              {device.sessions.toLocaleString()} sessões
+                            </p>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                           <p className="text-lg font-semibold text-foreground">
+                              {device.users.toLocaleString()}
+                            </p>
+                          <p className="text-sm text-muted-foreground">
+                            usuários
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="locations">
+            <Card>
+              <CardHeader>
+                <CardTitle>Top 5 Localizações</CardTitle>
+                <CardDescription>
+                  Principais países por número de usuários
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {loading ? (
+                  <div className="flex items-center justify-center p-8">
+                    <Loader2 className="h-6 w-6 animate-spin mr-2" />
+                    <span className="text-muted-foreground">
+                      Carregando dados de localização...
+                    </span>
+                  </div>
+                ) : locationData.length === 0 ? (
+                  <div className="flex items-center justify-center p-8">
+                    <span className="text-muted-foreground">
+                      Nenhum dado disponível
+                    </span>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    {locationData.map((loc) => (
+                      <div
+                        key={`${loc.country}-${loc.city}`}
+                        className="flex items-center justify-between p-4 rounded-lg border bg-card"
+                      >
+                        <div className="flex items-center space-x-4">
+                          <MapPin className="w-4 h-4 text-muted-foreground" />
+                          <div>
+                            <p className="font-medium text-foreground">
+                              {loc.country}
+                            </p>
+                            <p className="text-sm text-muted-foreground">
+                              {loc.city !== '(not set)' ? loc.city : 'Cidade não especificada'}
+                            </p>
+                          </div>
+                        </div>
+                         <div className="text-right">
+                           <p className="text-lg font-semibold text-foreground">
+                              {loc.users.toLocaleString()}
+                            </p>
+                          <p className="text-sm text-muted-foreground">
+                            usuários
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </TabsContent>
+
         </Tabs>
       </div>
     </div>

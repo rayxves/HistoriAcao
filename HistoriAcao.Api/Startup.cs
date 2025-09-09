@@ -27,28 +27,28 @@ public class Startup
             options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
         });
 
-    services.AddDbContextPool<ApplicationDbContext>(options =>
-    {
-     var connectionString = Configuration.GetConnectionString("DefaultConnection");
+        services.AddDbContextPool<ApplicationDbContext>(options =>
+        {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
 
-     options.UseNpgsql(connectionString, npgsqlOptions =>
-     {
-         npgsqlOptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
+            options.UseNpgsql(connectionString, npgsqlOptions =>
+        {
+             npgsqlOptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
 
-         npgsqlOptions.CommandTimeout(60);
+             npgsqlOptions.CommandTimeout(60);
 
-         npgsqlOptions.EnableRetryOnFailure(
-             maxRetryCount: 2,
-             maxRetryDelay: TimeSpan.FromSeconds(3),
-             errorCodesToAdd: null
-         );
-     });
+             npgsqlOptions.EnableRetryOnFailure(
+                 maxRetryCount: 2,
+                 maxRetryDelay: TimeSpan.FromSeconds(3),
+                 errorCodesToAdd: null
+             );
+         });
 
-     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 
-     options.EnableSensitiveDataLogging(false);
+            options.EnableSensitiveDataLogging(false);
 
-    }, poolSize: 32);
+        }, poolSize: 32);
 
         services.AddIdentity<User, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -88,6 +88,8 @@ public class Startup
         services.AddScoped<IQuestionServices, QuestionServices>();
         services.AddScoped<ITokenServices, TokenServices>();
         services.AddScoped<IAuthServices, AuthServices>();
+        services.AddScoped<GoogleAnalyticsService>();
+
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -6,6 +6,7 @@ out/
 *.exe
 *.app
 *.pdb
+google-credentials.json
 lambda-package.zip
 lambda_deploy_script.sh
 *.log
