@@ -33,16 +33,16 @@ public class Startup
 
             options.UseNpgsql(connectionString, npgsqlOptions =>
         {
-             npgsqlOptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
+            npgsqlOptions.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
 
-             npgsqlOptions.CommandTimeout(60);
+            npgsqlOptions.CommandTimeout(60);
 
-             npgsqlOptions.EnableRetryOnFailure(
-                 maxRetryCount: 2,
-                 maxRetryDelay: TimeSpan.FromSeconds(3),
-                 errorCodesToAdd: null
-             );
-         });
+            npgsqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 2,
+                maxRetryDelay: TimeSpan.FromSeconds(3),
+                errorCodesToAdd: null
+            );
+        });
 
             options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 
@@ -78,9 +78,10 @@ public class Startup
             options.AddPolicy("AllowAll",
                 policy =>
                 {
-                    policy.AllowAnyOrigin()
+                    policy.WithOrigins("https://d27g8rl30ph7b4.cloudfront.net")
                           .AllowAnyHeader()
-                          .AllowAnyMethod();
+                          .AllowAnyMethod()
+                          .AllowCredentials();
                 });
         });
 

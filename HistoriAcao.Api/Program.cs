@@ -73,9 +73,10 @@ builder.Services.AddCors(options =>
                       {
                           if (isLambda)
                           {
-                              policy.AllowAnyOrigin()
+                              policy.WithOrigins("https://d27g8rl30ph7b4.cloudfront.net")
                                     .AllowAnyHeader()
-                                    .AllowAnyMethod();
+                                    .AllowAnyMethod()
+                                    .AllowCredentials();
                           }
                           else
                           {
