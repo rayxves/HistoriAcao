@@ -43,7 +43,7 @@ const QuizPlayer = ({ questions, onBack }: QuizPlayerProps) => {
   const [isModalLoading, setIsModalLoading] = useState(true);
 
   const currentQuestion = questions[currentQuestionIndex];
-  
+
   useEffect(() => {
     if (!selectedDoc) return;
 
@@ -261,7 +261,7 @@ const QuizPlayer = ({ questions, onBack }: QuizPlayerProps) => {
                 <Loader2 className="h-10 w-10 text-emerald-600 animate-spin" />
               </div>
             ) : (
-               <div className="overflow-y-auto">
+              <div className="overflow-y-auto">
                 {selectedDoc.url && (
                   <div className="p-6">
                     <ImageWithLoader
@@ -304,7 +304,7 @@ const QuizPlayer = ({ questions, onBack }: QuizPlayerProps) => {
                 )}
               </div>
             )}
-            
+
             <div className="p-4 bg-gray-50 border-t text-right mt-auto">
               <button
                 onClick={() => setSelectedDoc(null)}
@@ -343,6 +343,7 @@ const QuizPlayer = ({ questions, onBack }: QuizPlayerProps) => {
               userAnswerId={userAnswers[currentQuestion.id]}
               onAnswerSelect={handleAnswerSelect}
               onViewDocument={handleViewDocument}
+              showAnswers={false}
             />
           </div>
 

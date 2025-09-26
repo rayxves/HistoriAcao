@@ -9,6 +9,7 @@ interface Props {
   onAnswerSelect: (questionId: number, alternativeId: number) => void;
   onAddToQuiz?: (question: QuestionDto) => void;
   onViewDocument?: (doc: DocumentDto) => void;
+  showAnswers?: boolean;
 }
 
 const getAlternativeColorClass = (score: number): string => {
@@ -24,8 +25,8 @@ const sortAlternatives = (alternatives: QuestionDto["alternativas"]) => {
 
   return [...alternatives].sort((a, b) => {
     return (
-      letterOrder.indexOf(a.letra.toLowerCase()) -
-      letterOrder.indexOf(b.letra.toLowerCase())
+      letterOrder.indexOf(a.letra.toUpperCase()) -
+      letterOrder.indexOf(b.letra.toUpperCase())
     );
   });
 };
@@ -37,10 +38,11 @@ export default function QuestionCard({
   onAnswerSelect,
   onAddToQuiz,
   onViewDocument,
+  showAnswers = true,
 }: Props) {
   const hasAnswered = userAnswerId != null && userAnswerId != undefined;
+  const canShowAnswerFeedback = showAnswers && hasAnswered;
   const sortedAlternatives = sortAlternatives(question.alternativas);
-
   return (
     <div className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow p-4 sm:p-6">
       <div className="space-y-3 sm:space-y-4">
@@ -122,11 +124,15 @@ export default function QuestionCard({
                 "p-3 border rounded-lg transition-colors flex items-center justify-between";
               let colorClass = "border-gray-200 hover:bg-gray-50";
 
-              if (hasAnswered) {
+              if (canShowAnswerFeedback) {
                 if (isSelected) {
                   colorClass = getAlternativeColorClass(alt.pontuacao);
                 } else {
                   colorClass = "bg-gray-50 border-gray-200 opacity-70";
+                }
+              } else if (hasAnswered) {
+                if (isSelected) {
+                  colorClass = "bg-gray-100 border-gray-300";
                 }
               } else {
                 baseClass += " cursor-pointer";
@@ -135,10 +141,14 @@ export default function QuestionCard({
               return (
                 <div
                   key={alt.id}
-                  className={`${baseClass} ${colorClass} cursor-pointer`}
-                  onClick={() =>
-                    !hasAnswered && onAnswerSelect(question.id, alt.id)
-                  }
+                  className={`${baseClass} ${colorClass} ${
+                    !canShowAnswerFeedback ? "cursor-pointer" : ""
+                  }`}
+                  onClick={() => {
+                    if (!canShowAnswerFeedback) {
+                      onAnswerSelect(question.id, alt.id);
+                    }
+                  }}
                 >
                   <div className="flex items-start space-x-2 sm:space-x-3">
                     <span className="font-bold text-gray-700 bg-white px-2 py-1 rounded border border-gray-200/50 min-w-[28px] sm:min-w-[32px] text-center text-xs sm:text-sm">
@@ -148,7 +158,7 @@ export default function QuestionCard({
                       {alt.texto}
                     </span>
                   </div>
-                  {hasAnswered && (
+                  {canShowAnswerFeedback && (
                     <span className="font-bold pr-1 text-xs sm:text-sm text-gray-700">
                       {alt.pontuacao} pts
                     </span>

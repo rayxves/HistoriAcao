@@ -1,434 +1,418 @@
 [
-    {
-      "Olimpiada": "5ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Média",
-      "TopicoId": 11,
-      "SubtopicoId": null,
-      "Enunciado": "Leia os dois excertos extraídos de blogs de escritores e escolha a alternativa:",
-      "Documentos": [
-        {
-          "Titulo": "Politicamente incorreto não é transgressor...",
-          "Tipo": "Texto",
-          "Descricao": "História da Mulher Politicamente Incorreto Século XXI Brasil Preconceito",
-          "Origem": "Lola Aronovich. “Politicamente incorreto não é transgressor, Rafinha”. 09 maio 2011.",
-          "Url": null,
-          "Texto": "“Eu acho ótimo estarmos vivendo numa época em que boa parte das pessoas fica indignada com piadas contra minorias. Sim, muitas vezes o humor é transgressor. Mas o que esse pessoal que ataca minorias pra fazer piada precisa entender é que eles não estão transgredindo nada. Seus tataravôs já eram racistas, gente. Pode ter certeza que seus tataravôs já comparavam negros com macacos. Aposto como seus tataravôs já faziam gracinhas sobre a sorte que uma moça feia teve em ser estuprada. Vocês não são moderninhos, não são ousados, não são criativos. Vocês estão apenas seguindo uma tradição. E, se naquela época já não era engraçado, imagina agora? Rebeldia é querer mudar o mundo, começando pela forma que falamos. Não há nada de novo ou de rebelde em eternizar velhos preconceitos (…)”\n**Agradecemos à escritora Lola Aronovich pela gentil permissão de uso de seu texto.**"
-        },
-        {
-          "Titulo": "Carta aberta aos humoristas do Brasil...",
-          "Tipo": "Texto",
-          "Descricao": "“Carta aberta aos humoristas do Brasil”, do escritor Alex Castro, publicado em 06 de dezembro de 2012.",
-          "Origem": "Alex Castro",
-          "Url": null,
-          "Texto": "“O machismo mata. Dez mulheres são assassinadas no Brasil, colocando-o no 12º lugar no ranking mundial de homicídios contra a mulher. Uma em cada cinco mulheres já sofreu violência de parte de um homem, em 80% dos casos o seu próprio parceiro. Em 2011, o ABC paulista teve um estupro (reportado!) por dia . Na cidade de São Paulo, uma mulher é agredida a cada sete minutos — além de não ter tempo de fazer nada, essa pobre mulher ainda é agredida no chuveiro, no ônibus, até na privada! Riu? É, mas não tem graça. A solução está na mão dos homens . (…) As mulheres são mortas em tão grandes números, e por seus próprios homens, porque existe uma cultura machista no Brasil, onde as mulheres são vistas como tendo menos valor, onde as mulheres são rotuladas ou como santas ou putas, onde uma mulher viver abertamente sua sexualidade é considerado ofensivo ou repreensível, onde a sexualidade de uma mulher tem impacto direto sobre a honra de seu companheiro. Se você faz piadas que confirmam os lugares-comuns dessa cultura machista, que objetificam a mulher, que estigmatizam seu comportamento sexual, então você possibilita e reforça essa cultura assassina.\n\nVocê é cúmplice. (…) Não reclame da ‘patrulha’. ‘Patrulha’ são soldados armados que podem te matar se você os desobedecer.\n\nTorcer o nariz para as piadas racistas, homofóbicas ou machistas de um comediante não é ‘patrulha’.\n\nÉ o público exercendo pacificamente sua liberdade de expressão de considerar babaca um comediante que faça piadas racistas, homofóbicas ou machistas.\n\nEsses pobres humoristas ‘perseguidos’ que reclamam da ‘patrulha politicamente correta’ não estão defendendo a liberdade de expressão: liberdade de expressão de verdade é o cara poder fazer piada sobre mulher estuprada e nós podermos criticá-lo por isso.\n\nNa verdade, a liberdade que querem esses paladinos do ‘politicamente incorreto’ é a liberdade de falar os maiores absurdos sem nunca serem criticados.\n\nAí é fácil, né? Assim eu também quero. Nunca vi ninguém não-babaca se dizendo ‘politicamente incorreto’.\n\n(…) Falar besteira, qualquer criança fala. Adulto é quem sabe que falar significa se abrir para a possibilidade de ouvir a resposta.\n\nAdulto é quem entende que ele tem a mesma liberdade de falar que seus críticos tem de criticá-lo.”\n**Agradecemos ao escritor Alex Castro pela gentil permissão de uso de seu texto.**"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "Ambos os textos, publicados em blogs, atestam as novas formas de comunicação e de divulgação veloz de ideias e opiniões, próprios da era da internet.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "B",
-          "Texto": "O texto 1 questiona a ideia de que haveria rebeldia ou originalidade neste tipo de humor, vendo-o como preconceito historicamente arraigado.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "C",
-          "Texto": "O texto 2 discorda da ideia de que o “politicamente correto” cerceia a liberdade de expressão dos humoristas.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "D",
-          "Texto": "Ambos os textos lidam com o tema do preconceito racial e/ou de gênero, questionando os limites do humor.",
-          "Pontuacao": 1
-        }
-      ]
-    },
-    {
-      "Olimpiada": "5ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Difícil",
-      "TopicoId": 6,
-      "SubtopicoId": 13,
-      "Enunciado": "A seguir estão dispostos alguns documentos sobre o músico e maestro Carlos Gomes. Analise-os e assinale a melhor alternativa.",
-      "Documentos": [
-        {
-          "Titulo": "História da música ocidental",
-          "Tipo": "Texto",
-          "Descricao": "Primeira República Séculos XIX-XX Indianismo Brasil História da Música",
-          "Origem": "Jean Massin e Brigitte Massin. História da música ocidental, Rio de Janeiro: Nova Fronteira, 1997.",
-          "Url": null,
-          "Texto": "“(…) O ano de 1870 viu justamente aparecer um estranho personagem, brasileiro de origem: Antônio Carlos Gomes (1836-1896) nasceu em Campinas, perto de São Paulo; estudou música em Milão e compôs uma ópera estranha, O Guarani, em que se encontram todos os temas patrióticos tão caros a Verdi. (…) A música da obra é sólida, densa e apresenta por momentos aquela imperiosa urgência que prende a atenção nas óperas de Verdi. Carlos Gomes foi saudado como o herdeiro presuntivo do mestre e, em seguida, foi rapidamente esquecido entre os inúmeros compositores de dramas mais ou menos históricos”."
-        },
-        {
-          "Titulo": "A obra de Carlos Gomes no contexto da transição entre monarquia e república...",
-          "Tipo": "Texto",
-          "Descricao": "Brasil Indianismo História da Música Séculos XIX-XX Primeira República.",
-          "Origem": "Alan Carlos Ghedini. TCC apresentado à Universidade do Estado de Santa Catarina, Florianópolis, 2008",
-          "Url": null,
-          "Texto": "“(…) Essa escolha marcou não só sua estética pessoal, como também sua identificação política no país, haja vista que, com a proximidade da República e sua subsequente proclamação, o embate entre a estética italiana e alemã voltou à cena, porém dessa vez não europeia, mas brasileira. Eram dois estilos estrangeiros identificados às duas realidades políticas em conflito no Brasil. O debate assumiu contornos de verdadeira guerra política na qual, de um lado, figuravam aqueles alinhados à estética alemã, associada à República, entre os quais o novo diretor do Instituto Nacional de Música e autor do hino da República, Leopoldo Miguéz, e de outro, os artistas adeptos ao estilo italiano que por sua vez, associado ao Império, representou a quase exclusão de músicos como o próprio Carlos Gomes, este, relacionado de forma recorrente, no período da Primeira República, à monarquia. (…) É um engano supor que, a despeito de seu sucesso na Itália, fosse ele considerado pelos italianos um seu patrício, havia clara distinção a esse respeito. Elegia-se o maestro como membro do estilo lírico daquele país, mantendo-o, contudo, envolto num ambiente de certa forma ‘exótico’, colocando Carlos em termos de um ‘selvagem’ ou um ‘aborígene’ da ópera.”"
-        },
-        {
-          "Titulo": "A força indômita",
-          "Tipo": "Imagem",
-          "Descricao": "História da Música Primeira República Indianismo Séculos XIX-XX Brasil.",
-          "Origem": "Gazzetta Musicale di Milano, SD. In: Marcus Góes . A força indômita, Belém: SECULT, 1996.",
-          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/5ONHB_primeira_fase_questao_2.jpg",
-          "Texto": null
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "Carlos Gomes foi um dos nomes mais importantes da história da música brasileira, sendo ligado à estética romântica indianista do Brasil.",
-          "Pontuacao": 4
-        },
-        {
-          "Letra": "B",
-          "Texto": "Giuseppe Verdi, importante músico italiano romântico nacionalista, foi referência para Carlos Gomes, cuja obra retratou o processo de Unificação Italiana.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "C",
-          "Texto": "A caricatura de Carlos Gomes publicada no jornal italiano de Milão, Gazzetta Musicale, retrata o artista brasileiro como um ‘selvagem’, tal qual entendiam a temática de sua ópera O Guarani.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "D",
-          "Texto": "Carlos Gomes era conhecido por discursar a favor da monarquia antes de suas apresentações em espaços públicos, em gratidão a D. Pedro II que financiou seus estudos na Itália.",
-          "Pontuacao": 0
-        }
-      ]
-    },
-    {
-      "Olimpiada": "5ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Média",
-      "TopicoId": 9,
-      "SubtopicoId": 20,
-      "Enunciado": "A partir da leitura da notícia, podemos afirmar que:",
-      "Documentos": [
-        {
-          "Titulo": "Exposição \"Curitiba Anos 50\"",
-          "Tipo": "Texto",
-          "Descricao": "Curitiba História das Cidades Século XX-XXI",
-          "Origem": "Redação Bonde com PMC",
-          "Url": null,
-          "Texto": "Exposição histórica resgata Curitiba dos anos 50\n\nO Salão Paranaguá do Memorial de Curitiba abriga, a partir das 19h desta quinta-feira (29), a exposição histórica “Curitiba Anos 50”, que reúne material do acervo da Casa da Memória, uma das unidades da Fundação Cultural de Curitiba. São textos, fotos, gibis e revistas de época, além de filmes e ambientações que poderão ser vistos até novembro de 2013. A entrada é franca.\n\nA proposta é que o público empreenda uma viagem no tempo. Nos anos dourados, Curitiba sentia bafejar os bons ventos de mudanças e o tom do discurso progressista era dado em novos acordes. A riqueza do café trazia recursos antes impensados, os números da construção civil impressionavam e os horizontes expandiam-se por vias que se prolongavam em direção aos mais distantes arrabaldes. Para deleite dos moradores, o clima era de permanente construção, próprio das grandes metrópoles. A cidade pontuava seu horizonte com prédios cada vez mais altos, anunciados em todas as revistas locais como a tradução do progresso e do clima de euforia do momento. No ano do Centenário, para orgulho dos habitantes, prédios com mais de dez andares já somavam mais de quarenta e as estatísticas apontavam uma média de oito casas construídas por dia útil. A cidade crescia a olhos vistos, como se dizia. A bem da verdade, Curitiba transformou-se num grande canteiro de obras, onde o vaivém de operários, engenheiros, arquitetos e maquinários, reforçavam a imagem de prosperidade.\n\nEmbalados pelo sentimento de euforia progressista, os curitibanos veriam brotar marcos que sacralizariam o modernismo arquitetônico e cultural, a começar pelos edifícios da Biblioteca Pública e do Centro Cívico, o primeiro do país em linguagem totalmente moderna. Tornava-se evidente que o principal signo dos novos tempos eram as linhas de uma arquitetura que colocaria a capital em pé de igualdade com grandes centros urbanos, como Rio de Janeiro e São Paulo.\n\nServiço\nExposição “Curitiba Anos 50”, com material do acervo da Casa da Memória da Fundação Cultural de Curitiba\nOnde: Salão Paranaguá do Memorial de Curitiba (Rua Claudino dos Santos, 79 – Setor Histórico).\nQuando: de 29 de novembro de 2012 (abertura às 19h) a 3 de novembro de 2013.\nHorário de visitas: de terça a sexta-feira, das 9h às 12h e 13h às 18h; sábados, domingos e feriados, das 9h às 15h.”"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "O texto sobre a exposição reconstrói um passado de euforia e entusiasmo que não leva em consideração grande parte dos conflitos decorrentes do pós-guerra tanto no Brasil como no mundo.",
-          "Pontuacao": 4
-        },
-        {
-          "Letra": "B",
-          "Texto": "Fotos, textos, filmes e arquitetura são alguns dos itens utilizados pela exposição para apresentar uma cidade que se modernizava rapidamente na década de 1950, desejando equiparar-se a outras capitais como São Paulo e Rio de Janeiro.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "C",
-          "Texto": "Apesar do esforço de transformação da cidade de Curitiba em uma grande metrópole, a cidade não foi escolhida como uma das sedes dos jogos da Copa do Mundo de Futebol de 1950, que privilegiou as capitais Rio de Janeiro, São Paulo, Belo Horizonte, Porto Alegre e Recife.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "D",
-          "Texto": "O texto traz uma leitura do passado a partir dos dias atuais, narrando a história da cidade de Curitiba com um discurso celebratório da modernidade e do \"crescimento a olhos vistos\".",
-          "Pontuacao": 5
-        }
-      ]
-    },
-    {
-      "Olimpiada": "5ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Fácil",
-      "TopicoId": 6,
-      "SubtopicoId": 13,
-      "Enunciado": "Leia alguns trechos da Lei Rio Branco. Sobre a lei é correto afirmar:",
-      "Documentos": [
-        {
-          "Titulo": "LEI Nº 2.040, DE 28 DE SETEMBRO DE 1871",
-          "Tipo": "Texto",
-          "Descricao": "Emancipação História da Escravidão Século XIX Ventre livre Brasil História do Direito",
-          "Origem": "AULETE, Caldas. Diccionario contemporaneo da lingua portugueza. Lisboa Portugal: Parceria Antonio Maria Pereira, 1925",
-          "Url": null,
-          "Texto": "“(…) Art. 1º Os filhos de mulher escrava que nascerem no Império desde a data desta lei, serão considerados de condição livre. § 1º Os ditos filhos menores ficarão em poder ou sob a autoridade dos senhores de suas mães, os quais terão obrigação de criá-los e tratá-los até a idade de oito anos completos. Chegando o filho da escrava a esta idade, o senhor da mãe terá opção, ou de receber do Estado a indenização de 600$000, ou de utilizar-se dos ser viços do menor até a idade de 21 anos completos. No primeiro caso, o Governo receberá o menor, e lhe dará destino, em conformidade da presente lei. (…) § 2º Qualquer desses menores poderá remir-se do ônus de servir, mediante prévia indenização pecuniária, que por si ou por outrem ofereça ao senhor de sua mãe, procedendo-se à avaliação dos serviços pelo tempo que lhe restar a preencher, se não houver acordo sobre o quanto da mesma indenização. (…) Art. 3º Serão anualmente libertados em cada Província do Império tantos escravos quantos corresponderem à quota anualmente disponível do fundo destinado para a emancipação. § 1º O fundo de emancipação compõe-se: 1º Da taxa de escravos. 2º Dos impostos gerais sobre transmissão de propriedade dos escravos. 3º Do produto de seis loterias anuais, isentas de impostos, e da décima parte das que forem concedidas de agora em diante para correrem na capital do Império. 4º Das multas impostas em virtude desta lei. 5º Das quotas que sejam marcadas no Orçamento geral e nos provinciais e municipais. 6º De subscrições, doações e legados com esse destino. (…) Art. 10. Ficam revogadas as disposições em contrário. (…) \n\n600$000: Seiscentos mil réis. Pecuniária: referente à pecúnia = dinheiro."
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "A criação do fundo de emancipação contemplava os senhores que optassem por entregar ao cuidado do Estados os filhos de escravas nascidos após 1871.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "B",
-          "Texto": "A liberdade de ventre pode ser tomada como uma forma de emancipação gradual, na medida em que eliminava a reprodução da escravidão pelo nascimento.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "C",
-          "Texto": "A lei 2.040 de 28 de setembro de 1871 é chamada de Lei do ventre livre por ser essa a sua resolução mais reconhecida e explorada.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "D",
-          "Texto": "A prestação de serviços ou o pagamento de 600$000 pelo Estado garantia aos senhores uma indenização pela liberdade de ventre de suas escravas.",
-          "Pontuacao": 4
-        }
-      ]
-    },
-    {
-      "Olimpiada": "5ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Difícil",
-      "TopicoId": 10,
-      "SubtopicoId": 24,
-      "Enunciado": "Numa entrevista para Ana de Oliveira no site Tropicália, o poeta e compositor José Carlos Capinan afirmou, sobre a canção “Soy loco por ti, América”, composta em 1967, em parceria com Gilberto Gil:",
-      "Documentos": [
-        {
-          "Titulo": "Entrevista de José Carlos Capinan",
-          "Tipo": "Texto",
-          "Descricao": "História da Música Censura Século XX América Latina",
-          "Origem": "Ana de Oliveira",
-          "Url": null,
-          "Texto": "“A minha intenção era registrar a emoção pela morte de Che Guevara. Não quis dizer que eu era latino-americano, embora me sentisse assim. Sentia Cuba desde a revolução de Fidel Castro. Quando menino, tentava cantar rumbas e boleros em castelhano. E o carnaval baiano tinha muitas versões de rumbas pra frevo, não é? Na letra, busquei palavras do português e do castelhano que não demonstrassem ser de línguas diferentes. Algumas palavras me pareciam sonoramente mais poéticas em castelhano do que em português. Lembravam Federico García Lorca. Além disso, havia a coisa de uma estética do continente, numa época em que as diversas questões de cada país se aproximavam muito. Uma latinidade de mundo alternativo…”"
-        },
-        {
-          "Titulo": "Soy loco por ti, América",
-          "Tipo": "Texto",
-          "Descricao": "Caetano Veloso [1967] Caetano Veloso 1967 Philips R 765.026",
-          "Origem": "Gilberto Gil e Capinan",
-          "Url": null,
-          "Texto": "Soy loco por ti, América, yo voy traer una mujer playera\nQue su nombre sea Marti, que su nombre sea Marti\nSoy loco por ti de amores tenga como colores la espuma blanca de Latinoamérica\nY el cielo como bandera, y el cielo como bandera\n\nSoy loco por ti, América, soy loco por ti de amores\nSorriso de quase nuvem, os rios, canções, o medo\nO corpo cheio de estrelas, o corpo cheio de estrelas\nComo se chama a amante desse país sem nome, esse tango, esse rancho,\nEsse povo, dizei-me, arde o fogo de conhecê-la, o fogo de conhecê-la\n\nSoy loco por ti, América, soy loco por ti de amores\nEl nombre del hombre muerto ya no se puede decirlo, quién sabe?\nAntes que o dia arrebente, antes que o dia arrebente\nEl nombre del hombre muerto antes que a definitiva noite se espalhe em Latinoamérica\nEl nombre del hombre es pueblo, el nombre del hombre es pueblo\n\nSoy loco por ti, América, soy loco por ti de amores\nEspero a manhã que cante, el nombre del hombre muerto\nNão sejam palavras tristes, soy loco por ti de amores\nUm poema ainda existe com palmeiras, com trincheiras, canções de guerra\nQuem sabe canções do mar, ai, hasta te comover, ai, hasta te comover\n\nSoy loco por ti, América, soy loco por ti de amores\nEstou aqui de passagem, sei que adiante um dia vou morrer\nDe susto, de bala ou vício, de susto, de bala ou vício\nNum precipício de luzes entre saudades, soluços, eu vou morrer de bruços\nNos braços, nos olhos, nos braços de uma mulher, nos braços de uma mulher Mais apaixonado ainda dentro dos braços da camponesa, guerrilheira\n\nManequim, ai de mim, nos braços de quem me queira, nos braços de quem me queira\nSoy loco por ti, América, soy loco por ti de amores"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "Ainda hoje, essa canção aparece com sua autoria atribuída também a Torquato Neto, já que o nome deste poeta apareceu como parceiro na primeira edição do LP Caetano Veloso, de 1967.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "B",
-          "Texto": "Na canção, Che Guevara é apresentado como “el hombre muerto” de quem não se podia dizer o nome. Essa foi a forma de os compositores burlarem a censura na ditadura militar.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "C",
-          "Texto": "No verso “Espero a manhã que cante” Capinan utiliza uma imagem comum às canções de protesto dos anos 1960: a ideia de um futuro revolucionário.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "D",
-          "Texto": "Entre os problemas comuns citados pelo compositor estava a grande quantidade de ditaduras de esquerda nos países da América do Sul nas décadas de 1960 e 1970.",
-          "Pontuacao": 0
-        }
-      ]
-    },
-    {
-      "Olimpiada": "5ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Média",
-      "TopicoId": 9,
-      "SubtopicoId": 20,
-      "Enunciado": "Observe a propaganda retirada da revista A Cigarra de 8 de abril de 1954. A partir da leitura da propaganda, escolha uma das alternativas:",
-      "Documentos": [
-        {
-          "Titulo": "A Cigarra",
-          "Tipo": "Imagem",
-          "Descricao": "Propaganda do Leite de Colônia na revista A Cigarra.",
-          "Origem": "A Cigarra, n. 8, abril de 1954, p. 1.",
-          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/5ONHB_primeira_fase_questao_6.jpg",
-          "Texto": "Não arrisque a beleza natural de sua pele! Proteja sua cútis pela vitalizante massagem de beleza com ação medicinal do Leite de Colonia.\n\nO viço… o colorido… a juventude de sua pele não são coisas que possam ser substituídas. Sua cútis, portanto, merece todo cuidado! Para conservar o frescor e a maciez de sua pele, faça diariamente a tonificante “massagem de beleza”… pela manhã e à noite… com a penetrante ação medicinal do insubstituível Leite de Colonia. Revigorando os tecidos da pele, Leite de Colonia evita a flacidez… remove manchas, sardas e espinhas, que antes você tentava, inutilmente, esconder com a maquilagem excessiva. E nada melhor do que Leite de Colonia para a completa limpeza da pele, sejam quais forem os preparados que você usa em seu rosto. Adote agora Leite de Colonia para ter a pele jovem… por muito mais tempo.\n\nÉ o tratamento de beleza mais simples e econômico! Molhe o seu rosto com bastante água. Sem enxugá-lo, friccione algodão embebido de Leite de Colonia, em movimentos circulares de baixo para cima. É o quanto basta!\n\nInsista com Leite de Colonia. É preparado pelo médico Dr. Arthur Studar."
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "Observa-se a criação de um padrão de beleza feminino atrelado, por meio do consumo de cosméticos, à manutenção da juventude.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "B",
-          "Texto": "A maquiagem era considerada uma prática artificial e imoral para a época, e por isso é criticada no presente anúncio.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "C",
-          "Texto": "O texto publicitário, além de trazer uma mensagem que relaciona o uso do produto à conservação da beleza feminina, oferece outras informações, tais como: modo de usar e certificação medicinal.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "D",
-          "Texto": "Anúncios deste período eram frequentemente confeccionados com imagens e textos longos e argumentativos, que tinham como público alvo uma classe média urbana com crescente poder aquisitivo.",
-          "Pontuacao": 4
-        }
-      ]
-    },
-    {
-      "Olimpiada": "5ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Difícil",
-      "TopicoId": 2,
-      "SubtopicoId": 2,
-      "Enunciado": "A historiadora, no texto:",
-      "Documentos": [
-        {
-          "Titulo": "Do espetáculo da natureza à natureza do espetáculo",
-          "Tipo": "Texto",
-          "Descricao": "Século XXVII usos e costumes História da medicina",
-          "Origem": "Vera Regina Beltrão Marques.",
-          "Url": null,
-          "Texto": "Deixamos aqui nossa homenagem à saudosa colega historiadora Vera Regina Beltrão Marques (1953-2013) “Nas correspondências avulsas encetadas entre metrópole e colônia enfatizava-se com frequência a falta de médicos, remédios, hospitais e o grande número de epidemias que grassavam. É possível entretanto identificar nos meandros desses documentos e naqueles não oficiais a presença de outros atores(…) Reclamava-se da falta de médicos, mas convém colocar as seguintes questões: que setores populacionais ressentiam-se da escassez destes profissionais? A quem recorriam os indígenas, escravos e seus descendentes quando adoeciam? Buscavam eles o atendimento médico ou seriam os mandantes portugueses os que mais demandavam a arte de curar dita erudita? (…) Proponho então outro ponto de partida: o florescimento das demais artes de cura esteve intrinsecamente ligado às diferentes raízes culturais das populações aqui residentes (…) Não era a falta de médicos formados que possibilitava a atuação de curadores considerados ilegítimos. As tradições culturais refletidas nas artes de curar dos negros e indígenas abria espaço para que se disseminassem seus próprios curadores e suas terapêuticas. Considerar a medicina lusitana oficial como o saber legítimo e todo poderoso seria desautorizar outros conhecimentos (…) Poder se-ia, ainda, assinalar que tal procedimento historiográfico contribuiria para manter relegados e esquecidos saberes que são constituintes de áreas do conhecimento médico.”"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "Evita corroborar o argumento de que se recorria a curandeiros no Brasil colonial devido à escassez de médicos, propondo um “ponto de partida” que inclua as tradições culturais locais.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "B",
-          "Texto": "Adota um procedimento historiográfico que põe em evidência sujeitos históricos que de outro modo seriam relegados a um papel menor.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "C",
-          "Texto": "Indica que tanto as artes de curar praticadas por indígenas ou negros quanto a medicina oficial lusitana estavam atrasadas em relação aos conhecimentos médicos do restante da Europa.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "D",
-          "Texto": "Recusa as primeiras evidências que encontra nas fontes históricas - as correspondências entre metrópole e colônia -buscando outras explicações para o seu tema de pesquisa.",
-          "Pontuacao": 4
-        }
-      ]
-    },
-    {
-      "Olimpiada": "5ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Média",
-      "TopicoId": 7,
-      "SubtopicoId": 15,
-      "Enunciado": "Em seu livro Visão do jogo – primórdios do futebol no Brasil, José Moraes dos Santos Neto escreve:",
-      "Documentos": [
-        {
-          "Titulo": "Visão do jogo",
-          "Tipo": "Texto",
-          "Descricao": "História do Esporte Séculos XIX-XX Sudeste Futebol. José Moraes dos Santos Neto – Visão do jogo.",
-          "Origem": "José Moraes dos Santos Neto. Visão do jogo. Primórdios do futebol no Brasil. São Paulo: Cosac &Naify, 2002. pp.27-37.",
-          "Url": null,
-          "Texto": "“Mas e Charles Miller, o ‘pai do futebol brasileiro’? Onde entra nessa história, se o esporte já era jogado por aqui desde a primeira metade da década de 1880? Afinal, é para este brasileiro de nome inglês que o nosso senso comum aponta quando o assunto é a introdução do futebol no país. Charles Miller nasceu em São Paulo, no dia 24 de novembro de 1874, filho do engenheiro escocês John Miller e de Carlota Fox. Durante boa parte de sua vida, no entanto, morou e foi educado na Inglaterra. Conheceu o futebol no colégio, jogando pelo Banister Court School, depois pelo Corinthian Football Club, pelo St. Mary’s Football Club (atual Southampton Football Club) e pela seleção do condado de Hampshire. Era um atacante rápido, excelente driblador e dono de um chute forte e preciso, qualidades que o destacavam mesmo na Inglaterra, onde o futebol já amadurecera e conquistara um número expressivo de adeptos. Em 1894, retornando ao Brasil, Miller trouxe na mala alguns itens de sua adoração: um livro de regras do association football, uma camisa do Banister School e outra do St. Mary, duas bolas, uma bomba para enchê-las e um par de chuteiras.\n\n(…) Como todo bom oldboy das escolas inglesas, Miller chamou para si a responsabilidade de promover a prática do esporte entre a fina-flor da juventude paulistana.\n\n(…) Várias hipóteses podem explicar a origem do mito segundo o qual Miller seria, além de grande craque e divulgador pioneiro, o ‘pai’ do futebol entre nós. A primeira diz respeito à inserção dos jogos entre os clubes de elite nos jornais paulistas. Obviamente, enquanto foi uma atividade recreativa restrita a colégios, o futebol não mereceu qualquer atenção da imprensa. Além disso, deve-se ter em conta a força cultural desses grupos socialmente dominantes, contumazes inventores de tradições, bem como o fato de os primeiros arquivos sistematizados serem provenientes dos clubes e das ligas que os reuniam (…). Tudo isto, porém, não pode criar uma muralha documental que encubra o fato de que o futebol já era praticado, embora com outro espírito e menor organização, pelos membros das elites nos colégios brasileiros, e que muitos de seus ex-alunos também contribuíram para a difusão do esporte. (…) Mas é difícil derrubar um mito depois que ele é erguido. (…) O jornalista Thomaz Mazzoni, foi, talvez, o único a descrever vários jogos no Brasil antes do retorno de Charles Miller, em 1894. Fez, inclusive, referência ao futebol no Colégio São Luís de Itu, com base no relato de ex-alunos. No jornal A Gazeta e também no A Gazeta Esportiva, sempre iniciava suas matérias sobre o assunto descrevendo algum episódio anterior à chegada de Miller. Conhecia não só a história do futebol nos colégios, como também várias outras possíveis fontes dessa paixão nacional. Sabia que funcionários escoceses e brasileiros da São Paulo Railway, na linha Jundiaí-São Paulo, praticavam o futebol, o mesmo acontecendo com os ferroviários das oficinas da Companhia Paulista, já por volta de 1892, e dispunha de inúmeros relatos de jogos de futebol entre marinheiros estrangeiros em praias brasileiras, quando da passagem de seus navios nos portos do país. Apesar disso tudo, jamais arriscou um artigo mais contundente sobre a questão da gênese do esporte no Brasil, preferindo, ao final de seus textos, resignar-se à versão imposta pela primeira classe dirigente do futebol paulistano. Terminava sempre por corroborar a teses de que Miller foi o ‘pai’ do futebol brasileiro. Essa atitude ambígua foi a tônica de sua abordagem do assunto. Como resposta às dúvidas subliminarmente colocadas por Mazzoni, o também jornalista esportivo Adriano Neiva publicou, durante os anos 50, vários artigos defendendo a ‘tese Miller’. Num deles, enfatiza o modelo inglês como padrão cultural e esportivo no Brasil: ‘Esse fato da fundação do futebol já foi exaustivamente pesquisado e provado. Antes de Charles Miller havia bolas, mas não existia futebol. Como poderá haver mar sem haver natação e touro sem haver tourada?’ (…) Para contradizê-lo, porém, basta recorrer às fontes primárias atualmente disponíveis em Itu, Itaici, São Paulo e Rio de Janeiro. (…) Além da pesquisas nas instituições de ensino da época, a memória dos ferroviários também são fontes riquíssimas e muito pouco exploradas, bem como os relatórios de linha, que contêm informações sobre a prática do futebol por ferroviários escoceses, ingleses e brasileiros, na última década do século XIX.”\n\nAssociation football: sinônimo de “futebol”, foi um termo usado com frequência nas últimas décadas do século XIX e nas iniciais do XX.\nOldboy: substantivo do inglês britânico: homem que foi estudante numa escola particular ou universidade.\nRelatórios de linha: O Relatório de Linha era um procedimento requisitado pelas companhias ferroviárias com o objetivo de controlar a qualidade dos serviços com o fim de evitar acidentes ao longo das estradas de ferro. Existiam relatórios de circulação, de trem e de linha, cada qual atribuído ao pessoal de cada setor. Fichas impressas eram fornecidas pelas próprias empresas aos trabalhadores, que deveriam entregar após a execução das tarefas. O feitor de linha tinha a função de preencher o impresso, pois ele era encarregado de gerenciar o pessoal da manutenção da linha, também chamado de pessoal da soca, que exercia um trabalho muito penoso, como troca de trilhos e dormentes. O Relatório de Linha registrava as condições dos trilhos do ponto de verificação inicial ao final, se houve trocas de dormentes e trilhos, estacas e sobre as condições das sinalizações nas passagens de nível e cruzamentos. Os relatórios também serviam para assegurar a efetiva execução do processo de trabalho.”"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "O autor do texto demonstra como, apesar da apropriação coletiva do futebol após alguns anos de sua introdução no Brasil, o pioneirismo de Charles Miller atesta o poder da ação individual na popularização do jogo.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "B",
-          "Texto": "Embora jornalistas não ignorassem a existência do futebol praticado pelas classes populares, poucos distanciaram-se da ideia de que foi a elite que introduziu este esporte no país.",
-          "Pontuacao": 4
-        },
-        {
-          "Letra": "C",
-          "Texto": "A forma como os antigos clubes sistematizaram seus arquivos teve grande influência sobre a história do futebol no Brasil.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "D",
-          "Texto": "O autor questiona a construção do \"mito fundador\" e da necessidade, no caso brasileiro, de atrelá-lo a uma origem branca, europeia e civilizada – representada na figura de Charles Miller.",
-          "Pontuacao": 5
-        }
-      ]
-    },
-    {
-      "Olimpiada": "5ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Média",
-      "TopicoId": 2,
-      "SubtopicoId": 2,
-      "Enunciado": "Considerado o primeiro livro produzido por um médico sobre o Brasil, História Natural do Brasil (Historia Naturalis Brasiliae), escrito em 1648 pelo holandês Guilherme Piso e complementado por outros autores, é avaliado como uma obra prima do gênero. Redigido em latim e dedicado a Maurício de Nassau, Piso descreveu plantas, animais, doenças e remédios que conheceu no litoral do Nordeste. Muitas imagens ilustraram a obra, dando aos estrangeiros a possibilidade de conhecer animais, flores e frutos que jamais haviam sido vistos antes. Veja uma imagem colorida do frontispício, originalmente publicado em preto e branco. ",
-      "Documentos": [
-        {
-          "Titulo": "Frontispício",
-          "Tipo": "Imagem",
-          "Descricao": "século XVIII Iconografia Brasil Holandês História Natural. Guilherme de Piso. “Frontispício”. História Natural do Brasil. Leiden: Elsevier, 1648.",
-          "Origem": "Guilherme de Piso. “Frontispício”. História Natural do Brasil. Leiden: Elsevier, 1648.",
-          "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/5ONHB_primeira_fase_questao_9.jpg",
-          "Texto": null
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "Médicos, pintores, cientistas e astrônomos, dentre outros, acompanharam Maurício de Nassau e indicaram em suas obras aspectos de interesse econômico e cultural da Nova Holanda.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "B",
-          "Texto": "Vemos a natureza brasileira representada numa profusão de detalhes que incluem a flora, a fauna e, de pé, os nativos da terra, ao lado de alegorias e do título do livro.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "C",
-          "Texto": "O arranjo das árvores, dispostas em fileiras, comprova que o médico Piso não conhecia uma floresta tropical.",
-          "Pontuacao": 0
-        },
-        {
-          "Letra": "D",
-          "Texto": "O casal de nativos é representado aos moldes de um Adão e Eva às portas de um paraíso tropical, do qual nem mesmo a serpente está ausente.",
-          "Pontuacao": 4
-        }
-      ]
-    },
-    {
-      "Olimpiada": "5ONHB",
-      "Fase": 1,
-      "NivelDificuldade": "Fácil",
-      "TopicoId": 8,
-      "SubtopicoId": 18,
-      "Enunciado": "A seguir há um pequeno trecho do romance Vidas Secas (1937-1938), de Graciliano Ramos. Após lê-lo atentamente, e refletir sobre a obra, assinale a alternativa que julgar a melhor.",
-      "Documentos": [
-        {
-          "Titulo": "Vidas Secas",
-          "Tipo": "Texto",
-          "Descricao": "Nordeste Terra História da Literatura Século XX Migração. Graciliano Ramos. Sinha Vitória, in: Vidas Secas, São Paulo: Ed. Record, 1984",
-          "Origem": "Graciliano Ramos. Vidas Secas, São Paulo: Ed. Record, 1984",
-          "Url": null,
-          "Texto": "“(…) Sinha Vitória desejava possuir uma cama igual à de seu Tomás da bolandeira. Doidice. Não dizia nada para não contrariá-la, mas sabia que era doidice. Cambembes podiam ter luxo? E estavam ali de passagem. Qualquer dia o patrão os botaria fora, e eles ganhariam o mundo, sem rumo, nem teriam meio de conduzir os cacarecos. Viviam de trouxa arrumada, dormiriam bem debaixo de um pau. (…) Seu Tomás tinha uma cama de verdade, feita pelo carpinteiro, um estrado de sucupira alisado a enxó, com as juntas abertas a formão, tudo embutido direito, e um couro cru em cima, bem esticado e bem pregado. Ali podia um cristão estirar os ossos.”\n\nBolandeira: roda movida por força animal, que aciona o rodete de ralar mandioca.\nCambembes: trabalhador assalariado que trabalhava junto com escravos.\nSucupira: nome comum de duas árvores leguminosas (Ormosia ou Robínea coccinea e O. coarctata ou minor, esta última também chamada sucupira-mirim ou sicupira-mirim e acari).\nEnxó: instrumento de carpinteiro e de tanoeiro, de cabo curvo e chapa de aço cortante, que serve para desbastar a madeira.”"
-        }
-      ],
-      "Alternativas": [
-        {
-          "Letra": "A",
-          "Texto": "No romance Vidas Secas, Graciliano Ramos retrata a miséria do sertão focado numa família de retirantes que vive em constante deslocamento e opressão.",
-          "Pontuacao": 1
-        },
-        {
-          "Letra": "B",
-          "Texto": "O pensamento de Sinhá Vitória em querer uma cama ‘de verdade’ traz a simbologia do desejo de fincar raízes, estabelecer um lugar de morada, contrário à vida de retirantes que perambulam pelo sertão.",
-          "Pontuacao": 5
-        },
-        {
-          "Letra": "C",
-          "Texto": "A obra Vidas Secas de Graciliano Ramos reflete o engajamento do autor e sua denúncia social.",
-          "Pontuacao": 4
-        },
-        {
-          "Letra": "D",
-          "Texto": "As décadas de 1930 e 1940 no Brasil foram marcadas por grandes secas no nordeste, retratadas na literatura regionalista, e levaram o presidente Vargas a criar a SUDENE em 1948.",
-          "Pontuacao": 0
-        }
-      ]
-    }
+  {
+    "Olimpiada": "7ONHB",
+    "Fase": 2,
+    "NivelDificuldade": "Fácil",
+    "TopicoId": 11,
+    "SubtopicoId": null,
+    "Enunciado": "Escolha uma das alternativas.",
+    "Documentos": [
+      {
+        "Titulo": "Ser Especial",
+        "Tipo": "Texto",
+        "Descricao": "Nova República Século XXI Consumo Brasil",
+        "Origem": "Danuza Leão. Folha de São Paulo, Caderno Cotidiano, 25/11/2012",
+        "Url": null,
+        "Texto": "Afinal, qual a graça de ter muito dinheiro? Quanto mais coisas se tem, mais se quer ter e os desejos e anseios vão mudando -- e aumentando -- a cada dia, só que a coisa não é assim tão simples. Bom mesmo é possuir coisas exclusivas, a que só nós temos acesso; se todo mundo fosse rico, a vida seria um tédio.\n\nUm homem que começa do nada, por exemplo: no início de sua vida, ter um apartamento era uma ambição quase impossível de alcançar; mas, agora, cheio de sucesso, se você falar que está pensando em comprar um com menos de 800 metros quadrados, piscina, sauna e churrasqueira, ele vai olhar para você com o maior desprezo -- isso se olhar.\n\nVai longe o tempo do primeiro fusquinha comprado com o maior sacrifício; agora, se não for um importado, com televisão, bar e computador, não interessa -- e só tem graça se for o único a ter o brinquedinho. Somos todos verdadeiras crianças, e só queremos ser únicos, especiais e raros; simples, não?\n\nQueremos todas as brincadeirinhas eletrônicas, que acabaram de ser lançadas, mas qual a graça, se até o vizinho tiver as mesmas? O problema é: como se diferenciar do resto da humanidade, se todos têm acesso a absolutamente tudo, pagando módicas prestações mensais?\n\nAs viagens, por exemplo: já se foi o tempo em que ir a Paris era só para alguns; hoje, ninguém quer ouvir o relato da subida do Nilo, do passeio de balão pelo deserto ou ver as fotos da viagem -- e se for o vídeo, pior ainda -- de quem foi às muralhas da China. Ir a Nova York ver os musicais da Broadway já teve sua graça, mas, por R$ 50 mensais, o porteiro do prédio também pode ir, então qual a graça?\n\nEnfrentar 12 horas de avião para chegar a Paris, entrar nas perfumarias que dão 40% de desconto, com vendedoras falando português e onde você só encontra brasileiros -- não é melhor ficar por aqui mesmo?"
+      }
+    ],
+    "Alternativas": [
+      {
+        "Letra": "A",
+        "Texto": "O texto alerta as classes menos favorecidas para o perigo que correm devido ao endividamento e ao superaquecimento da economia gerado por suas compras em prestações.",
+        "Pontuacao": 0
+      },
+      {
+        "Letra": "B",
+        "Texto": "A ideia de \"se diferenciar do resto da humanidade\" está ligada ao conceito de elitismo, que pode ser definido como \"favorecimento de uma minoria\".",
+        "Pontuacao": 5
+      },
+      {
+        "Letra": "C",
+        "Texto": "A autora do texto defende que a presença de brasileiros fazendo turismo ou trabalhando em outros países diminui, para certas pessoas, o prazer e o interesse em se visitar estes locais.",
+        "Pontuacao": 1
+      },
+      {
+        "Letra": "D",
+        "Texto": "O texto, escrito em 2012, pode ser utilizado como indício de que certos grupos sociais passaram a ter acesso a bens de consumo antes inacessíveis.",
+        "Pontuacao": 4
+      }
+    ]
+  },
+  {
+    "Olimpiada": "7ONHB",
+    "Fase": 2,
+    "NivelDificuldade": "Média",
+    "TopicoId": 2,
+    "SubtopicoId": 1,
+    "Enunciado": "Observe a imagem do quadro e a imagem do fotograma de uma cena de filme e escolha uma alternativa.",
+    "Documentos": [
+      {
+        "Titulo": "A Primeira Missa no Brasil, 1860",
+        "Tipo": "Imagem",
+        "Descricao": "Brasil Colônia Pré-Colonial Século XVI",
+        "Origem": "Victor Meirelles. 1860. Museu Nacional de Belas Artes, Rio de Janeiro",
+        "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/7ONHB_segunda_fase_questao_13_doc1.jpg",
+        "Texto": null
+      },
+      {
+        "Titulo": "Fotograma de cena do filme Descobrimento do Brasil de Humberto Mauro, 1936",
+        "Tipo": "Imagem",
+        "Descricao": "Brasil Colônia Pré-Colonial Cinema Século XX",
+        "Origem": "Humberto Mauro. 1936. 60 min",
+        "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/7ONHB_segunda_fase_questao_13_doc2.jpg",
+        "Texto": null
+      }
+    ],
+    "Alternativas": [
+      {
+        "Letra": "A",
+        "Texto": "O filme O Descobrimento do Brasil de Humberto Mauro fazia parte de uma política institucional de produção de cinema educativo.",
+        "Pontuacao": 4
+      },
+      {
+        "Letra": "B",
+        "Texto": "Os indígenas, em ambas as imagens, são retratados em primeiro plano e em maior quantidade, mas o tema principal é a cruz no altar.",
+        "Pontuacao": 1
+      },
+      {
+        "Letra": "C",
+        "Texto": "Os dois documentos (quadro e fotograma do filme) obedecem a uma hierarquia em termos de representação, sendo que o filme é o menos fidedigno dentre eles.",
+        "Pontuacao": 0
+      },
+      {
+        "Letra": "D",
+        "Texto": "O quadro de Victor Meirelles exerce grande influência na narrativa visual adotada pelo filme de Humberto Mauro.",
+        "Pontuacao": 5
+      }
+    ]
+  },
+  {
+    "Olimpiada": "7ONHB",
+    "Fase": 2,
+    "NivelDificuldade": "Média",
+    "TopicoId": 8,
+    "SubtopicoId": 18,
+    "Enunciado": "A partir da leitura da reportagem, escolha uma das alternativas.",
+    "Documentos": [
+      {
+        "Titulo": "Amazonas pede desculpas aos japoneses por abusos na 2ª Guerra",
+        "Tipo": "Texto",
+        "Descricao": "Era Vargas Estado Novo Segunda Guerra Mundial",
+        "Origem": "G1 Jornal Nacional",
+        "Url": null,
+        "Texto": "Uma cerimônia realizada nesta terça-feira (25), em Manaus, serviu como uma reparação histórica: um pedido de desculpas por injustiças de 70 anos (...) contra imigrantes.\n\nTambores tradicionais japoneses na Assembleia Legislativa. É o resgate de parte de uma história quase esquecida. Em 1931, imigrantes do Japão fundaram, no meio da floresta, um lugar chamado Vila Amazônia. Eles conseguiram adaptar a juta ao solo da região. A fibra natural asiática era fundamental para a economia brasileira porque dela são feitos sacos para exportação do café. O projeto agrícola deu tão certo que, em poucos anos, o Brasil deixou de importar juta da Índia. Mas com a Segunda Guerra Mundial na década de 40, os imigrantes foram perseguidos.\n\n'Eles abriram galerias para formar o esgoto da vila, e o pessoal começou a dizer que eles estavam cavando para guardar armas. Outros iam além: diziam que estavam cavando um buraco para chegar ao Japão', conta o geógrafo Camilo Ramos.\n\nQuando os japoneses foram declarados inimigos, as terras, indústrias de beneficiamento da juta, a companhia de exportação, tudo foi confiscado pelo governo. Os imigrantes que permaneceram na Vila Amazônia foram presos e depois levados ao estado do Pará, onde ficaram confinados em um lugar chamado \"Acará\". Para os japoneses e descendentes era um campo de concentração em plena Floresta Amazônica.\n\nO engenheiro Yosiyuki Miyakei, com sete anos na época, diz que os pais tiveram que fazer trabalho forçado. 'Meus pais foram forçados pela administração da época a construir estradas'.\n\nSeu Shoji fugiu para a floresta para não ser preso. Quando voltou para a cidade, foi açoitado.\n\n'O soldado disse: traz aquele japonesinho. Eu fui lá e ele começou a me bater com couro de peixe-boi', contou o aposentado Zennoshin Shoji.\n\nHoje com 96 anos, Seu Shoji recebeu título de Cidadão do Amazonas. Apenas 3 dos 249 imigrantes da Vila Amazônia ainda estão vivos. Viúvas e descendentes ouviram do governo do Amazonas o pedido formal de desculpas pelas agressões e calúnias durante a Segunda Guerra Mundial. 'Para nós é como se tivéssemos conseguido lavar a honra de nossos pais. Agora a gente pode dizer: descansem em paz', diz Valdir Sató, da Associação Koutaku do Amazonas."
+      }
+    ],
+    "Alternativas": [
+      {
+        "Letra": "A",
+        "Texto": "A história da presença de japoneses no norte do Brasil, desde o começo dos anos 1930, foi alterada pela entrada do país na Segunda Guerra Mundial.",
+        "Pontuacao": 1
+      },
+      {
+        "Letra": "B",
+        "Texto": "A retratação recente, ocorrida quando não há praticamente mais nenhum sobrevivente da Vila Amazônia, é uma medida inócua.",
+        "Pontuacao": 0
+      },
+      {
+        "Letra": "C",
+        "Texto": "A retratação procura estabelecer uma nova memória e pode ser considerada parte de outras ações da sociedade brasileira contra o apagamento de episódios violentos promovidos pelo Estado.",
+        "Pontuacao": 5
+      },
+      {
+        "Letra": "D",
+        "Texto": "O confisco de bens e a perseguição a imigrantes japoneses, alemães e italianos pautaram-se num decreto presidencial e faziam parte de ações do Estado Brasileiro no contexto da Segunda Guerra.",
+        "Pontuacao": 4
+      }
+    ]
+  },
+  {
+    "Olimpiada": "7ONHB",
+    "Fase": 2,
+    "NivelDificuldade": "Média",
+    "TopicoId": 11,
+    "SubtopicoId": null,
+    "Enunciado": "No ano de 1987, uma proposta de Emenda Popular à Constituição visando o direito dos deficientes foi apresentada. Leia este documento:",
+    "Documentos": [
+      {
+        "Titulo": "Emenda PE00086-5/Emenda 1P20759-2",
+        "Tipo": "Texto",
+        "Descricao": "Nova República Constituição 1988 Direitos",
+        "Origem": "Assembleia Nacional Constituinte. Emendas Populares, p. 81",
+        "Url": null,
+        "Texto": "**EMENDA Nº POPULAR**\n\n1. Inclui, onde couber, no Capítulo I (Dos Direitos Individuais), do Título II (Dos Direitos Fundamentais), o seguinte:\n\n\"Art. – Todos são iguais perante a lei, sem distinção de sexo, raça, trabalho, credo religioso e convicções políticas ou por ser portador de deficiência de qualquer ordem.\n\nParágrafo Único – Será punido por lei toda discriminação atentatória aos direitos humanos.\"\n\n2. Insere, onde couber, no Capítulo II (Dos Direitos Sociais), do Título II (Dos Direitos e Liberdades Fundamentais), o seguinte:\n\nArt. – São proibidas as diferenças de salário e de critério de admissão, promoção e dispensa, por motivo discriminatório, relativos a pessoa portadora de deficiência, raça, cor, sexo, religião, opinião política, nacionalidade, idade, estado civil, origem ou condição social.\n\n3. Inclui, onde couber, no Capítulo III (Dos Direitos Coletivos), do Título II (Dos Direitos e Liberdades Fundamentais), o seguinte:\n\nArt. – Garantir o livre acesso a edifícios públicos e particulares de frequência aberta ao público, a logradouros públicos e ao transporte coletivo, mediante a eliminação de barreiras arquitetônicas, ambientes e a adaptação dos meios de transportes.\n\n4. Acrescente, onde couber, na Seção I (Da Saúde), do Capítulo II (Seguridade Social), do Título IX (Da Ordem Social), o seguinte:\n\nArt. – Garantir e proporcionar a prevenção de doenças ou condições que levem à deficiência.\n\n5. Insere, onde couber, na Seção I (Da Previdência Social), Capítulo II (Da Seguridade Social), Título IX (Da Ordem Social), o seguinte:\n\nArt. – Transformar a \"aposentadoria por invalidez\" em \"seguro-reabilitação\", e permitir à pessoa portadora de deficiência, trabalhar em outra função diferente da anterior, ficando garantido este seguro sempre que houver situação de desemprego.\n\nArt. – Garantir a aposentadoria por tempo de serviço, aos 20 (vinte) anos de trabalho, para as pessoas portadoras de deficiência que tenham expectativa de vida reduzida.\n\n6. Acrescente, onde couber, na Seção III (Da Assistência Social), do Capítulo II (Seguridade Social), do Título IX (Da Ordem Social), o seguinte:\n\nArt. – Assegurar às pessoas portadoras de deficiência, o direito à habilitação e reabilitação com todos os equipamentos necessários.\n\nArt. – Garantir ações de esclarecimentos junto às instituições de ensino, às empresas e às comunidades, quanto a importância de prevenção de doenças ou condições que levem à deficiência.\n\nArt. – Concede a dedução no imposto de renda, de pessoas físicas e jurídicas, dos gastos com adaptação e aquisição de equipamentos necessários ao exercício profissional de pessoas portadoras de deficiência.\n\nArt. – Isenta os impostos às atividades relacionadas ao desenvolvimento de pesquisa, produção, importação e comercialização de material ou equipamento especializado para pessoas portadoras de deficiência.\n\n7. Inclui, onde couber, no Capítulo III (Da Educação e Cultura), do Título IX (Da Ordem Social), o seguinte:\n\nArt. – Assegurar às pessoas portadoras de deficiência, o direito à educação básica e profissionalizante obrigatória e gratuita, sem limite de idade, desde o nascimento.\n\nArt. – A União, os Estados e os Municípios devem garantir para a educação das pessoas portadoras de deficiência, em seus respectivos orçamentos, o mínimo de 10% (dez por cento) do valor que constitucionalmente for destinado à educação.\n\nArt. – Regulamentar e organizar o trabalho das oficinas abrigadas para pessoas portadoras de deficiência, enquanto não possam integrar-se no mercado de trabalho competitivo.\n\n**JUSTIFICATIVA**\n\nA cidadania não necessita de pré-requisito no que pese a particularidade de cada cidadão ou de grupos. Ela deve ser integral e plena, e como tal, deve ser assegurada na Constituição Brasileira.\n\nAs pessoas portadoras de deficiência – física, mental, visual, auditiva e outras deficiências específicas – que representam 10% da população brasileira, tem o direito à plena cidadania. Neste momento faz-se necessário de que esta Comissão se manifeste pelo recebimento da Emenda Popular nº 00086-5 reservada a apreciação de mérito para a ocasião própria.\n\n**EMENDA POPULAR Nº PE-86, de 1987**\n\n\"Dispõe sobre deficientes físicos.\"\n\n**Entidades Responsáveis:** – Organização Nacional de Entidades de Deficientes Físicos – ONEDEF; – Movimento pelos Direitos das Pessoas Deficientes – MDPD, e – Associação Nacional dos Ostomizados.\n\n**Relator:** Constituinte BERNARDO CABRAL\n\nSubscrita por 32.899 eleitores e apresentada pelas entidades associativas acima mencionadas, a presente emenda visa incluir, no Capítulo I do Título II – \"DOS DIREITOS E LIBERDADES FUNDAMENTAIS\" – do Projeto de Constituição diversos dispositivos asseguradores de direitos aos deficientes físicos.\n\nComo, nesta fase dos trabalhos, compete a este colegiado analisar a proposta apenas em seus aspectos formais e considerando que a iniciativa em exame, segundo informações da Secretaria, atende às exigências previstas no art. 24 do Regimento Interno para sua regular tramitação, meu parecer é no sentido de que se garantam esses mecanismos que podemos definir como direitos diferenciais.\n\nO direito da pessoa portadora de deficiência à integração ou reintegração à sociedade tem como condição essencial a reabilitação física, profissional e social. Para termos o direito de ir e vir é necessário o acesso aos meios de transporte, ao espaço urbano e às edificações. Para termos direito à educação e à cultura, é necessário o acesso às instituições educacionais e culturais, bem como à educação especial, para aqueles que dela necessitem, quer através de classe especial, linguagem, por sinal ou labial, ou Braille. É necessário o acesso aos materiais e equipamentos para o desenvolvimento de sua condição motora ou para orientação de locomoção. O direito ao trabalho tem que ser garantido, considerando as particularidades e potencialidades de cada indivíduo. É obrigação do Estado assistir à pessoa portadora de deficiência quando a limitação física ou mental dificulta ou impede sua independência para o exercício de suas atividades cotidianas, pelo tempo que se fizer necessário.\n\n**AUTOR:** INÊS SILVA FELIZ DA FONSECA E OUTROS (32.899 subscritores)\n\n**Entidades Responsáveis:** – Organização Nacional de Entidades de Deficientes Físicos – ONEDEF; – Movimento pelos Direitos das Pessoas Deficientes – MDPD, e – Associação Nacional dos Ostomizados.\n\n**COMISSÃO DE SISTEMATIZAÇÃO**"
+      }
+    ],
+    "Alternativas": [
+      {
+        "Letra": "A",
+        "Texto": "A inserção dos direitos das pessoas com deficiência em todos os capítulos e não em uma seção específica de tutelas especiais objetivava superar a lógica da caridade e a segregação, garantindo-lhes legalmente a cidadania e o princípio da inclusão ampla.",
+        "Pontuacao": 5
+      },
+      {
+        "Letra": "B",
+        "Texto": "Na atualidade, na visão dos movimentos sociais, o termo \"pessoa com deficiência\" é mais adequado que a expressão constitucional \"pessoas portadoras de deficiência\", ou mesmo outras mais pejorativas tais quais \"inválidos\", \"especiais\" ou \"defeituosos\", sobretudo por humanizar a pessoa e diminuir o estigma causado pela deficiência.",
+        "Pontuacao": 4
+      },
+      {
+        "Letra": "C",
+        "Texto": "A reserva de percentual de cargos e empregos públicos para pessoas com deficiência distorce os ganhos políticos que esse grupo conquistou ao incluir seus direitos na \"Constituição Cidadã\" ao invés de corrigir desigualdades sociais e minorar preconceitos.",
+        "Pontuacao": 0
+      },
+      {
+        "Letra": "D",
+        "Texto": "A Proposta de Emenda Popular à Constituição que era elaborada pela Assembleia Nacional Constituinte propõe alterações em vários artigos de forma a incluir direitos para as pessoas com deficiência, apresenta a justificativa para tais mudanças e o parecer do Deputado Constituinte relator.",
+        "Pontuacao": 1
+      }
+    ]
+  },
+  {
+    "Olimpiada": "7ONHB",
+    "Fase": 2,
+    "NivelDificuldade": "Média",
+    "TopicoId": 2,
+    "SubtopicoId": 2,
+    "Enunciado": "Sobre o trabalho nas charqueadas do Rio Grande do Sul, foi escrita a seguinte canção apresentada em um festival de música tradicionalista:",
+    "Documentos": [
+      {
+        "Titulo": "Escravo de Saladeiro (1980)",
+        "Tipo": "Texto",
+        "Descricao": "Brasil Colônia Colonial Escravidão Rio Grande do Sul",
+        "Origem": "Neto Fagundes",
+        "Url": null,
+        "Texto": "Escravo de saladeiro me dói saber como foi  \nTrabalhando o dia inteiro sangrando o mesmo que o boi  \nA faca que mata a vaca, o coice o laço que vem  \nO tronco a soga e a estaca tudo é teu negro também  \n\n(A dor do charque é barata o sal te racha o garrão  \nÉ fácil ver tua pata na marca em sangue no chão  \nO boi que morre te mata pouco a pouco meu irmão)  \n\nPobre negro sem futuro touro olhando humilhado  \nO teu braço de aço escuro sustentou o meu estado  \nJá é hora negro forte que os homens se deem as mãos  \nE se ouça de sul a norte que somos todos irmãos  \n\n**Glossário:**\n- Soga: Corda usada para prender animais a um poste, estaca etc; nas boleadeiras, conjunto de tiras de couro que ligam as esferas.\n- Garrão: calcanhar."
+      }
+    ],
+    "Alternativas": [
+      {
+        "Letra": "A",
+        "Texto": "Trata do árduo trabalho realizado por escravos no cotidiano das charqueadas rio-grandenses.",
+        "Pontuacao": 1
+      },
+      {
+        "Letra": "B",
+        "Texto": "Desconstrói a ideia de uma identidade rio-grandense construída a partir da imigração europeia.",
+        "Pontuacao": 5
+      },
+      {
+        "Letra": "C",
+        "Texto": "A consolidação das charqueadas nas grandes propriedades rurais de caráter industrial ocorreu no século XIX na cidade de Pelotas.",
+        "Pontuacao": 4
+      },
+      {
+        "Letra": "D",
+        "Texto": "A Revolução Farroupilha, ocasionada por questões relativas ao preço do charque do Rio Grande do Sul, teve como um dos resultados a libertação dos escravos de saladeiros.",
+        "Pontuacao": 0
+      }
+    ]
+  },
+  {
+    "Olimpiada": "7ONHB",
+    "Fase": 2,
+    "NivelDificuldade": "Difícil",
+    "TopicoId": 2,
+    "SubtopicoId": 1,
+    "Enunciado": "Baseado na imagem e em seu conhecimento acerca dos povos indígenas, escolha uma alternativa:",
+    "Documentos": [
+      {
+        "Titulo": "Canibais de Theodore Bry",
+        "Tipo": "Imagem",
+        "Descricao": "Representação feita pelo europeu Theodor de Bry, no século XVI, com o objetivo de mostrar os indígenas como bárbaros aos olhos europeus.",
+        "Origem": "Theodor de Bry, 1593",
+        "Url": "https://dysnjdhxwpqbhaoqrvzv.supabase.co/storage/v1/object/public/histori-acao-storage/7ONHB_segunda_fase_questao_17.jpg",
+        "Texto": null
+      }
+    ],
+    "Alternativas": [
+      {
+        "Letra": "A",
+        "Texto": "A prática do canibalismo entre os autóctones era a principal característica de sua cultura.",
+        "Pontuacao": 0
+      },
+      {
+        "Letra": "B",
+        "Texto": "A imagem retrata indígenas comendo partes de corpos humanos esquartejados enquanto um observador europeu (ao fundo, de barba) demonstra espanto com a cena.",
+        "Pontuacao": 1
+      },
+      {
+        "Letra": "C",
+        "Texto": "A carne humana consumida pelos índios tupi era exclusivamente de inimigos mortos em combate e se dava em ritual com participação de toda a tribo.",
+        "Pontuacao": 5
+      },
+      {
+        "Letra": "D",
+        "Texto": "A expressão da barbárie indígena, presente no desenho de Theodor de Bry, revela o imaginário europeu do século XVI.",
+        "Pontuacao": 4
+      }
+    ]
+  },
+  {
+    "Olimpiada": "7ONHB",
+    "Fase": 2,
+    "NivelDificuldade": "Difícil",
+    "TopicoId": 7,
+    "SubtopicoId": 15,
+    "Enunciado": "Com base na leitura da matéria jornalística e em seus conhecimentos sobre movimentos político-religiosos populares na Primeira República, é possível afirmar que:",
+    "Documentos": [
+      {
+        "Titulo": "Os fanáticos de Paraná",
+        "Tipo": "Texto",
+        "Descricao": "Trecho de jornal sobre a Guerra do Contestado (1912-1916). Pede interpretação sobre “fanáticos” e repressão.",
+        "Origem": "A Lucta, Sobral, n. 20, 17 de setembro de 1914",
+        "Url": null,
+        "Texto": "O sr. presidente da Republica conferenciou no dia 1 do corrente com os ministros da Justiça e da Guerra, sobre a situação dos fanaticos do Paraná e Santa Catarina, diante do pedido de intervenção federal feito pelos governos desses estados e hoje reiterados em telegrammas.\n\nO governo resolveu apenas nomear interventor o general Setembrino de Carvalho, marcando-lhe o embarque para o mais breve possível.\n\nTelegrapham de Curitiba que chegam ali numerosas familias fugidas do Rio Negro, com receio dos fanaticos. Hontem seguiram para a zona contestada fortes contingentes da policia paranaense, sob o comando do coronel Fabriciano Rego Barros. Sobre os fanaticos, sabe-se que estiveram no Rio Negro e depois em Itayopolis, onde prenderam as autoridades locaes.\n\nN da R -- o general Setembrino prova assim que é um verdadeiro automato do governo: hontem interviu no Ceará a favor dos phanaticos do padre Cicero e hoje intervem em Paraná contra os phanaticos de João Maria. Tome cuidado general que elles não quebrem a espada de ouro.\n\n-- Os jornaes publicam um grotesco manifesto do chefe dos fanaticos de Taquarussu, que se intitula D. Manoel Alves d'Assumpção Rocha, acclamador constitucional da monarchia sul brazileira.\n\nDentre muitas bobagens constantes do referido manifesto, saliente-se a promessa da annexação do Uruguay à nova monarchia."
+      }
+    ],
+    "Alternativas": [
+      {
+        "Letra": "A",
+        "Texto": "O periódico cearense se refere ao movimento do Contestado, conflito ocorrido numa zona de litígio entre os estados do Paraná e Santa Catarina entre os anos de 1912 e 1916, e cujas principais características podem ser encontradas nas disputas por terras e no perfil messiânico que mobilizou os camponeses da região.",
+        "Pontuacao": 4
+      },
+      {
+        "Letra": "B",
+        "Texto": "A conexão entre o movimento ocorrido no Ceará e na região Sul do país demonstra algo que a moderna historiografia dos movimentos sociais brasileiros tem apontado de maneira cada vez mais consistente, isto é, a existência de uma complexa rede que ligou pessoalmente os líderes Padre Cícero Romão Batista, o \"santo monge\" José Maria e Antônio Conselheiro no intuito de transformar a República numa monarquia teocrática.",
+        "Pontuacao": 0
+      },
+      {
+        "Letra": "C",
+        "Texto": "A utilização do termo \"fanáticos\" para designar os elementos camponeses presentes no movimento do Contestado e naquele liderado por Padre Cícero denota que os cidadãos letrados de então consideravam-se portadores de valores civilizados em detrimento dos homens do \"sertão\", tomados como bárbaros e movidos por crenças consideradas irracionais.",
+        "Pontuacao": 5
+      },
+      {
+        "Letra": "D",
+        "Texto": "Tanto no movimento de Juazeiro quanto no do Contestado, a religiosidade popular cumpria um papel fundamental nas principais formas de resistência à estrutura de poder vigente.",
+        "Pontuacao": 5
+      }
+    ]
+  },
+  {
+    "Olimpiada": "7ONHB",
+    "Fase": 2,
+    "NivelDificuldade": "Média",
+    "TopicoId": 6,
+    "SubtopicoId": 11,
+    "Enunciado": "Sobre Memórias de um Sargento de Milícias, destacado o trecho, é possível afirmar:",
+    "Documentos": [
+      {
+        "Titulo": "Memórias de um Sargento de Milícias, 1852",
+        "Tipo": "Texto",
+        "Descricao": "Segundo Reinado Literatura Século XIX",
+        "Origem": "Manuel Antônio de Almeida. São Paulo: Círculo do Livro, s/d [1852]",
+        "Url": null,
+        "Texto": "**Capítulo XVIII**\n\nOs leitores devem já estar fatigados de histórias de travessuras de criança; já conhecem suficientemente o que foi o nosso memorando em sua meninice, as esperanças que deu, e o futuro que prometeu.\n\nAgora vamos saltar por cima de alguns anos, e vamos ver realizadas algumas dessas esperanças. Agora começam histórias, se não mais importantes, pelo menos um pouco mais sisudas.\n\nComo sempre acontece a quem tem muito onde escolher, o pequeno, a quem o padrinho queria fazer clérigo mandando-o a Coimbra, a quem a madrinha queria fazer artista metendo-o na Conceição, a quem D. Maria queria fazer rábula arranjando-o em algum cartório, e a quem enfim cada conhecido ou amigo queria dar um destino que julgava mais conveniente às inclinações que nele descobria, o pequeno, dizemos, tendo tantas coisas boas, escolheu a pior possível: nem foi para Coimbra, nem para a Conceição, nem para cartório algum; não fez nenhuma destas coisas, nem também outra qualquer: constituiu-se um completo vadio, vadio-mestre, vadio-tipo.\n\nO padrinho desesperava com isso vinte vezes em cada dia por ver frustrado o seu belo sonho, porém não se animava mais a contrariar o afilhado, e deixava-o ir à sua vontade. A comadre tinha conseguido o seu fim, pelo que diz respeito à sobrinha; tanto fizera, que o Leonardo, pilhando a cigana em nova infidelidade, resolveu-se... e arranjou-se... Dessa época começou ele a viver sossegado: o vento da idade começava a apagar-lhe as flamas de ternura.\n\nD. Maria envelhecera sofrivelmente, porém não perdera de modo nenhum a sua mania favorita das demandas: a última que tivera foi talvez a mais desculpável, a mais razoável de todas. Teve por causa a tutoria de uma sua sobrinha que ficara órfã por morte de um seu irmão.\n\nEste irmão tinha um compadre que não gozava de boa reputação: ora, tendo a órfã ficado senhora de alguns mil cruzados que deixara seu pai, ainda que este não tivesse feito testamento, por ser ela filha única e legítima, o compadre apresentou-se pretendendo ser seu tutor.\n\nD. Maria, percebendo o caso, apresentou-se também, e afinal venceu: foi nomeada tutora, e veio-lhe a sobrinha para casa: ela estimou isso, tanto mais que a sua idade já a fazia precisar, ainda não de um apoio, porém de uma companhia.\n\nAs mais personagens continuaram no mesmo estado."
+      }
+    ],
+    "Alternativas": [
+      {
+        "Letra": "A",
+        "Texto": "Caracteriza as camadas médias brasileiras nos primeiros anos do século XIX e inaugura a referência ao \"malandro\" nas peças artísticas do país.",
+        "Pontuacao": 5
+      },
+      {
+        "Letra": "B",
+        "Texto": "Demonstra as frustrações da família de Leonardo diante de seu futuro e narra as escolhas profissionais restritas de uma pequena camada média da sociedade.",
+        "Pontuacao": 4
+      },
+      {
+        "Letra": "C",
+        "Texto": "Revela a trajetória de uma família no começo do século XIX, que reservou grandes expectativas para o futuro de Leonardo, personagem central do livro.",
+        "Pontuacao": 1
+      },
+      {
+        "Letra": "D",
+        "Texto": "Descreve as limitações da sociedade escravista e a formulação de preconceitos raciais já nos primeiros anos do século XIX.",
+        "Pontuacao": 0
+      }
+    ]
+  },
+  {
+    "Olimpiada": "7ONHB",
+    "Fase": 2,
+    "NivelDificuldade": "Difícil",
+    "TopicoId": 11,
+    "SubtopicoId": null,
+    "Enunciado": "A partir do texto, é possível afirmar:",
+    "Documentos": [
+      {
+        "Titulo": "O arsenal da macumba",
+        "Tipo": "Texto",
+        "Descricao": "Texto acadêmico sobre repressão policial às religiões afro-brasileiras e musealização de objetos.",
+        "Origem": "Yvonne Maggie. Revista de História da Biblioteca Nacional, 19/9/2007",
+        "Url": null,
+        "Texto": "'Praticar o espiritismo, a magia e seus sortilégios, usar de talismãs e cartomancias para despertar sentimentos de ódio ou amor, inculcar cura de moléstias curáveis e ou incuráveis, enfim para fascinar e subjugar a credulidade pública', como diz o artigo 157 do Código Penal de 1890, eram práticas condenadas pela lei e pela própria crença da sociedade no Brasil republicano. Desde a promulgação deste Código Penal, e ao longo do século XX, inúmeros acusados de serem maus espíritas, macumbeiros ou pais e mães-de-santo foram levados à prisão em quase todos os estados da federação (...)\n\nOs processos criminais que foram instaurados a partir do artigo 157 do Código Penal de 1890 revelaram o fascínio que essa crença exercia em toda a nossa sociedade. Uma das demonstrações desse fascínio, desse verdadeiro 'vício' na acepção de João do Rio (1906), são as inúmeras coleções de 'apetrechos' apreendidos pela polícia e que se encontram em museus brasileiros. Especialmente a coleção Perseverança, hoje sob a guarda do Instituto Histórico Geográfico de Alagoas, tem uma característica particular, pois revela a participação de grupos ligados à política local no combate aos 'feiticeiros'.\n\n(...)\n\nNo Rio de Janeiro, peritos da polícia eram chamados a opinar sobre os materiais apreendidos e os classificaram como de 'magia negra', parte do 'arsenal dos bruxos', 'objetos próprios para a exploração do falso espiritismo', 'objetos de bruxaria', 'coisas necessárias à mise-en-scène da macumba e candomblé', 'objetos próprios para fazer o mal, ebó (embó)'. Os artefatos recolhidos pela polícia em 'casas de fazer macumba', em terreiros e centros espíritas definidos como 'antros de bruxaria', foram expostos no Museu da Polícia Civil do Rio de Janeiro e constituíam a prova material de que o feitiço existia. O Museu da Polícia contava a história da repressão àqueles que praticavam a bruxaria, usando poderes sobrenaturais para produzir o mal. A bruxaria, na versão do nosso sistema de explicação do infortúnio, era plenamente aceita (...)\n\nA coleção classificada como 'coleção Afro-Brasileira, jogos, entorpecentes, atividades subversivas, falsificações de notas e moedas, mistificação' está registrada sob inscrição nº.1, de 5 de maio de 1938, no Livro Tombo Arqueológico, Etnográfico e Paisagístico do antigo Instituto do Patrimônio Artístico Nacional (IPHAN). As peças antes de seu tombamento em 1938 encontravam-se na Seção de Tóxicos, Entorpecentes e Mistificação da Primeira Delegacia Auxiliar no 'Museu de Magia Negra'. A delegacia que reprimia e perseguia os feiticeiros era a guardiã daquilo que os peritos da polícia definiam como objetos de bruxaria. Essa materialização da bruxaria ainda é vista com desconfiança -- não faltaram pessoas para dizer que aquelas coisas eram perigosas, estavam 'carregadas', 'pesadas' e era arriscado desvendar sua origem. Depois de tombados, os objetos passaram a fazer parte, em 1945, do Museu de Criminologia, um museu científico e de arte popular que faz parte do Conselho Internacional de Museus, registrado como Museu Científico do Departamento de Segurança Pública. O museu tem uma coleção de armas, bandeiras nazistas, pertences de presos políticos. A 'coleção de magia negra' foi organizada pelo primeiro diretor da casa que, para tanto, utilizou-se de bibliografia sobre o tema das religiões afro-brasileiras sobretudo Artur Ramos, Roger Bastide e Edison Carneiro. Em 1979, os objetos da bruxaria no Museu da Polícia estavam dispostos como em um terreiro, com as imagens dos exus separadas das dos outros orixás, os atabaques separados das imagens e os 'trabalhos para fechar caminhos' em estante separada \"dos trabalhos para abrir caminhos\". (...)\n\nJá em 2005, a coleção de 'magia negra' estava fechada à visitação pública. A coleção do Museu da Polícia parece ter sido danificada durante um incêndio, tendo sido colocada na reserva técnica, onde o acesso a ela era proibido. O que significa o desaparecimento da coleção dos olhos do público? Arrisco duas hipóteses. A primeira é que houve nos anos 1970 uma demanda por parte de alguns movimentos políticos para devolver as peças para seus donos originais. Essa demanda foi dificultada porque aqueles itens expostos no Museu eram a prova viva de que a feitiçaria existia e estavam 'carregados'. Mas quem sabe elas não teriam assim mesmo sido encaminhadas à alguma instituição religiosa? Também é possível especular que o sumiço da coleção do Museu da Polícia tenha algo a ver com a força crescente das religiões evangélicas no Rio de Janeiro, inimigas mortais da feitiçaria, que têm crentes em todas as esferas da sociedade, até na policial."
+      }
+    ],
+    "Alternativas": [
+      {
+        "Letra": "A",
+        "Texto": "A existência de objetos ligados à \"magia\" ou à \"bruxaria\" era, para as forças policiais, a evidência material de que ela era praticada.",
+        "Pontuacao": 1
+      },
+      {
+        "Letra": "B",
+        "Texto": "Ao arriscar uma das hipóteses para o sumiço da coleção, a autora do texto culpabiliza a ação de seguidores de outras crenças religiosas, de certa forma perpetuando a prática - que ela mesmo condena - do preconceito contra a crença alheia.",
+        "Pontuacao": 5
+      },
+      {
+        "Letra": "C",
+        "Texto": "A Constituição Brasileira de 1988 em seu artigo 5º, embora estabeleça serem invioláveis a liberdade de consciência e de crença, não garante a proteção aos locais de culto, quaisquer eles sejam.",
+        "Pontuacao": 0
+      },
+      {
+        "Letra": "D",
+        "Texto": "O fato de a coleção de \"magia negra\" ao mesmo tempo ser objeto de investigação policial e item protegido, em 1938, pelo patrimônio nacional, indica posturas ambivalentes em relação aos mesmos objetos.",
+        "Pontuacao": 4
+      }
+    ]
+  },
+  {
+    "Olimpiada": "7ONHB",
+    "Fase": 2,
+    "NivelDificuldade": "Média",
+    "TopicoId": 8,
+    "SubtopicoId": 17,
+    "Enunciado": "Sobre a Campanha dos 50%, pode-se afirmar:",
+    "Documentos": [
+      {
+        "Titulo": "A Manhã, 09 de agosto de 1935",
+        "Tipo": "Texto",
+        "Descricao": "Era Vargas Governo Constitucional Movimento Estudantil",
+        "Origem": "A Manhã, Rio de Janeiro, n. 91, 09 agosto 1935",
+        "Url": null,
+        "Texto": "**A Proclamação**\n\nA não ser que se pretenda transformar as nossas escolas em fábricas de diplomas, infestando o país de médicos, bacharéis, engenheiros, professores, agrônomos, dentistas, químicos, farmacêuticos, todos incompetentes para o desempenho das funções e, portanto, nocivos no desenvolvimento e progresso da Pátria, nós devemos, como sentinelas do futuro, defender intransigentemente nossos sagrados interesses que se confundem com as necessidades do Brasil.\n\nÉ por isso, repetimos, que lançamos esta proclamação à mocidade estudiosa de todas as escolas. Dedicando a nossa vida ao estudo, nós mantemos um nível de vida inferior às demais classes do Brasil.\n\nDe acordo, pois, com nossas necessidades, precisamos bater-nos por abatimentos nos meios de locomoção e diversão dos estudantes.\n\nEsta campanha surge com uma legenda \"Campanha dos 50%\". Em torno dela, devemos nos unir para obter a diminuição das passagens e dos divertimentos.\n\n(...)\n\nColegas de todo o Brasil, realizamos a nossa aspiração imediata! Tudo pela campanha dos 50%!"
+      },
+      {
+        "Titulo": "A Manhã, de 17 de setembro de 1935",
+        "Tipo": "Texto",
+        "Descricao": "Era Vargas Governo Constitucional Movimento Estudantil",
+        "Origem": "A Manhã, Rio de Janeiro, nº 124, 17 setembro 1935",
+        "Url": null,
+        "Texto": "**O memorial dos estudantes, entregue à minoria parlamentar**\n\n(...)\n\nUm dos fatores que mais concorrem para o alarmante coeficiente de analfabetos, no Brasil, é indiscutivelmente a dificuldade de transportes e o preço exorbitante das passagens. Em vários países e mesmo em algumas unidades da nossa Federação os estudantes gozam esse abatimento, evidentemente justíssimo. E, realmente, não se compreende que um jovem brasileiro, faminto de saber, não possa estudar, devido ao elevado preço dos transportes, que, na sua maioria, está nas mãos de poderosas companhias estrangeiras. Pleiteando esse abatimento, nós defendemos os interesses do povo e do Brasil. Portanto, combater a 'Campanha dos 50%' é ser contra os estudantes, o povo e o Brasil, e é estar ao lado de empresas estrangeiras que têm lucros fabulosos!"
+      }
+    ],
+    "Alternativas": [
+      {
+        "Letra": "A",
+        "Texto": "Denotava a imaturidade da esquerda brasileira em enfrentar a crescente repressão de Getúlio Vargas aos comunistas, num contexto em que a taxa de analfabetismo era de 56%.",
+        "Pontuacao": 0
+      },
+      {
+        "Letra": "B",
+        "Texto": "Anunciava a formação de um movimento social que reivindicava o pagamento de \"meia entrada\" para estudantes em eventos culturais e no transporte público.",
+        "Pontuacao": 1
+      },
+      {
+        "Letra": "C",
+        "Texto": "Marcava a entrada de um movimento social de juventude na cena política, da qual já participavam trabalhadores urbanos, processo interrompido com o advento do Estado Novo.",
+        "Pontuacao": 4
+      },
+      {
+        "Letra": "D",
+        "Texto": "Reivindicando políticas públicas e de assistência não oferecidas pelo Estado, os estudantes se constituíam como sujeitos políticos.",
+        "Pontuacao": 5
+      }
+    ]
+  }
 ]
