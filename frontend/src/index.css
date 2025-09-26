@@ -139,6 +139,46 @@
   }
 }
 
+@layer components {
+  .prose {
+    line-height: 1.75 !important; 
+    font-size: 1rem !important; 
+  }
+
+  .prose p,
+  .prose ul,
+  .prose ol,
+  .prose h3,
+  .prose h4 {
+    margin-bottom: 1.5em !important; 
+  }
+
+  .prose h3 {
+    margin-top: 2.5em !important;
+    margin-bottom: 1.5em !important;
+    font-size: 1.5rem !important; 
+    font-weight: 700 !important;
+  }
+
+  .prose h4 {
+    margin-top: 2em !important;
+    margin-bottom: 1em !important;
+    font-size: 1.25rem !important; 
+    font-weight: 600 !important;
+  }
+
+  .prose strong {
+    font-weight: 800 !important; 
+  }
+
+  .prose hr {
+    margin-top: 2.5em !important;
+    margin-bottom: 2.5em !important;
+    border-top-width: 2px !important; 
+    border-color: #e5e7eb !important; 
+  }
+}
+
 /* Custom utility classes for IF Goiano branding */
 @layer utilities {
   .text-if-green {
@@ -160,7 +200,6 @@
     overflow: hidden;
   }
 
-  /* Modern spacing utilities */
   .section-padding {
     @apply px-4 sm:px-6 lg:px-8;
   }
@@ -169,7 +208,6 @@
     @apply max-w-7xl mx-auto;
   }
 
-  /* Institutional colors */
   .text-green-700 {
     color: #006633;
   }
@@ -194,7 +232,6 @@
     background-color: #007a3d;
   }
 
-  /* Focus states */
   .focus\:ring-green-500:focus {
     --tw-ring-color: #10b981;
   }
